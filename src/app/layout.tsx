@@ -11,6 +11,7 @@ import User from "@/models/user";
 import { authOptions } from "@/auth-options";
 import { SessionProvider } from "next-auth/react";
 import SessionProviderComp from "@/lib/session-provider";
+import TanstackProvider from "@/lib/tanstack-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,21 +35,23 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SessionProviderComp>
+        <TanstackProvider>
+          <SessionProviderComp>
 
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Navbar
-              // userInfo={user}
-              userInfo={JSON.parse(JSON.stringify(user))}
-            />
-            {children}
-          </ThemeProvider>
-        </SessionProviderComp>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Navbar
+                // userInfo={user}
+                userInfo={JSON.parse(JSON.stringify(user))}
+              />
+              {children}
+            </ThemeProvider>
+          </SessionProviderComp>
+        </TanstackProvider>
       </body>
     </html >
   );
