@@ -4,14 +4,11 @@ import { Button } from './ui/button'
 import ModeToggle from '@/utilities/mode-toggle'
 
 const HomePage = () => {
-	return (
-		<div>
-
-
-<Button variant="default">Button</Button>
-<ModeToggle/>
-		</div>
-	)
+  return (
+    <div>
+      HomePage
+    </div>
+  )
 }
 
 export default HomePage
