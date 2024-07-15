@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 
 import { cn } from '@/lib/utils';
-import { UserInfo, navItems } from '@/utilities/types';
+import { UserInfo, navItemsDashboard } from '@/utilities/types';
 
 
 const DashboardNav = ({ setOpen, userInfo }: {
@@ -14,11 +14,11 @@ const DashboardNav = ({ setOpen, userInfo }: {
 }) => {
   const path = usePathname();
 
-  if (!navItems?.length) return null;
+  if (!navItemsDashboard?.length) return null;
 
   return (
     <nav className="grid items-start gap-2">
-      {navItems.map((item, index) => {
+      {navItemsDashboard.map((item, index) => {
         if (item.role.includes(userInfo?.role)) {
           return (
             item.href && (

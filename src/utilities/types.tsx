@@ -31,7 +31,50 @@ export interface UserInfo {
 
 
 
-export interface NavItem {
+export interface NavItemMenu {
+  title: string;
+  href?: string;
+  disabled?: boolean;
+  external?: boolean;
+  label?: string;
+}
+
+
+
+export const navItemsMenu: NavItemMenu[] = [
+  {
+    title: "Home",
+    href: "/",
+    label: "Home"
+  },
+  {
+    title: "The Best",
+    href: "/the-best",
+    label: "The Best"
+  },
+  // {
+  //   title: "Movies",
+  //   href: "/",
+  //   label: "Movies"
+  // },
+  {
+    title: "Blog",
+    href: "/blog",
+    label: "Blog"
+  }, {
+    title: "About us",
+    href: "/about-us",
+    label: "About us"
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+    label: "Contact"
+  }
+]
+
+
+export interface NavItemsDashboard {
   title: string;
   href?: string;
   disabled?: boolean;
@@ -41,8 +84,7 @@ export interface NavItem {
   role: string[];
 }
 
-
-export const navItems: NavItem[] = [
+export const navItemsDashboard: NavItemsDashboard[] = [
   {
     title: "Dashboard",
     href: "/dashboard",
