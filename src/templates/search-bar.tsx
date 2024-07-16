@@ -54,7 +54,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="relative w-full md:w-1/2">
+    <div className="relative w-full ">
       <Input
         type="search"
         placeholder="Search..."

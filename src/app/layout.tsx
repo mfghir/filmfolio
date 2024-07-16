@@ -13,6 +13,9 @@ import { SessionProvider } from "next-auth/react";
 import SessionProviderComp from "@/lib/session-provider";
 import TanstackProvider from "@/lib/tanstack-provider";
 
+
+import { appWithTranslation } from 'next-i18next';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -35,6 +38,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+
         <TanstackProvider>
           <SessionProviderComp>
 
@@ -43,16 +47,23 @@ export default async function RootLayout({
               defaultTheme="system"
               enableSystem
               disableTransitionOnChange
-            >
+              >
               <Navbar
                 // userInfo={user}
                 userInfo={JSON.parse(JSON.stringify(user))}
-              />
+                />
               {children}
             </ThemeProvider>
           </SessionProviderComp>
         </TanstackProvider>
+               
       </body>
     </html >
   );
 }
+
+
+
+
+
+

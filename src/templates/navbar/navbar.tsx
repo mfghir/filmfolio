@@ -51,7 +51,7 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
   return (
     <div className="fixed inset-0 top-0 left-0 z-20 h-fit">
       <div className=" px-6 py-3 lg:px-20 flex justify-between items-center supports-backdrop-blur:bg-background/60 border-b bg-background/95 backdrop-blur">
-        <section className="bg-red-700 flex justify-start items-center gap-y-2 gap-x-4 ">
+        <section className=" flex justify-start items-center gap-y-2 gap-x-4 ">
           <Link href="/"
             className='pic-anim bg-gradient-to-r from-fuchsia-500 to-cyan-500 hover:bg-gradient-to-rl hover:from-cyan-500 hover:to-fuchsia-500'>
             <Image
@@ -65,10 +65,11 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
           <ModeToggle />
         </section>
 
-        <MenuNav />
+        <div className="hidden lg:block">
+          <MenuNav />
+        </div>
 
-
-        <section className="flex justify-end items-center gap-y-2 gap-x-4 bg-green-700">
+        <section className="flex justify-end items-center gap-y-2 gap-x-4">
           {/* <div className='hidden lg:flex justify-between items-center gap-x-4'>
           </div> */}
 
@@ -81,7 +82,9 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
             <UserNav userInfo={userInfo} />
             :
             <>
-              <SearchBar onSearch={handleSearch} />
+              <div className="hidden lg:block w-full">
+                <SearchBar onSearch={handleSearch} />
+              </div>
               <Button asChild>
                 <Link href="/register">Register</Link>
               </Button>
