@@ -163,7 +163,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { IconChevronDown } from '@tabler/icons-react';
 
-import { navItemsMenu } from '@/utilities/types';
+import { navItemsMenu } from '@/utilities/types-data';
 
 import {
   Menubar,

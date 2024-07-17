@@ -10,12 +10,17 @@ import { usePathname } from 'next/navigation';
 
 import ModeToggle from '@/utilities/mode-toggle';
 import { Button } from '@/components/ui/button';
-import { UserInfo } from '@/utilities/types';
+
+
 import PhoneNav from './phone-nav';
 import MenuNav from './menu-nav';
 import SearchBar from '../search-bar';
+import { UserInfo } from '@/utilities/types-data';
+import { useGoogleTranslate } from '@/utilities/google-provider';
+import LanguageSwitchButton from '@/utilities/LanguageSwitchButton';
 
-const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
+
+const Navbar = ({ userInfo ,prefLangCookie }: { userInfo: UserInfo }) => {
   const { data: session, status } = useSession();
   const path = usePathname();
 
@@ -48,6 +53,14 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
 
 
 
+  const { language, changeLanguage } = useGoogleTranslate();
+  const toggleLanguage = () => {
+    const newLang = language === 'en' ? 'fa' : 'en';
+    changeLanguage(newLang);
+  };
+
+
+
   return (
     <div className="fixed inset-0 top-0 left-0 z-20 h-fit">
       <div className=" px-6 py-3 lg:px-20 flex justify-between items-center supports-backdrop-blur:bg-background/60 border-b bg-background/95 backdrop-blur">
@@ -63,6 +76,20 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
             />
           </Link>
           <ModeToggle />
+
+
+          {/* <GoogleTranslate prefLangCookie={prefLangCookie} /> */}
+
+          <LanguageSwitchButton prefLangCookie={prefLangCookie} />
+
+          {/* <Button variant="ghost" size="sm" onClick={toggleLanguage}>
+            <img
+              src={language === 'en' ? "https://flagcdn.com/h60/ir.png" : "https://flagcdn.com/h60/us.png"}
+              alt={language === 'en' ? "Persian" : "English"}
+              className="w-6 h-6"
+            />
+            {/* <span className="ml-2">{language === 'en' ? "Persian" : "English"}</span> */}
+          {/* </Button>  */}
         </section>
 
         <div className="hidden lg:block">

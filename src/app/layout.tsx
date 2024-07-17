@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Vazirmatn } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-provider";
@@ -15,8 +15,10 @@ import TanstackProvider from "@/lib/tanstack-provider";
 
 
 import { appWithTranslation } from 'next-i18next';
+import GoogleTranslateProvider from "@/utilities/google-provider";
+import { getPrefLangCookie } from "@/utilities/getPrefLangCookie";
 
-const inter = Inter({ subsets: ["latin"] });
+const vazir = Vazirmatn({ subsets: ["arabic"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,29 +36,31 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
   const user = await User.findOne({ email: session?.user?.email });
 
-
+  const prefLangCookie = getPrefLangCookie();
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" >
+      <body className={vazir.className}>
+        <GoogleTranslateProvider>
 
-        <TanstackProvider>
-          <SessionProviderComp>
+          <TanstackProvider>
+            <SessionProviderComp>
 
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
               >
-              <Navbar
-                // userInfo={user}
-                userInfo={JSON.parse(JSON.stringify(user))}
+                <Navbar prefLangCookie={prefLangCookie}
+                  // userInfo={user}
+                  userInfo={JSON.parse(JSON.stringify(user))}
                 />
-              {children}
-            </ThemeProvider>
-          </SessionProviderComp>
-        </TanstackProvider>
-               
+                {children}
+              </ThemeProvider>
+            </SessionProviderComp>
+          </TanstackProvider>
+        </GoogleTranslateProvider>
+
       </body>
     </html >
   );

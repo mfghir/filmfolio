@@ -20,7 +20,7 @@ import {
 import { Gauge, LogOutIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link";
-import { UserInfo } from "@/utilities/types"
+import { UserInfo } from "@/utilities/types-data"
 
 
 import { signOut, useSession } from 'next-auth/react';
@@ -28,7 +28,7 @@ import { signOut, useSession } from 'next-auth/react';
 
 
 
-const UserNav = ({userInfo}: { userInfo: UserInfo }) => {
+const UserNav = ({ userInfo }: { userInfo: UserInfo }) => {
   const { data: session } = useSession();
   // console.log("session - userNav===>>>" , session );
   // console.log("image - userNav===>>>" , session?.user?.image );
@@ -39,7 +39,7 @@ const UserNav = ({userInfo}: { userInfo: UserInfo }) => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-9 w-9">
-            <AvatarImage src={ userInfo?.imgUrl } alt="user pic" />
+            <AvatarImage src={userInfo?.imgUrl} alt="user pic" />
             <AvatarFallback>{userInfo?.name ? userInfo.name.slice(0, 2) : "user pic"}</AvatarFallback>
           </Avatar>
         </Button>
@@ -60,7 +60,7 @@ const UserNav = ({userInfo}: { userInfo: UserInfo }) => {
         <DropdownMenuGroup>
           <Link href="/dashboard">
             <DropdownMenuItem>
-            Dashboard
+              Dashboard
               <DropdownMenuShortcut><Gauge /></DropdownMenuShortcut>
             </DropdownMenuItem>
           </Link>

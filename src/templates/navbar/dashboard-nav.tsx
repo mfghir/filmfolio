@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 
 import { cn } from '@/lib/utils';
-import { UserInfo, navItemsDashboard } from '@/utilities/types';
+import { UserInfo, navItemsDashboard } from '@/utilities/types-data';
 
 
 const DashboardNav = ({ setOpen, userInfo }: {

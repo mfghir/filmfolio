@@ -4,7 +4,7 @@ import { useState } from "react";
 import { MenuIcon } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-import { UserInfo } from "@/utilities/types";
+import { UserInfo } from "@/utilities/types-data";
 
 
 import ModeToggle from "@/utilities/mode-toggle";

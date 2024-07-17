@@ -56,7 +56,39 @@
 
 
 
+
+
+
+  .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+  }
+
+  
+  body {
+    position: "static";
+    top: "0px !important";
+  }
+
+ .skiptranslate {
+    display: "none !important";
+  }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .pic-anim {
   animation: morph 5s linear infinite;
@@ -75,4 +107,5 @@
   100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
+
 }
