@@ -57,30 +57,14 @@
 
 
 
-
-
-  .goog-te-banner-frame.skiptranslate {
-    display: none !important;
-  }
-
-  
-  body {
-    position: "static";
-    top: "0px !important";
-  }
-
- .skiptranslate {
-    display: "none !important";
-  }
-
-
-
 }
 
 
 
 
-
+body > .skiptranslate {
+  display: none;
+}
 
 
 

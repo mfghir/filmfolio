@@ -206,8 +206,8 @@ const MenuNav = () => {
           <MenubarTrigger>
             <span className={`hover:text-primary dark:hover:text-primary duration-300
             flex items-center ${path === "/movies" ? "text-primary" : "text-zinc-900 dark:text-white"}`}>
-              Movies
               <IconChevronDown className="ml-1" size="18" stroke="1.5" />
+              <span>فیلم ها</span>
             </span>
 
             {/* <Link
@@ -228,7 +228,7 @@ const MenuNav = () => {
                   className={`hover:text-primary dark:hover:text-primary duration-300
                   ${path === "/movies/special-ads" ? "text-primary" : "text-zinc-900 dark:text-white"}`}
                 >
-                  Special Ads
+                  اعلان های ویژه
                 </Link>
               </MenubarRadioItem>
               <MenubarRadioItem value="popular-movies">
@@ -237,7 +237,7 @@ const MenuNav = () => {
                   className={`hover:text-primary dark:hover:text-primary duration-300
                   ${path === "/movies/popular-movies" ? "text-primary" : "text-zinc-900 dark:text-white"}`}
                 >
-                  Popular Movies
+                  فیلم های محبوب
                 </Link>
               </MenubarRadioItem>
               <MenubarRadioItem value="new-movies">
@@ -246,7 +246,7 @@ const MenuNav = () => {
                   className={`hover:text-primary dark:hover:text-primary duration-200 
                   ${path === "/movies/new-movies" ? "text-primary" : "text-zinc-900 dark:text-white"}`}
                 >
-                  New Movies
+                  فیلم های جدید
                 </Link>
               </MenubarRadioItem>
               <MenubarRadioItem value="sort-movies">
@@ -255,7 +255,7 @@ const MenuNav = () => {
                   className={`hover:text-primary dark:hover:text-primary duration-300 
                   ${path === "/movies/sort-movies" ? "text-primary" : "text-zinc-900 dark:text-white"}`}
                 >
-                  Sort Movies
+                  دسته بندی فیلم ها
                 </Link>
               </MenubarRadioItem>
             </MenubarRadioGroup>

@@ -43,14 +43,14 @@ export interface NavItemMenu {
 
 export const navItemsMenu: NavItemMenu[] = [
   {
-    title: "Home",
+    title: "خانه",
     href: "/",
-    label: "Home"
+    label: "خانه"
   },
   {
-    title: "The Best",
+    title: "برترین ها",
     href: "/the-best",
-    label: "The Best"
+    label: "برترین ها"
   },
   // {
   //   title: "Movies",
@@ -58,18 +58,18 @@ export const navItemsMenu: NavItemMenu[] = [
   //   label: "Movies"
   // },
   {
-    title: "Blog",
+    title: "وبلاگ",
     href: "/blog",
-    label: "Blog"
+    label: "وبلاگ"
   }, {
-    title: "About us",
+    title: "درباره ما",
     href: "/about-us",
-    label: "About us"
+    label: "درباره ما"
   },
   {
-    title: "Contact",
+    title: "ارتباط",
     href: "/contact",
-    label: "Contact"
+    label: "ارتباط"
   }
 ]
 

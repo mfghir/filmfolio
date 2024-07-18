@@ -5,22 +5,20 @@ import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 
 import UserNav from './user-nav';
-
 import { usePathname } from 'next/navigation';
-
 import ModeToggle from '@/utilities/mode-toggle';
-import { Button } from '@/components/ui/button';
 
+import { Button } from '@/components/ui/button';
 
 import PhoneNav from './phone-nav';
 import MenuNav from './menu-nav';
 import SearchBar from '../search-bar';
+
 import { UserInfo } from '@/utilities/types-data';
-import { useGoogleTranslate } from '@/utilities/google-provider';
-import LanguageSwitchButton from '@/utilities/LanguageSwitchButton';
+import { LanguageToggle } from '@/utilities/language-toggle';
 
 
-const Navbar = ({ userInfo ,prefLangCookie }: { userInfo: UserInfo }) => {
+const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
   const { data: session, status } = useSession();
   const path = usePathname();
 
@@ -52,15 +50,6 @@ const Navbar = ({ userInfo ,prefLangCookie }: { userInfo: UserInfo }) => {
   };
 
 
-
-  const { language, changeLanguage } = useGoogleTranslate();
-  const toggleLanguage = () => {
-    const newLang = language === 'en' ? 'fa' : 'en';
-    changeLanguage(newLang);
-  };
-
-
-
   return (
     <div className="fixed inset-0 top-0 left-0 z-20 h-fit">
       <div className=" px-6 py-3 lg:px-20 flex justify-between items-center supports-backdrop-blur:bg-background/60 border-b bg-background/95 backdrop-blur">
@@ -77,19 +66,8 @@ const Navbar = ({ userInfo ,prefLangCookie }: { userInfo: UserInfo }) => {
           </Link>
           <ModeToggle />
 
-
-          {/* <GoogleTranslate prefLangCookie={prefLangCookie} /> */}
-
-          <LanguageSwitchButton prefLangCookie={prefLangCookie} />
-
-          {/* <Button variant="ghost" size="sm" onClick={toggleLanguage}>
-            <img
-              src={language === 'en' ? "https://flagcdn.com/h60/ir.png" : "https://flagcdn.com/h60/us.png"}
-              alt={language === 'en' ? "Persian" : "English"}
-              className="w-6 h-6"
-            />
-            {/* <span className="ml-2">{language === 'en' ? "Persian" : "English"}</span> */}
-          {/* </Button>  */}
+          {/* <GoogleTranslate /> */}
+          <LanguageToggle/> 
         </section>
 
         <div className="hidden lg:block">
@@ -113,7 +91,7 @@ const Navbar = ({ userInfo ,prefLangCookie }: { userInfo: UserInfo }) => {
                 <SearchBar onSearch={handleSearch} />
               </div>
               <Button asChild>
-                <Link href="/register">Register</Link>
+                <Link href="/register">ثبت نام</Link>
               </Button>
             </>
           }

@@ -57,7 +57,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     <div className="relative w-full ">
       <Input
         type="search"
-        placeholder="Search..."
+        placeholder="جست و جو..."
         value={searchTerm}
         onChange={handleInputChange}
         onKeyPress={handleKeyPress}
