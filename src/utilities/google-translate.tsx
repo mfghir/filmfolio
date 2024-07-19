@@ -33,8 +33,6 @@ const GoogleTranslateProvider = ({ children }: Readonly<{ children: React.ReactN
     // @ts-ignore
     window.googleTranslateElementInit = googleTranslateElementInit;
 
-
-
     // Set initial direction based on the preferred language
     const currentLang = languages.find(lang => lang.value === language) || languages[1];
     document.documentElement.setAttribute("dir", currentLang.dir);

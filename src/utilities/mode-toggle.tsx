@@ -4,6 +4,7 @@ import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
+import { useGoogleTranslate } from "./google-translate"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -12,9 +13,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-const ModeToggle = () => {
 
+const ModeToggle = () => {
   const { setTheme } = useTheme()
+  const { language } = useGoogleTranslate();
+
 
   return (
     <DropdownMenu>
@@ -27,14 +30,14 @@ const ModeToggle = () => {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+        <DropdownMenuItem onClick={() => setTheme("light")} className={language === "fa" ? "justify-end" : ""}>
+          روشن
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+        <DropdownMenuItem onClick={() => setTheme("dark")} className={language === "fa" ? "justify-end" : ""}>
+          تیره
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+        <DropdownMenuItem onClick={() => setTheme("system")} className={language === "fa" ? "justify-end" : ""}>
+          سیستم
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
