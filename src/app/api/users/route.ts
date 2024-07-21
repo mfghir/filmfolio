@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import connectDB from "@/lib/connectDB";
+// import connectDB from "@/lib/connectDB";
 import User from "@/models/user";
 
 // export async function GET(request: any) {
@@ -40,21 +40,21 @@ import User from "@/models/user";
 
 // ------------------------------------------------------delete list of users 👇---------------
 
-export async function DELETE(request: any) {
-  try {
-    await connectDB();
-    const ids = request.nextUrl.searchParams.getAll("ids[]");
-    await User.deleteMany({ _id: { $in: ids } });
+// export async function DELETE(request: any) {
+//   try {
+//     await connectDB();
+//     const ids = request.nextUrl.searchParams.getAll("ids[]");
+//     await User.deleteMany({ _id: { $in: ids } });
 
-    return NextResponse.json(
-      { message: "users deleted successfully" },
-      { status: 201 }
-    );
-  } catch (error) {
-    console.error("Error deleting users:", error);
-    return NextResponse.json(
-      { message: "Failed to delete users", error },
-      { status: 500 }
-    );
-  }
-}
+//     return NextResponse.json(
+//       { message: "users deleted successfully" },
+//       { status: 201 }
+//     );
+//   } catch (error) {
+//     console.error("Error deleting users:", error);
+//     return NextResponse.json(
+//       { message: "Failed to delete users", error },
+//       { status: 500 }
+//     );
+//   }
+// }

@@ -18,8 +18,9 @@ import { UserInfo } from '@/utilities/types-data';
 import { LanguageToggle } from '@/utilities/language-toggle';
 
 
-const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
-  const { data: session, status } = useSession();
+const Navbar = () => {
+  // const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
+  // const { data: session, status } = useSession();
   const path = usePathname();
 
   // console.log("session ---->",session)
@@ -79,10 +80,11 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
           </div> */}
 
           <div className="lg:hidden">
-            <PhoneNav userInfo={userInfo} />
+          PhoneNav
+            {/* <PhoneNav userInfo={userInfo} /> */}
           </div>
 
-
+{/* 
           {session?.user ?
             <UserNav userInfo={userInfo} />
             :
@@ -94,7 +96,7 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
                 <Link href="/register">ثبت نام</Link>
               </Button>
             </>
-          }
+          } */}
         </section>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/lib/theme-provider";
 import Navbar from "@/templates/navbar/navbar";
 
 import { getServerSession } from "next-auth";
-import connectDB from "@/lib/connectDB";
+// import connectDB from "@/lib/connectDB";
 import User from "@/models/user";
 
 import { authOptions } from "@/auth-options";
@@ -33,10 +33,9 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 
-
-  await connectDB()
-  const session = await getServerSession(authOptions);
-  const user = await User.findOne({ email: session?.user?.email });
+  // await connectDB()
+  // const session = await getServerSession(authOptions);
+  // const user = await User?.findOne({ email: session?.user?.email });
 
 
   const prefLangCookie = getPrefLangCookie();
@@ -58,7 +57,8 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 <Navbar
                   // prefLangCookie={prefLangCookie}
                   // userInfo={user}
-                  userInfo={JSON.parse(JSON.stringify(user))}
+
+                  // userInfo={JSON.parse(JSON.stringify(user))}
                 />
                 {children}
 
