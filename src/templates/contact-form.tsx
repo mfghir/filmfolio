@@ -82,15 +82,13 @@ const ContactForm = () => {
 
 
 
-
-
-
-
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full lg:w-1/2 flex flex-col gap-y-6 mt-4 md:mt-6 md:mb-8 lg:mb-0 bg-purple-300"
+        className="w-full lg:w-3/4 flex flex-col gap-y-6 mt-4 md:mt-6 md:mb-8 lg:mb-0
+        shadow-md bg-zinc-50 dark:bg-zinc-700 rounded-xl p-3
+        "
       >
         <FormField
           control={form.control}
@@ -99,7 +97,7 @@ const ContactForm = () => {
             <FormItem>
               <FormLabel>اسم</FormLabel>
               <FormControl>
-                <Input placeholder="اسم" {...field} />
+                <Input placeholder="نام خود را کامل وارد کنید" {...field} />
               </FormControl>
 
               <FormMessage />
@@ -134,7 +132,7 @@ const ContactForm = () => {
             <FormItem>
               <FormLabel>ایمیل</FormLabel>
               <FormControl>
-                <Input placeholder="ایمیل" {...field} />
+                <Input placeholder="ایمیل خود را وارد کنید" {...field} />
               </FormControl>
 
               <FormMessage />
@@ -168,7 +166,7 @@ const ContactForm = () => {
             <FormItem>
               <FormLabel>ایمیل</FormLabel>
               <FormControl>
-                <Textarea placeholder="پیام" {...field} />
+                <Textarea placeholder="پیام خود را وارد کنید" {...field} />
               </FormControl>
 
               <FormMessage />

@@ -55,12 +55,14 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 disableTransitionOnChange
               >
                 <Navbar
-                  // prefLangCookie={prefLangCookie}
-                  // userInfo={user}
+                // prefLangCookie={prefLangCookie}
+                // userInfo={user}
 
-                  // userInfo={JSON.parse(JSON.stringify(user))}
+                // userInfo={JSON.parse(JSON.stringify(user))}
                 />
-                {children}
+                <main className="p-6 pt-28 md:px-8 lg:px-20">
+                  {children}
+                </main>
 
                 <Footer />
               </ThemeProvider>
