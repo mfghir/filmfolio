@@ -36,8 +36,8 @@
 //           <Link
 //             href={item.href!}
 //             className={cn(
-//               "hover:text-primary",
-//               path === item.href ? "text-primary" : "text-zinc-900"
+//               "hover:galaxy-gradient-text",
+//               path === item.href ? "galaxy-gradient-text" : "text-zinc-900"
 //             )}
 //           >
 //             {item.title}
@@ -50,8 +50,8 @@
 //           <Button variant="ghost" size="sm">
 //             <Link href="/movies"
 //               className={cn(
-//                 "hover:text-primary flex justify-between items-center gap-x-2",
-//                 path === "/movies" ? "text-primary" : "text-zinc-900"
+//                 "hover:galaxy-gradient-text flex justify-between items-center gap-x-2",
+//                 path === "/movies" ? "galaxy-gradient-text" : "text-zinc-900"
 //               )}
 //             >
 //               Movies
@@ -65,8 +65,8 @@
 
 //             <DropdownMenuRadioItem value="special-ads" >
 //               <Link href="/movies/special-ads"
-//                 className={cn("hover:text-primary",
-//                   path === "/movies/special-ads" ? "text-primary" : "text-zinc-900"
+//                 className={cn("hover:galaxy-gradient-text",
+//                   path === "/movies/special-ads" ? "galaxy-gradient-text" : "text-zinc-900"
 //                 )}
 //               >
 //                 Special Ads
@@ -75,8 +75,8 @@
 
 //             <DropdownMenuRadioItem value="popular-movies">
 //               <Link href="/movies/popular-movies"
-//                 className={cn("hover:text-primary",
-//                   path === "/movies/popular-movies" ? "text-primary" : "text-zinc-900"
+//                 className={cn("hover:galaxy-gradient-text",
+//                   path === "/movies/popular-movies" ? "galaxy-gradient-text" : "text-zinc-900"
 //                 )}
 //               >
 //                 Popular Movies
@@ -85,8 +85,8 @@
 
 //             <DropdownMenuRadioItem value="new-movies">
 //               <Link href="/movies/new-movies"
-//                 className={cn("hover:text-primary",
-//                   path === "/movies/new-movies" ? "text-primary" : "text-zinc-900"
+//                 className={cn("hover:galaxy-gradient-text",
+//                   path === "/movies/new-movies" ? "galaxy-gradient-text" : "text-zinc-900"
 //                 )}
 //               >
 //                 New Movies
@@ -95,8 +95,8 @@
 
 //             <DropdownMenuRadioItem value="sort-movies">
 //               <Link href="/movies/sort-movies"
-//                 className={cn("hover:text-primary",
-//                   path === "/movies/sort-movies" ? "text-primary" : "text-zinc-900"
+//                 className={cn("hover:galaxy-gradient-text",
+//                   path === "/movies/sort-movies" ? "galaxy-gradient-text" : "text-zinc-900"
 //                 )}
 //               >
 //                 Sort Movies
@@ -110,8 +110,8 @@
 //           <Link
 //             href={item.href!}
 //             className={cn(
-//               "hover:text-primary",
-//               path === item.href ? "text-primary" : "text-zinc-900"
+//               "hover:galaxy-gradient-text",
+//               path === item.href ? "galaxy-gradient-text" : "text-zinc-900"
 //             )}
 //           >
 //             {item.title}
@@ -193,8 +193,8 @@ const MenuNav = () => {
             <MenubarTrigger>
               <Link
                 href={item.href!}
-                className={`hover:text-primary dark:hover:text-primary duration-300 
-                ${path === item.href ? "text-primary" : "text-zinc-900 dark:text-white"}`}
+                className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300 
+                ${path === item.href ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
               >
                 {item.title}
               </Link>
@@ -204,16 +204,16 @@ const MenuNav = () => {
 
         <MenubarMenu>
           <MenubarTrigger>
-            <span className={`hover:text-primary dark:hover:text-primary duration-300
-            flex items-center ${path === "/movies" ? "text-primary" : "text-zinc-900 dark:text-white"}`}>
+            <span className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300
+            flex items-center ${path === "/movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}>
               <IconChevronDown className="ml-1" size="18" stroke="1.5" />
               <span>فیلم ها</span>
             </span>
 
             {/* <Link
               href="/movies"
-              className={`hover:text-primary dura 
-              flex items-center ${path === "/movies" ? "text-primary" : "text-zinc-900"}`}
+              className={`hover:galaxy-gradient-text dura 
+              flex items-center ${path === "/movies" ? "galaxy-gradient-text" : "text-zinc-900"}`}
             >
               Movies
               <IconChevronDown className="ml-1" size="18" stroke="1.5" />
@@ -225,8 +225,8 @@ const MenuNav = () => {
               <MenubarRadioItem value="special-ads">
                 <Link
                   href="/movies/special-ads"
-                  className={`hover:text-primary dark:hover:text-primary duration-300
-                  ${path === "/movies/special-ads" ? "text-primary" : "text-zinc-900 dark:text-white"}`}
+                  className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300
+                  ${path === "/movies/special-ads" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
                 >
                   اعلان های ویژه
                 </Link>
@@ -234,8 +234,8 @@ const MenuNav = () => {
               <MenubarRadioItem value="popular-movies">
                 <Link
                   href="/movies/popular-movies"
-                  className={`hover:text-primary dark:hover:text-primary duration-300
-                  ${path === "/movies/popular-movies" ? "text-primary" : "text-zinc-900 dark:text-white"}`}
+                  className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300
+                  ${path === "/movies/popular-movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
                 >
                   فیلم های محبوب
                 </Link>
@@ -243,8 +243,8 @@ const MenuNav = () => {
               <MenubarRadioItem value="new-movies">
                 <Link
                   href="/movies/new-movies"
-                  className={`hover:text-primary dark:hover:text-primary duration-200 
-                  ${path === "/movies/new-movies" ? "text-primary" : "text-zinc-900 dark:text-white"}`}
+                  className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-200 
+                  ${path === "/movies/new-movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
                 >
                   فیلم های جدید
                 </Link>
@@ -252,8 +252,8 @@ const MenuNav = () => {
               <MenubarRadioItem value="sort-movies">
                 <Link
                   href="/movies/sort-movies"
-                  className={`hover:text-primary dark:hover:text-primary duration-300 
-                  ${path === "/movies/sort-movies" ? "text-primary" : "text-zinc-900 dark:text-white"}`}
+                  className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300 
+                  ${path === "/movies/sort-movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
                 >
                   دسته بندی فیلم ها
                 </Link>
@@ -267,8 +267,8 @@ const MenuNav = () => {
             <MenubarTrigger>
               <Link
                 href={item.href!}
-                className={`hover:text-primary dark:hover:text-primary duration-300 
-                ${path === item.href ? "text-primary" : "text-zinc-900 dark:text-white"}`}
+                className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300 
+                ${path === item.href ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
               >
                 {item.title}
               </Link>

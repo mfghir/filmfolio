@@ -123,6 +123,7 @@ const ContactForm = () => {
                 <Checkbox
                   checked={field.value}
                   onCheckedChange={field.onChange}
+                  className='text-fuchsia-500 border-fuchsia-500 fill-fuchsia-500'
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
@@ -130,7 +131,7 @@ const ContactForm = () => {
                   قبول کردن
                   <Link
                     href="/terms&conditions"
-                    className="text-primary hover:text-rose-400 duration-300"
+                    className="text-fuchsia-500 hover:text-cyan-500 duration-300"
                   >
                     شرایط و ضوابط
                   </Link>
@@ -143,7 +144,7 @@ const ContactForm = () => {
         <Button
           variant="default"
           type="submit"
-          className="w-full md:w-fit  py-2 px-12 fill-btn "
+          className="w-full md:w-fit py-2 px-12 galaxy-gradient-bg"
           disabled={isDisabled}
         >
           {loading ? (
@@ -155,6 +156,7 @@ const ContactForm = () => {
             "ارسال"
           }
         </Button>
+
       </form>
     </Form>
   )
