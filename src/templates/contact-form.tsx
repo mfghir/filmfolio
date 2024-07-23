@@ -17,6 +17,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import Link from 'next/link';
 
 
 
@@ -87,8 +88,7 @@ const ContactForm = () => {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full lg:w-3/4 flex flex-col gap-y-6 mt-4 md:mt-6 md:mb-8 lg:mb-0
-        shadow-md bg-zinc-50 dark:bg-zinc-700 rounded-xl p-3
-        "
+        shadow-md bg-zinc-50 dark:bg-zinc-700 rounded-xl p-3"
       >
         <FormField
           control={form.control}
@@ -105,26 +105,6 @@ const ContactForm = () => {
           )}
         />
 
-        {/* <div className="w-full md:max-w-xs flex flex-col gap-y-2">
-          <label htmlFor="name"
-            className={`text-lg font-semibold
-              
-          `}>
-            اسم
-          </label>
-
-          <Input type="text" id="name"  {...register("name")}
-            className={`appearance-none placeholder-transparent focus:outline-none bg-transparent 
-            w-full border p-3 lg:p-2  text-woodsmoke-950 dark:text-woodsmoke-50
-             
-            `}
-          />
-          {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message?.toString()}</p>}
-        </div> */}
-
-
-
-
         <FormField
           control={form.control}
           name="email"
@@ -140,31 +120,13 @@ const ContactForm = () => {
           )}
         />
 
-        {/* <div className="w-full md:max-w-xs flex flex-col gap-y-2">
-          <label htmlFor="email"
-            className={`text-lg font-semibold
-               
-          `}>
-            ایمیل
-          </label>
-
-          <Input type="text" id="email"  {...register("email")}
-            className="appearance-none placeholder-transparent  focus:outline-none bg-transparent 
-            w-full border p-3 lg:p-2  text-woodsmoke-950 dark:text-woodsmoke-50"
-          />
-          {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message?.toString()}</p>}
-        </div> */}
-
-
-
-
 
         <FormField
           control={form.control}
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>ایمیل</FormLabel>
+              <FormLabel>پیام</FormLabel>
               <FormControl>
                 <Textarea placeholder="پیام خود را وارد کنید" {...field} />
               </FormControl>
@@ -173,22 +135,6 @@ const ContactForm = () => {
             </FormItem>
           )}
         />
-        {/* <div className="w-full md:max-w-xs flex flex-col gap-y-2">
-          <label htmlFor="message"
-            className={`text-lg font-semibold
-              
-          `}>
-            پیام
-          </label>
-
-          <textarea id="message"  {...register("message")}
-            className={`appearance-none placeholder-transparent  focus:outline-none bg-transparent
-             w-full border p-3 lg:p-2  text-woodsmoke-950 dark:text-woodsmoke-50
-          
-            `}
-          />
-          {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message.message?.toString()}</p>}
-        </div> */}
 
 
 
@@ -204,25 +150,20 @@ const ContactForm = () => {
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <FormLabel>
-                  قبول کردن شرایط و ضوابط
+                <FormLabel className="flex gap-x-2">
+                  قبول کردن
+                  <Link
+                    href="/terms&conditions"
+                    className="text-primary hover:text-rose-400 duration-300 "
+                  >
+                    شرایط و ضوابط
+                  </Link>
                 </FormLabel>
-                {/* <FormDescription>
-                  You can manage your mobile notifications in the{" "}
-                  <Link href="/examples/forms">mobile settings</Link> page.
-                </FormDescription> */}
               </div>
             </FormItem>
           )}
         />
 
-        {/* <div className="flex items-center gap-x-2">
-          <Checkbox id="terms"  {...field} />
-          <label htmlFor="terms" className="text-sm">
-            قبول کردن شرایط و ضوابط
-          </label>
-          {errors.termsAccepted && <p className="mt-1 text-sm text-red-600">{errors.termsAccepted.message?.toString()}</p>}
-        </div> */}
 
         <Button
           variant="default"

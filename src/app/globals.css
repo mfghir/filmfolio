@@ -32,7 +32,9 @@
 
   .dark {
     --background: 20 14.3% 4.1%;
-    --foreground: 0 0% 95%;
+    /* --foreground: 0 0% 95%; */
+    --foreground: 210 14% 11%;
+
     --card: 24 9.8% 10%;
     --card-foreground: 0 0% 95%;
     --popover: 0 0% 9%;
@@ -65,23 +67,6 @@
 body>.skiptranslate {
   display: none;
 }
-
-
-
-.test {
-  clip-path: polygon(0 30%, 50% 1%, 100% 30%, 100% 70%, 50% 100%, 0 70%);
-  background: pink;
-
-  width: 300px; /* Adjust width and height as needed */
-  height: 300px;
-  border-radius: 50%; /* This makes the wrapper circular */
-  overflow: hidden; /* This ensures the image stays within the circular boundary */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
 
 
 
