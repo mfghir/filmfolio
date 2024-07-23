@@ -1,13 +1,12 @@
 "use client"
 
 import { Button } from '@/components/ui/button'
-
+import React from 'react'
 
 const SubmitButton = ({ loading }: { loading: boolean }) => {
   return (
     <Button type="submit" disabled={loading}
-      className="w-full font-semibold text-base text-white transition-all duration-700 bg-gradient-to-r  
-    from-fuchsia-500 to-cyan-500 hover:bg-gradient-to-rl hover:from-cyan-500 hover:to-fuchsia-500"
+      className="w-full fill-btn"
     >
       {loading ?
         <>

@@ -54,12 +54,20 @@
     --ring: 346.8 77.2% 49.8%;
   }
 
-
-
-
-
-
 }
+
+
+@layer utilities {
+
+  .galaxy-gradient-text {
+    @apply bg-gradient-to-l from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent inline-block
+  }
+
+  .fill-btn {
+    @apply font-semibold text-base text-white transition-all duration-300 bg-gradient-to-tr from-fuchsia-500 to-cyan-500 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-fuchsia-500
+  }
+}
+
 
 
 
