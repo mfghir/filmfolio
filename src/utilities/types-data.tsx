@@ -128,3 +128,19 @@ export const navItemsDashboard: NavItemsDashboard[] = [
     role: ["user", "admin"],
   },
 ];
+
+
+
+
+
+
+
+
+
+
+export const termsItems = [
+  { title: "", text: "" }
+]
+
+
+
