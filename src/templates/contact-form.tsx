@@ -33,6 +33,7 @@ const schema = z.object({
 
 
 const ContactForm = () => {
+  const [isDisabled, setIsDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
@@ -48,8 +49,6 @@ const ContactForm = () => {
 
   });
 
-  const watchFields = form.watch();
-  const [isDisabled, setIsDisabled] = useState(true);
 
   useEffect(() => {
     const subscription = form.watch((values) => {
@@ -58,6 +57,7 @@ const ContactForm = () => {
     });
     return () => subscription.unsubscribe();
   }, [form]);
+
 
   const onSubmit = async (data: z.infer<typeof schema>): Promise<void> => {
     setLoading(true);
@@ -70,7 +70,7 @@ const ContactForm = () => {
       );
 
       toast({ variant: "success", title: "پیام باموفقیت ارسال شد ✔" });
-      form.reset(); // reset form after successful submission
+      form.reset(); 
 
     } catch (error: any) {
       console.log('error contact form ------>', error);
