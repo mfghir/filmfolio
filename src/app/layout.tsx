@@ -18,6 +18,7 @@ import TanstackProvider from "@/lib/tanstack-provider";
 import { getPrefLangCookie } from "@/utilities/getPrefLangCookie"
 import GoogleTranslateProvider from "@/utilities/google-translate";
 import Footer from "@/templates/footer";
+import { Toaster } from "@/components/ui/toaster";
 
 
 const vazir = Vazirmatn({ subsets: ["arabic"] });
@@ -63,7 +64,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 <main className="p-6 pt-28 md:px-8 lg:px-20 ">
                   {children}
                 </main>
-
+                <Toaster />
                 <Footer />
               </ThemeProvider>
             </SessionProviderComp>

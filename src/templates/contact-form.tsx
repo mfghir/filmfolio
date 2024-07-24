@@ -1,38 +1,51 @@
 "use client"
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import emailjs from '@emailjs/browser';
-import Dots from '../utilities/dots';
-import { toast } from '@/components/ui/use-toast';
+
+import { useToast } from '@/components/ui/use-toast';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
+
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import Link from 'next/link';
-import SubmitButton from '@/utilities/fill-button';
+
+import Dots from '../utilities/dots';
+
+
+const schema = z.object({
+  name: z.string().nonempty({ message: "وارد کردن اسم الزامی است" })
+    .min(2, { message: "اسم باید بیشتر از دو حرف باشد" }),
+  email: z.string().nonempty({ message: "وارد کردن ایمیل الزامی است" })
+    .email({ message: "ایمیل نامعتبر" }),
+  message: z.string().nonempty({ message: "وارد کردن پیام الزامی است" })
+    .min(1, { message: "پیام وارد شده کوتاه است" }),
+  terms: z.boolean().refine(value => value === true,
+    { message: "قبول کردن شرایط و ضوابط الزامی است" }),
+});
+
+
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
-  const schema = z.object({
-    name: z.string().nonempty({ message: "وارد کردن اسم الزامی است" })
-      .min(2, { message: "اسم باید بیشتر از دو حرف باشد" }),
-    email: z.string().nonempty({ message: "وارد کردن ایمیل الزامی است" })
-      .email({ message: "ایمیل نامعتبر" }),
-    message: z.string().nonempty({ message: "وارد کردن پیام الزامی است" })
-      .min(1, { message: "پیام وارد شده کوتاه است" }),
-    terms: z.boolean().refine(value => value === true,
-      { message: "قبول کردن شرایط و ضوابط الزامی است" }),
-  });
-
-  type FormData = z.infer<typeof schema>;
-
-  const form = useForm<FormData>({
+  const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
+    defaultValues:
+    {
+      name: '',
+      email: '',
+      message: '',
+      terms: false,
+    }
+
   });
 
   const watchFields = form.watch();
@@ -55,11 +68,17 @@ const ContactForm = () => {
         data,
         process.env.NEXT_PUBLIC_APP_KEY
       );
-      toast({ variant: "success", title: "پیام باموفقیت ارسال شد✔" });
+
+      toast({ variant: "success", title: "پیام باموفقیت ارسال شد ✔" });
       form.reset(); // reset form after successful submission
-    } catch (error) {
-      toast({ variant: "destructive", title: "خطا در ارسال" });
-      console.log('FAILED... ------>', error);
+
+    } catch (error: any) {
+      console.log('error contact form ------>', error);
+      toast({
+        variant: "destructive",
+        title: "خطا در ارسال",
+        description: error
+      });
     } finally {
       setLoading(false);
     }
