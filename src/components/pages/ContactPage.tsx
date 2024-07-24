@@ -20,7 +20,7 @@ const ContactPage = () => {
         width={1024}
         height={1024}
         src="https://i.postimg.cc/1zhcQN4K/contact.jpg"
-        alt="logo"
+        alt="contact pic"
       />
     </section>
   )
