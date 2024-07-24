@@ -163,7 +163,7 @@ const ContactForm = () => {
         <Button
           variant="default"
           type="submit"
-          className="w-full md:w-fit py-2 px-12 galaxy-gradient-bg"
+          className="w-full md:w-fit py-2 px-12 font-semibold text-base text-white galaxy-gradient-bg"
           disabled={isDisabled}
         >
           {loading ? (
