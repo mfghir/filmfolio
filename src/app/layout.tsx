@@ -61,7 +61,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
                 // userInfo={JSON.parse(JSON.stringify(user))}
                 />
-                <main className="p-6 pt-28 md:px-8 lg:px-20 ">
+                <main className="p-6 pt-28 md:px-8 lg:px-20 dark:bg-gradient-to-bl dark:from-indigo-950/50 dark:via-indigo-950/25 dark:to-indigo-950/10">
                   {children}
                 </main>
                 <Toaster />

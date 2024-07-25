@@ -16,7 +16,7 @@ const ContactPage = () => {
 
 
       <Image
-        className="lg:w-[550px] lg:h-[550px] object-fill rounded-3xl"
+        className="lg:w-[550px] lg:h-[550px] object-fill rounded-3xl place-self-end self-start"
         width={1024}
         height={1024}
         src="https://i.postimg.cc/1zhcQN4K/contact.jpg"
