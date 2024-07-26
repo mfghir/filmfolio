@@ -17,7 +17,7 @@ const TermsAndConditionsPage = () => {
           {termsItems.map(item =>
             <li className="my-8 flex flex-col gap-y-2">
               <div className="flex gap-x-2">
-                <HexagonGradientIcon />
+                <HexagonGradientIcon sortType="" />
                 <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-200">{item.title}</h4>
               </div>
               <p className="text-base text-gray-700 dark:text-gray-400">{item.text}</p>

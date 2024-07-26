@@ -1,3 +1,4 @@
+import { IconBulb, IconUsers } from "@tabler/icons-react";
 import {
   ThumbsUp,
   ThumbsDown,
@@ -151,3 +152,35 @@ export const termsItems = [
 
 
 
+export const teamMembers = [
+  { name: "علی رضایی", job: "بنیان‌گذار و سردبیر", picUrl: "https://i.postimg.cc/vZbTRfHR/team-mate-1.png" },
+  { name: "سمیرا حسینی", job: "مدیر محتوا", picUrl: "https://i.postimg.cc/Pq6PQJjg/team-mate-2.png" },
+  { name: "احمد موسوی", job: "منتقد ارشد", picUrl: "https://i.postimg.cc/JhK1C2YZ/team-mate-3.png" },
+  { name: "نازنین کاظمی", job: "نویسنده و تحلیل‌گر سینما", picUrl: "https://i.postimg.cc/VkQsqMbr/team-mate-4.png" },
+  { name: "رضا شریفی", job: "مسئول پادکست", picUrl: "https://i.postimg.cc/W4s2Kv8s/team-mate-5.png" },
+  { name: "مینا سعیدی", job: "کارشناس جشنواره‌ها", picUrl: "https://i.postimg.cc/1RbVd8qP/team-mate-6.png" }
+]
+
+
+export const ourValues = [
+  {
+    title: "کیفیت بالا",
+    text: "برای ما کیفیت همیشه در اولویته. چه از نظر محتوای نوشته‌ها، چه از نظر طراحی سایت، تلاش می‌کنیم بهترین‌ها رو به شما ارائه کنیم تا تجربه‌ای بی‌نظیر از دنیای سینما داشته باشید.",
+    icon: ""
+  },
+  {
+    title: "احترام به تنوع",
+    text: "ما به همه سلیقه‌ها و ژانرهای سینمایی احترام می‌ذاریم. تلاش می‌کنیم به فیلم‌های مختلف با نگاه باز و متنوع نگاه کنیم و به هر اثر فرصتی برای درخشش بدیم.",
+    icon: ""
+  },
+  {
+    title: " تعامل با مخاطب",
+    text: "ارتباط با شما برای ما خیلی مهمه. نظرات، پیشنهادات و انتقادات شما رو با روی باز می‌پذیریم و همیشه دنبال اینیم که با شما در تعامل باشیم و نیازهای شما رو بهتر درک کنیم.",
+    icon: <IconUsers stroke={1.5} />
+  },
+  {
+    title: "خلاقیت و نوآوری",
+    text: "ما به دنبال ایده‌های جدید و نوآورانه هستیم. توی نقد و بررسی‌ها و محتواهای سایت، همیشه سعی می‌کنیم با رویکردهای خلاقانه و متفاوت به شما خدمت کنیم.",
+    icon: <IconBulb stroke={1.5} />
+  },
+]
