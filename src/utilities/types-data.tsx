@@ -1,4 +1,4 @@
-import { IconBulb, IconUsers } from "@tabler/icons-react";
+import { IconAward, IconBulb, IconRosetteDiscountCheck, IconUsers } from "@tabler/icons-react";
 import {
   ThumbsUp,
   ThumbsDown,
@@ -162,25 +162,52 @@ export const teamMembers = [
 ]
 
 
+
+
+
+
+
+const GradientDefs = () => (
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="galaxyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{ stopColor: "#f0abfc", stopOpacity: 1 }} />
+        <stop offset="100%" style={{ stopColor: "#67e8f9", stopOpacity: 1 }} />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+
+const GradientIcon = ({ IconComponent }: { IconComponent: any }) => (
+  <svg className="icon">
+    <use xlinkHref="#galaxyGradient" />
+    <IconComponent stroke="url(#galaxyGradient)" />
+  </svg>
+);
+
+
+
+
 export const ourValues = [
   {
     title: "کیفیت بالا",
     text: "برای ما کیفیت همیشه در اولویته. چه از نظر محتوای نوشته‌ها، چه از نظر طراحی سایت، تلاش می‌کنیم بهترین‌ها رو به شما ارائه کنیم تا تجربه‌ای بی‌نظیر از دنیای سینما داشته باشید.",
-    icon: ""
+    icon: <GradientIcon IconComponent={IconAward} />
   },
   {
     title: "احترام به تنوع",
     text: "ما به همه سلیقه‌ها و ژانرهای سینمایی احترام می‌ذاریم. تلاش می‌کنیم به فیلم‌های مختلف با نگاه باز و متنوع نگاه کنیم و به هر اثر فرصتی برای درخشش بدیم.",
-    icon: ""
+    icon: <GradientIcon IconComponent={IconRosetteDiscountCheck} />
   },
   {
     title: " تعامل با مخاطب",
     text: "ارتباط با شما برای ما خیلی مهمه. نظرات، پیشنهادات و انتقادات شما رو با روی باز می‌پذیریم و همیشه دنبال اینیم که با شما در تعامل باشیم و نیازهای شما رو بهتر درک کنیم.",
-    icon: <IconUsers stroke={1.5} />
+    icon: <GradientIcon IconComponent={IconUsers} />
   },
   {
     title: "خلاقیت و نوآوری",
     text: "ما به دنبال ایده‌های جدید و نوآورانه هستیم. توی نقد و بررسی‌ها و محتواهای سایت، همیشه سعی می‌کنیم با رویکردهای خلاقانه و متفاوت به شما خدمت کنیم.",
-    icon: <IconBulb stroke={1.5} />
+    icon: <GradientIcon IconComponent={IconBulb} />
   },
-]
+];
