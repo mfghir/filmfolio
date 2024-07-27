@@ -7,7 +7,6 @@ export const metadata: Metadata = {
 
 
 const Contact = () => {
-
   return <ContactPage />;
 };
 

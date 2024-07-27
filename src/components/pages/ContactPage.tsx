@@ -11,12 +11,13 @@ const ContactPage = () => {
             ما توی فیلم فولیو همیشه دنبال این هستیم که تجربه کاربرا رو بهتر کنیم و محتوای دقیق و خوبی ارائه بدیم. اگه سوال، پیشنهاد یا نظری در مورد مطالب ما داری، خیلی خوشحال می‌شیم از طریق این فرم باهامون در تماس باشی. تیم ما آماده‌ست بهت جواب بده و نظرات ارزشمندت رو برای بهبود سایت و محتوامون در نظر بگیره. منتظر پیام‌هات هستیم!
           </p>
         </div>
+        
         <ContactForm />
       </div>
 
 
       <Image
-        className="lg:w-[550px] lg:h-[550px] object-fill rounded-3xl place-self-end self-start"
+        className="lg:max-w-[550px] lg:max-h-[550px] w-fit h-fit object-fill rounded-3xl place-self-end self-start"
         width={1024}
         height={1024}
         src="https://i.postimg.cc/1zhcQN4K/contact.jpg"

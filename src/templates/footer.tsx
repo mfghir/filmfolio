@@ -133,8 +133,10 @@ const Footer = () => {
         </ul>
       </section>
 
-      <div className="bg-zinc-200 dark:bg-zinc-800 px-5 py-4">
-        <p className="text-xs capitalize text-center">تمامی حقوق محفوظ و استفاده بدون کسب اجازه ممنوع است</p>
+      <div className="bg-zinc-200 dark:bg-zinc-800 px-5 py-4 text-xs grid grid-cols-1 gap-y-3 md:grid-cols-3">
+        {/* <div className="bg-zinc-200 dark:bg-zinc-800 px-5 py-4 text-xs flex items-center w-full"> */}
+        <span className="col-span-1">قوانین و مقررات</span>
+        <p className="col-span-2 ">تمامی حقوق محفوظ و استفاده بدون کسب اجازه ممنوع است</p>
       </div>
     </footer>
 

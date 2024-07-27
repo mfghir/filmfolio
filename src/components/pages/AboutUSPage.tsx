@@ -1,15 +1,15 @@
-import HexagonGradientIcon from '@/utilities/HexagonGradientIcon'
-import { ourValues, teamMembers } from '@/utilities/types-data'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '../ui/button'
-import Link from 'next/link'
+
+import HexagonGradientIcon from '@/utilities/HexagonGradientIcon'
+import { ourValues, teamMembers } from '@/utilities/types-data'
 
 
 
 const AboutUSPage = () => {
   return (
     <>
-
       <section className="w-full h-full place-items-start content-between grid grid-cols-1 gap-y-6 lg:grid-cols-2">
         <div className="flex flex-col gap-y-3">
           <h3 className="text-2xl lg:text-3xl font-bold galaxy-gradient-text">درباره ما</h3>
@@ -48,7 +48,7 @@ const AboutUSPage = () => {
         </div>
 
         <Image
-          className="lg:w-[550px] lg:h-[550px] object-fill rounded-3xl place-self-end self-start"
+          className="lg:max-w-[550px] lg:max-h-[550px] w-fit h-fit object-fill rounded-3xl place-self-end self-start"
           width={1024}
           height={1024}
           src="https://i.postimg.cc/VNwGw6Cr/about-us-1.jpg"
@@ -59,7 +59,7 @@ const AboutUSPage = () => {
 
       <section className="w-full h-full place-items-center grid grid-cols-1 gap-y-6 lg:grid-cols-2 my-12">
         <Image
-          className="lg:w-[550px] lg:h-[550px] object-fill rounded-3xl place-self-start self-start"
+          className="lg:max-w-[550px] lg:max-h-[550px] w-fit h-fit object-fill rounded-3xl place-self-start self-start"
           width={1024}
           height={1024}
           src="https://i.postimg.cc/V66P61kY/about-us-2.jpg"
@@ -140,7 +140,7 @@ const AboutUSPage = () => {
 
       <section className="w-full h-full place-items-center grid grid-cols-1 gap-y-6 lg:grid-cols-2 my-12">
         <Image
-          className="lg:w-[550px] lg:h-[550px] object-fill rounded-3xl place-self-start self-center"
+          className="lg:max-w-[550px] lg:max-h-[550px] w-fit h-fit object-fill rounded-3xl place-self-start self-center"
           width={1024}
           height={1024}
           src="https://i.postimg.cc/gks0yrmG/about-us-3.jpg"

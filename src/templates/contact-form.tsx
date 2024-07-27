@@ -88,7 +88,7 @@ const ContactForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full lg:w-3/4 flex flex-col gap-y-6 mt-4 md:mt-6 md:mb-8 lg:mb-0
+        className="w-full  flex flex-col gap-y-6 mt-4 md:mt-6 md:mb-8 lg:mb-0
         shadow-md bg-zinc-50 dark:bg-zinc-700 rounded-xl p-3"
       >
         <FormField
