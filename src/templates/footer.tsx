@@ -24,7 +24,7 @@ const Footer = () => {
               className="w-16 h-16 rounded-full object-cover origin-center"
               width={70}
               height={70}
-              src="https://i.postimg.cc/yNpn4ymk/logo.png"
+              src="https://i.postimg.cc/pdRP5J2Y/logo.jpg"
               alt="logo"
             />
           </Link>

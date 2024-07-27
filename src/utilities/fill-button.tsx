@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button'
 import React from 'react'
 
-const SubmitButton = ({ loading }: { loading: boolean }) => {
+const SubmitButton = ({ loading, text }: { loading: boolean, text: string }) => {
   return (
     <Button type="submit" disabled={loading}
       className="w-full fill-btn"

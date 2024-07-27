@@ -70,7 +70,7 @@ const ContactForm = () => {
       );
 
       toast({ variant: "success", title: "پیام باموفقیت ارسال شد ✔" });
-      form.reset(); 
+      form.reset();
 
     } catch (error: any) {
       console.log('error contact form ------>', error);

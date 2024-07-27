@@ -1,24 +1,50 @@
 import HexagonGradientIcon from '@/utilities/HexagonGradientIcon'
 import { ourValues, teamMembers } from '@/utilities/types-data'
 import Image from 'next/image'
+import { Button } from '../ui/button'
+import Link from 'next/link'
 
 
 
 const AboutUSPage = () => {
   return (
-    <section>
+    <>
 
       <section className="w-full h-full place-items-start content-between grid grid-cols-1 gap-y-6 lg:grid-cols-2">
         <div className="flex flex-col gap-y-3">
           <h3 className="text-2xl lg:text-3xl font-bold galaxy-gradient-text">درباره ما</h3>
           <p className="text-gray-700 dark:text-gray-400 text-base">
-            فیلم فولیو یه جاییه برای همه عاشقان فیلم و سینما. ایده این پلتفرم از دل نیازهای واقعی فیلم‌بازها بیرون اومده؛ اونایی که وقتی یکی ازشون لیست فیلم‌هایی که دیدن رو می‌خواد، تعداد زیاد فیلم‌ها و تحلیل‌های مختلف کار رو براشون سخت می‌کنه. اینجا ما فضایی رو فراهم کردیم تا هر کسی بتونه به راحتی لیست فیلم‌هایی که دیده رو ثبت کنه و نظرش رو درباره هر فیلم به اشتراک بذاره.
+            فیلم فولیو یه جاییه برای همه عاشقان فیلم و سینما.
+            ایده این پلتفرم از دل نیازهای واقعی فیلم‌بازها بیرون اومده؛
+            اونایی که وقتی یکی ازشون لیست فیلم‌هایی که دیدن رو می‌خواد، تعداد زیاد فیلم‌ها و تحلیل‌های مختلف کار رو براشون سخت می‌کنه.
           </p>
 
           <p className="text-gray-700 dark:text-gray-400 text-base">
-            ما معتقدیم که تبادل نظرات و تجربیات درباره‌ی فیلم‌ها می‌تونه به همه کمک کنه تا فیلم‌های بهتری پیدا کنن و از دیدن فیلم‌ها بیشتر لذت ببرن. تیم ما، با شور و علاقه فراوان، تلاش می‌کنه تا بهترین تجربه کاربری رو برای شما فراهم کنه. از طراحی تا توسعه و پشتیبانی، ما اینجا هستیم تا هر قدم همراه شما باشیم و مطمئن شیم که هر بازدید شما از فیلم فولیو، تجربه‌ای لذت‌بخش و مفید باشه.
-
+            ما اینجا فضایی رو فراهم کردیم تا هر کسی بتونه به راحتی لیست فیلم‌هایی که دیده رو ثبت کنه
+            و نظرش رو درباره هر فیلم به اشتراک بذاره. این امکان باعث میشه تا هر فرد بتونه به سادگی دسترسی به
+            اطلاعات و تحلیل‌های خودش داشته باشه و اون‌ها رو با دیگران به اشتراک بذاره.
           </p>
+
+          <p className="text-gray-700 dark:text-gray-400 text-base">
+            ما معتقدیم که تبادل نظرات و
+            تجربیات درباره‌ی فیلم‌ها می‌تونه به همه کمک کنه تا فیلم‌های بهتری پیدا کنن و از دیدن فیلم‌ها بیشتر لذت ببرن.
+            تیم ما، با شور و علاقه فراوان، تلاش می‌کنه تا بهترین تجربه کاربری رو برای شما فراهم کنه.
+          </p>
+
+          <p className="text-gray-700 dark:text-gray-400 text-base">
+            از طراحی تا توسعه و پشتیبانی، ما اینجا هستیم
+            تا هر قدم همراه شما باشیم و مطمئن شیم که هر بازدید شما از فیلم فولیو، تجربه‌ای لذت‌بخش و مفید باشه.
+            ما همیشه آماده‌ایم تا به نیازها و خواسته‌های شما پاسخ بدیم و هر روز بهتر از قبل عمل کنیم.
+          </p>
+
+          <Link href="/contact">
+            <Button
+              variant="default"
+              className="w-full md:w-fit py-2 px-12 font-semibold text-base text-white galaxy-gradient-bg"
+            >
+              برامون پیام بفرست!
+            </Button>
+          </Link>
         </div>
 
         <Image
@@ -114,7 +140,7 @@ const AboutUSPage = () => {
 
       <section className="w-full h-full place-items-center grid grid-cols-1 gap-y-6 lg:grid-cols-2 my-12">
         <Image
-          className="lg:w-[550px] lg:h-[550px] object-fill rounded-3xl place-self-start self-start"
+          className="lg:w-[550px] lg:h-[550px] object-fill rounded-3xl place-self-start self-center"
           width={1024}
           height={1024}
           src="https://i.postimg.cc/gks0yrmG/about-us-3.jpg"
@@ -123,37 +149,29 @@ const AboutUSPage = () => {
 
 
 
-        <section className="text-gray-400 bg-gray-900 body-font">
-          <div className="container px-5 py-24 mx-auto">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font text-center text-white mb-20">Raw Denim Heirloom Man Braid
-              <br className="hidden sm:block" />Selfies Wayfarers
+        <section className="text-gray-400 bg-gray-900">
+          <div className="container px-5 py-8 mx-auto">
+            <h1 className="text-xl  text-gray-300 mb-12">
+              تیم فیلم فولیو یک گروه پرانرژی و با تجربه از متخصصان سینماست که هر کدوم با مهارت‌های خاص خودشون به
+              سایت ما کمک می‌کنن. از تحلیل‌های دقیق و نقدهای جالب تا مدیریت محتوا و پادکست‌های جذاب، ما همیشه تلاش دار
+              یم بهترین تجربه رو برای شما فراهم کنیم. با ما همراه باشید و از دیدگاه‌های متنوع و عمیق تیم ما لذت ببرید!
             </h1>
 
-
-
-            {/* <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6"> */}
-            <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 -mb-10 -mt-4 md:space-y-0 space-y-6">
-
+            <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-y-6 md:gap-6">
               {ourValues.map(item =>
-                  <div className="p-4 flex">
-                    <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-4 flex-shrink-0">
-                      {item.icon}
-                    </div>
-                    <div className="flex-grow pl-6">
-                      <h2 className="text-white text-lg title-font font-medium mb-2">{item.title}</h2>
-                      <p className="leading-relaxed text-base">
-                        {item.text}
-                      </p>
-
-                    </div>
+                <div className=" flex w-full  ">
+                  <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-4 flex-shrink-0">
+                    {item.icon}
                   </div>
-                )
-              }
+                  <div className="flex-grow pr-2">
+                    <h2 className="text-white text-lg title-font font-medium mb-2">{item.title}</h2>
+                    <p className="leading-relaxed text-base">
+                      {item.text}
+                    </p>
 
-
-
-
-
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -161,8 +179,7 @@ const AboutUSPage = () => {
 
       </section>
 
-
-    </section>
+    </>
   )
 }
 

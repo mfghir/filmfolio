@@ -178,14 +178,12 @@ const GradientDefs = () => (
   </svg>
 );
 
-
-const GradientIcon = ({ IconComponent }: { IconComponent: any }) => (
-  <svg className="icon">
-    <use xlinkHref="#galaxyGradient" />
+const GradientIcon = ({ IconComponent }:{IconComponent:any}) => (
+  <div className="icon-wrapper">
+    <GradientDefs />
     <IconComponent stroke="url(#galaxyGradient)" />
-  </svg>
+  </div>
 );
-
 
 
 
