@@ -57,111 +57,110 @@ const BlogPage = () => {
             <p className="text-base leading-normal text-center text-gray-600 dark:text-white mt-4 lg:w-1/2 md:w-10/12 w-11/12">If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough</p>
           </div>
 
-          <div className="lg:flex lg:gap-x-10 items-stretch md:mt-12 mt-8">
+          <div className="lg:flex lg:gap-x-8 items-stretch md:mt-12 mt-8">
             <div className="lg:w-1/2">
-              <div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
+              <div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 mb-6">
                 <div className="sm:w-1/2 relative">
-                  <div>
+                  <>
                     <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
-                    <div className="absolute bottom-0 left-0 p-6">
-                      <h2 className="text-xl font-semibold 5 text-white">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
+                    <div className="absolute bottom-0 left-0 p-6 z-10">
+                      <h2 className="text-xl font-semibold text-gray-300">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
 
                       <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
                         <span className="text-sm">بیشتر</span>
                         <IconChevronLeft stroke={1.5} />
                       </Link>
                     </div>
-                  </div>
-                  <img src="https://picsum.photos/seed/galaxy/1200" className="w-full brightness-50" alt="chair" />
+                  </>
+                  <img src="https://picsum.photos/seed/pen/1200" className="w-full brightness-50 -z-10" alt="chair" />
                 </div>
 
 
 
                 <div className="sm:w-1/2 sm:mt-0 mt-4 relative">
-                  <div>
-                    <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                    <div className="absolute bottom-0 left-0 p-6">
-                      <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-                      <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-                      <Link href="">
+                  <>
+                    <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                    <div className="absolute bottom-0 left-0 p-6 z-10">
+                      <h2 className="text-xl font-semibold text-gray-300">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
 
-                        <p className="pr-2 text-sm font-medium leading-none">بیشتر</p>
+                      <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
+                        <span className="text-sm">بیشتر</span>
                         <IconChevronLeft stroke={1.5} />
-
                       </Link>
                     </div>
-                  </div>
-                  <img src="https://i.ibb.co/3C5HvxC/img-2.png" className="w-full" alt="wall design" />
+                  </>
+                  <img src="https://picsum.photos/seed/sky/1200" className="w-full brightness-50 -z-10" alt="chair" />
                 </div>
               </div>
+
               <div className="relative">
-                <div>
-                  <p className="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                  <div className="absolute bottom-0 left-0 md:p-10 p-6">
-                    <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-                    <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-                    <Link href="">
+                <>
+                  <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                  <div className="absolute bottom-0 left-0 p-6 z-10">
+                    <h2 className="text-xl font-semibold text-gray-300 lg:w-3/4">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
 
-                      <p className="pr-2 text-sm font-medium leading-none">بیشتر</p>
+                    <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
+                      <span className="text-sm">بیشتر</span>
                       <IconChevronLeft stroke={1.5} />
-
                     </Link>
                   </div>
-                </div>
-                <img src="https://i.ibb.co/Ms4qyXp/img-3.png" alt="sitting place" className="w-full mt-8 md:mt-6 hidden sm:block" />
-                <img className="w-full mt-4 sm:hidden" src="https://i.ibb.co/6XYbN7f/Rectangle-29.png" alt="sitting place" />
+                </>
+                <img src="https://picsum.photos/seed/car/1200" alt="sitting place" className="w-full sm:block hidden brightness-50" />
+                <img className="w-full sm:hidden brightness-50" src="https://picsum.photos/seed/car/1200" alt="sitting place" />
               </div>
             </div>
+
+
             <div className="lg:w-1/2 xl:ml-8 lg:ml-4 lg:mt-0 md:mt-6 mt-4 lg:flex flex-col justify-between">
               <div className="relative">
-                <div>
-                  <p className="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                  <div className="absolute bottom-0 left-0 md:p-10 p-6">
-                    <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-                    <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-                    <Link href="">
+                <>
+                  <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                  <div className="absolute bottom-0 left-0 p-6 z-10">
+                    <h2 className="text-xl font-semibold text-gray-300 lg:w-3/4">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
 
-                      <p className="pr-2 text-sm font-medium leading-none">بیشتر</p>
+                    <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
+                      <span className="text-sm">بیشتر</span>
                       <IconChevronLeft stroke={1.5} />
-
                     </Link>
                   </div>
-                </div>
-                <img src="https://i.ibb.co/6Wfjf2w/img-4.png" alt="sitting place" className="w-full sm:block hidden" />
-                <img className="w-full sm:hidden" src="https://i.ibb.co/dpXStJk/Rectangle-29.png" alt="sitting place" />
+                </>
+                <img src="https://picsum.photos/seed/tree/1200" alt="sitting place" className="w-full sm:block hidden brightness-50" />
+                <img className="w-full sm:hidden brightness-50" src="https://picsum.photos/seed/tree/1200" alt="sitting place" />
               </div>
+
+
+
+
               <div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 md:mt-6 mt-4">
                 <div className="relative w-full">
-                  <div>
-                    <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                    <div className="absolute bottom-0 left-0 p-6">
-                      <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-                      <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-                      <Link href="">
+                  <>
+                    <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                    <div className="absolute bottom-0 left-0 p-6 z-10">
+                      <h2 className="text-xl font-semibold text-gray-300">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
 
-                        <p className="pr-2 text-sm font-medium leading-none">بیشتر</p>
+                      <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
+                        <span className="text-sm">بیشتر</span>
                         <IconChevronLeft stroke={1.5} />
-
                       </Link>
                     </div>
-                  </div>
-                  <img src="https://i.ibb.co/3yvZBpm/img-5.png" className="w-full" alt="chair" />
+                  </>
+                  <img src="https://picsum.photos/seed/star/1200" className="w-full brightness-50 -z-10" alt="chair" />
                 </div>
+
+
                 <div className="relative w-full sm:mt-0 mt-4">
-                  <div>
-                    <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                    <div className="absolute bottom-0 left-0 p-6">
-                      <h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-                      <p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-                      <Link href="">
+                  <>
+                    <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                    <div className="absolute bottom-0 left-0 p-6 z-10">
+                      <h2 className="text-xl font-semibold text-gray-300">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
 
-                        <p className="pr-2 text-sm font-medium leading-none">بیشتر</p>
+                      <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
+                        <span className="text-sm">بیشتر</span>
                         <IconChevronLeft stroke={1.5} />
-
                       </Link>
                     </div>
-                  </div>
-                  <img src="https://i.ibb.co/gDdnJb5/img-6.png" className="w-full" alt="wall design" />
+                  </>
+                  <img src="https://picsum.photos/seed/people/1200" className="w-full brightness-50 -z-10" alt="chair" />
                 </div>
               </div>
             </div>
@@ -173,17 +172,40 @@ const BlogPage = () => {
 
 
 
-      <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-x-5 lg:gap-x-8
+      <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-x-5 lg:gap-8
       border border-blue-600 my-12">
         {
           blogPosts.map(item =>
-            <div className="">
-              {item.title}
+            <div className="bg-gray-300 dark:bg-gray-700 rounded-lg p-4">
+              <img src={item.articleImg} alt="Placeholder Image" className="w-full h-48 rounded-md object-cover" />
+              <div className="px-1 py-4">
+                <div className="font-bold text-xl mb-2 text-gray-900 dark:text-white">{item.title}</div>
+                <p className="text-gray-700 dark:text-gray-300 text-base">{item.summary}</p>
+              </div>
+              <div className="px-1 py-4">
+                <a href="#" className="text-blue-500 hover:underline">بیشتر</a>
+              </div>
             </div>
           )
         }
+
+
       </section>
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+        <div className="bg-white rounded-lg border p-4">
+          <img src="https://placehold.co/300x200/d1d4ff/352cb5.png" alt="Placeholder Image" className="w-full h-48 rounded-md object-cover" />
+          <div className="px-1 py-4">
+            <div className="font-bold text-xl mb-2">Blog Title</div>
+            <p className="text-gray-700 text-base">
+              This is a simple blog card example using Tailwind CSS. You can replace this text with your own blog content.
+            </p>
+          </div>
+          <div className="px-1 py-4">
+            <a href="#" className="text-blue-500 hover:underline">Read More</a>
+          </div>
+        </div>
+      </div>
 
     </>
   )
