@@ -2,7 +2,7 @@
 
 const nextConfig = {
   images: {
-    domains: ["i.postimg.cc", "flagcdn.com","picjumbo.com","images.freeimages.com"],
+    domains: ["i.postimg.cc", "flagcdn.com","picsum.photos","images.freeimages.com"],
   },
 };
 
