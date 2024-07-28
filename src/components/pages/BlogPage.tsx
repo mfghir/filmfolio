@@ -53,8 +53,10 @@ const BlogPage = () => {
 
         <div className="2xl:mx-auto 2xl:container   ">
           <div role="main" className="flex flex-col items-center justify-center">
-            <h1 className="text-4xl font-semibold leading-9 text-center text-gray-800 dark:text-gray-50">This Week Blogs</h1>
-            <p className="text-base leading-normal text-center text-gray-600 dark:text-white mt-4 lg:w-1/2 md:w-10/12 w-11/12">If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough</p>
+            <h1 className="text-3xl font-bold text-center galaxy-gradient-text">بلاگ های برتر این ماه</h1>
+            <p className="text-base text-center text-gray-600 dark:text-white mt-4 lg:w-1/2 md:w-10/12 w-11/12">
+              این ماه، فیلم فولیو کلی مقاله خفن درباره فیلم‌های جدید، انیمه‌های محبوب و تحلیل‌های جالب درباره دنیای سینما منتشر کرده. این مقالات با اطلاعات دقیق و جذابشون، حسابی توجه عاشقای فیلم و سینما رو به خودشون جلب کردن.
+            </p>
           </div>
 
           <div className="lg:flex lg:gap-x-8 items-stretch md:mt-12 mt-8">
@@ -62,7 +64,7 @@ const BlogPage = () => {
               <div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 mb-6">
                 <div className="sm:w-1/2 relative">
                   <>
-                    <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                    <p className="p-6 text-xs text-gray-50 font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
                     <div className="absolute bottom-0 left-0 p-6 z-10">
                       <h2 className="text-xl font-semibold text-gray-300">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
 
@@ -79,9 +81,9 @@ const BlogPage = () => {
 
                 <div className="sm:w-1/2 sm:mt-0 mt-4 relative">
                   <>
-                    <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                    <p className="p-6 text-xs text-gray-50 font-medium leading-3 absolute top-0 right-0 z-10">۱۷ تیر   ۱۴۰۳</p>
                     <div className="absolute bottom-0 left-0 p-6 z-10">
-                      <h2 className="text-xl font-semibold text-gray-300">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
+                      <h2 className="text-xl font-semibold text-gray-300">بررسی عملکرد بازیگران در جشنواره فیلم کن</h2>
 
                       <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
                         <span className="text-sm">بیشتر</span>
@@ -95,9 +97,9 @@ const BlogPage = () => {
 
               <div className="relative">
                 <>
-                  <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                  <p className="p-6 text-xs text-gray-50 font-medium leading-3 absolute top-0 right-0 z-10">۰۷ فروردین   ۱۴۰۳</p>
                   <div className="absolute bottom-0 left-0 p-6 z-10">
-                    <h2 className="text-xl font-semibold text-gray-300 lg:w-3/4">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
+                    <h2 className="text-xl font-semibold text-gray-300 lg:w-3/4">معرفی بهترین فیلم‌های علمی-تخیلی سال</h2>
 
                     <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
                       <span className="text-sm">بیشتر</span>
@@ -114,9 +116,9 @@ const BlogPage = () => {
             <div className="lg:w-1/2 xl:ml-8 lg:ml-4 lg:mt-0 md:mt-6 mt-4 lg:flex flex-col justify-between">
               <div className="relative">
                 <>
-                  <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                  <p className="p-6 text-xs text-gray-50 font-medium leading-3 absolute top-0 right-0 z-10">۰۷ مرداد   ۱۴۰۳</p>
                   <div className="absolute bottom-0 left-0 p-6 z-10">
-                    <h2 className="text-xl font-semibold text-gray-300 lg:w-3/4">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
+                    <h2 className="text-xl font-semibold text-gray-300 lg:w-3/4">مصاحبه اختصاصی با کارگردان برنده اسکار</h2>
 
                     <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
                       <span className="text-sm">بیشتر</span>
@@ -134,9 +136,9 @@ const BlogPage = () => {
               <div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 md:mt-6 mt-4">
                 <div className="relative w-full">
                   <>
-                    <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                    <p className="p-6 text-xs text-gray-50 font-medium leading-3 absolute top-0 right-0 z-10">۱۴ اردیبهشت   ۱۴۰۳</p>
                     <div className="absolute bottom-0 left-0 p-6 z-10">
-                      <h2 className="text-xl font-semibold text-gray-300">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
+                      <h2 className="text-xl font-semibold text-gray-300">نگاهی به زندگی و آثار لئوناردو دی‌کاپریو</h2>
 
                       <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
                         <span className="text-sm">بیشتر</span>
@@ -150,9 +152,9 @@ const BlogPage = () => {
 
                 <div className="relative w-full sm:mt-0 mt-4">
                   <>
-                    <p className="p-6 text-xs font-medium leading-3 absolute top-0 right-0 z-10">۲۷ فروردین   ۱۴۰۳</p>
+                    <p className="p-6 text-xs text-gray-50 font-medium leading-3 absolute top-0 right-0 z-10">۲۱ خرداد   ۱۴۰۳</p>
                     <div className="absolute bottom-0 left-0 p-6 z-10">
-                      <h2 className="text-xl font-semibold text-gray-300">آخرین فیلم کریستوفر نولان به رکورد فروش جدیدی دست یافت</h2>
+                      <h2 className="text-xl font-semibold text-gray-300">پیش‌بینی اسکار 2025: چه فیلم‌هایی شانس بیشتری دارند؟</h2>
 
                       <Link href="" className="flex items-center gap-x-1 group text-gray-400 hover:text-white z-20">
                         <span className="text-sm">بیشتر</span>
@@ -172,18 +174,45 @@ const BlogPage = () => {
 
 
 
-      <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-x-5 lg:gap-8
-      border border-blue-600 my-12">
+      <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-x-5 lg:gap-8 my-12">
         {
           blogPosts.map(item =>
-            <div className="bg-gray-300 dark:bg-gray-700 rounded-lg p-4">
-              <img src={item.articleImg} alt="Placeholder Image" className="w-full h-48 rounded-md object-cover" />
-              <div className="px-1 py-4">
-                <div className="font-bold text-xl mb-2 text-gray-900 dark:text-white">{item.title}</div>
-                <p className="text-gray-700 dark:text-gray-300 text-base">{item.summary}</p>
+            <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-3 py-4">
+              <Image
+                width={400}
+                height={400}
+                src={item.articleImg}
+                alt="Placeholder Image"
+                className="w-full h-48 rounded-md object-cover" />
+
+              <div className="mt-3 flex flex-row gap-x-2">
+                {item.tags.map(i =>
+                  <span className="text-xs px-[6px] py-1 rounded bg-gray-200 text-gray-500 dark:bg-gray-600 dark:text-gray-300">{i}</span>
+                )}
               </div>
-              <div className="px-1 py-4">
-                <a href="#" className="text-blue-500 hover:underline">بیشتر</a>
+
+              <div className="flex flex-col gap-y-2 my-4">
+                <div className="font-bold text-xl mb-2 text-gray-900 dark:text-white">{item.title}</div>
+                <p className="text-gray-700 dark:text-gray-300 text-base line-clamp-2">{item.summary}</p>
+              </div>
+
+              <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center gap-x-2">
+                  <Image
+                    width={400}
+                    height={400}
+                    src={item.authorImage}
+                    alt={item.authorName}
+                    className="w-9 h-9 rounded-full object-cover"
+                  />
+                  <span className="text-sm text-gray-400">{item.authorName}</span>
+                </div>
+
+                <Link href={`/blog/${item.id}`}
+                  className="flex items-center gap-x-1 text-xs text-gray-700 hover:text-gray-400 dark:text-gray-500 dark:hover:text-white duration-300">
+                  ادامه
+                  <IconChevronLeft stroke={1.5} size={18} />
+                </Link>
               </div>
             </div>
           )
