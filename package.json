@@ -28,6 +28,7 @@
     "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.3.19",
     "i18n-backend": "^0.1.13",
     "i18next": "^23.12.1",
     "i18next-resources-to-backend": "^1.2.1",

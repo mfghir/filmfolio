@@ -6,11 +6,11 @@ import Link from "next/link"
 
 const BlogMonth = () => {
   return (
-    <section className="borderborder-blue-600 my-12 flex justify-center items-center w-full">
+    <section className="my-20 flex justify-center items-center w-full">
 
-      <div className="2xl:mx-auto 2xl:container   ">
-        <div role="main" className="flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold text-center galaxy-gradient-text">بلاگ های برتر این ماه</h1>
+      <div className="">
+        <div className="flex flex-col items-center justify-center">
+          <h3 className="text-3xl font-bold text-center galaxy-gradient-text">بلاگ های برتر این ماه</h3>
           <p className="text-base text-center text-gray-600 dark:text-white mt-4 lg:w-1/2 md:w-10/12 w-11/12">
             این ماه، فیلم فولیو کلی مقاله خفن درباره فیلم‌های جدید، انیمه‌های محبوب و تحلیل‌های جالب درباره دنیای سینما منتشر کرده. این مقالات با اطلاعات دقیق و جذابشون، حسابی توجه عاشقای فیلم و سینما رو به خودشون جلب کردن.
           </p>
@@ -48,7 +48,7 @@ const BlogMonth = () => {
                     </Link>
                   </div>
                 </>
-                <Image width={800} height={800} src="https://picsum.photos/seed/sky/1200" className="w-full brightness-50 rounded-xl -z-10" alt="chair" />
+                <Image width={800} height={800} src="https://picsum.photos/seed/flower/1200" className="w-full h-full brightness-50 rounded-xl -z-10" alt="chair" />
               </div>
             </div>
 
@@ -64,8 +64,8 @@ const BlogMonth = () => {
                   </Link>
                 </div>
               </>
-              <Image width={800} height={800} src="https://picsum.photos/seed/car/1200" alt="sitting place" className="w-full sm:block hidden brightness-50 rounded-xl" />
-              <Image width={800} height={800} className="w-full sm:hidden brightness-50 rounded-xl" src="https://picsum.photos/seed/car/1200" alt="sitting place" />
+              <Image width={800} height={800} src="https://picsum.photos/seed/girl/1200" alt="sitting place" className="w-full sm:block hidden brightness-50 rounded-xl" />
+              <Image width={800} height={800} className="w-full sm:hidden brightness-50 rounded-xl" src="https://picsum.photos/seed/girl/1200" alt="sitting place" />
             </div>
           </div>
 

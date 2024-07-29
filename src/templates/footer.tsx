@@ -15,8 +15,11 @@ import Link from 'next/link';
 const Footer = () => {
 
   return (
-    <footer className="w-full dark:text-gray-200 text-zinc-800 bg-zinc-100 dark:bg-zinc-900 body-font rounded-xl mt-12">
-      <section className="container w-full flex justify-between items-center flex-wrap md:flex-nowrap gap-y-12 p-6">
+    <footer className="w-full  mx-auto text-gray-900 dark:text-white   mt-12 px-6 md:px-8 lg:px-20">
+      <section className="container bg-gray-100 dark:bg-gray-800 w-full rounded-xl
+              flex justify-between items-center flex-wrap md:flex-nowrap gap-y-12 py-10"
+      >
+
         {/* logo */}
         <div className="flex flex-col gap-y-2">
           <Link href="/" className='w-fit pic-anim galaxy-gradient-bg'>
@@ -133,9 +136,11 @@ const Footer = () => {
         </ul>
       </section>
 
-      <div className="bg-zinc-200 dark:bg-zinc-800 px-5 py-4 text-xs grid grid-cols-1 gap-y-3 md:grid-cols-3">
-        {/* <div className="bg-zinc-200 dark:bg-zinc-800 px-5 py-4 text-xs flex items-center w-full"> */}
-        <span className="col-span-1">قوانین و مقررات</span>
+      <div className=" px-5 py-6 text-xs flex justify-between items-center w-full text-gray-500">
+        <p className="flex gap-x-8">
+          <Link href="/faq" className="hover:galaxy-gradient-text duration-300">سوالات متداول</Link>
+          <Link href="/terms&conditions" className="hover:galaxy-gradient-text duration-300">قوانین و مقررات</Link>
+        </p>
         <p className="col-span-2 ">تمامی حقوق محفوظ و استفاده بدون کسب اجازه ممنوع است</p>
       </div>
     </footer>
