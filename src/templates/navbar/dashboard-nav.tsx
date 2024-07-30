@@ -2,9 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-
-
 import { cn } from '@/lib/utils';
+
 import { UserInfo, navItemsDashboard } from '@/utilities/types-data';
 
 
