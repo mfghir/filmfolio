@@ -14,14 +14,13 @@ const BlogDetailsPage = () => {
   return (
     <>
       <section className="w-full h-full grid grid-cols-1 gap-y-6 lg:grid-cols-3 lg:gap-x-12">
-        <BreadcrumbComp />
 
         <div className="lg:col-span-2 w-full lg:w-3/4 place-content-center mt-3">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
             {post?.title}
           </h1>
 
-          <ul className="w-full flex flex-row justify-between items-center gap-y-3 mt-3 text-gray-400">
+          <ul className="w-full flex flex-col justify-between items-start gap-y-2 mt-3 text-gray-400">
             <li className="flex justify-start items-center gap-x-2">
               <Image
                 width={400}

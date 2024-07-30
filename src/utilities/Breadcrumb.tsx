@@ -1,23 +1,41 @@
 import {
-	Breadcrumb,
-	BreadcrumbItem,
-	BreadcrumbLink,
-	BreadcrumbList,
-	BreadcrumbPage,
-	BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Slash } from "lucide-react";
 
-const BreadcrumbComp = ({items}) => {
-	return (
-		<Breadcrumb>
-		{items.map((item, index) => (
-			<BreadcrumbItem key={index} isCurrentPage={index === items.length - 1}>
-				<BreadcrumbLink href={item.href}>{item.name}</BreadcrumbLink>
-			</BreadcrumbItem>
-		))}
-	</Breadcrumb>
-
-	)
+interface BreadcrumbItem {
+  title: string;
+  href: string;
 }
 
-export default BreadcrumbComp
+interface BreadcrumbProps {
+  items: BreadcrumbItem[];
+}
+
+const BreadcrumbComp = ({ items }: BreadcrumbProps) => {
+  // Ensure items is an array
+  const breadcrumbItems = items || [];
+
+  return (
+    <Breadcrumb >
+      <BreadcrumbList>
+        {breadcrumbItems.map((item, index) => (
+          <>
+            <BreadcrumbItem key={index}>
+              <BreadcrumbLink href={item.link}>{item.title}</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>
+              <Slash />
+            </BreadcrumbSeparator>
+          </>
+        ))}
+      </BreadcrumbList>
+    </Breadcrumb>
+  );
+};
+
+export default BreadcrumbComp;

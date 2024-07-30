@@ -42,6 +42,7 @@ export interface NavItemMenu {
 
 
 
+
 export const navItemsMenu: NavItemMenu[] = [
   {
     title: "خانه",
@@ -62,7 +63,14 @@ export const navItemsMenu: NavItemMenu[] = [
     title: "وبلاگ",
     href: "/blog",
     label: "وبلاگ"
-  }, {
+  },
+  // {
+  //   title: "وبلاگ",
+  //   href: `/وبلاگ/${blogId}` ,
+  //   label: "وبلاگ"
+
+  // },
+  {
     title: "درباره ما",
     href: "/about-us",
     label: "درباره ما"

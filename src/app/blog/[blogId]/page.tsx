@@ -4,7 +4,7 @@ import BreadcrumbComp from "@/utilities/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: 'Blog Details',
+  title: 'Blog Details',
 }
 
 
@@ -12,17 +12,19 @@ export const metadata: Metadata = {
 
 const Blog = ({ blogId }: { blogId: string }) => {
 
-	
-	const breadcrumbItems = [
-		{ title: "KDrama List", link: `/blog/${blogId}` },
-	];
+
+  const breadcrumbItems = [
+    { title: "خانه", link: "/" },
+    { title: "بلاگ", link: "/blog" },
+    { title: " جزئیات بلاگ", link: `/blog/${blogId}` },
+  ];
 
 
-	return (
-		<>
-			<BreadcrumbComp items={breadcrumbItems} />
-			<BlogDetailsPage />;
-		</>)
+  return (
+    <>
+      <BreadcrumbComp items={breadcrumbItems} />
+      <BlogDetailsPage />;
+    </>)
 };
 
 export default Blog;
