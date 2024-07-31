@@ -17,7 +17,6 @@ import { useQuery } from "@tanstack/react-query";
 import GoogleButton from "../../utilities/GoogleButton";
 import { generatePassword } from "@/utilities/ninjas-api";
 
-import SubmitButton from "@/utilities/submit-button";
 import { Copy, Dices, KeyRound } from "lucide-react";
 import { useToast } from "../ui/use-toast";
 
@@ -30,6 +29,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
+import SubmitButton from "@/utilities/SubmitButton";
 
 
 const formSchema = z.object({

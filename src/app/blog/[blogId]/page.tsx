@@ -9,9 +9,7 @@ export const metadata: Metadata = {
 
 
 
-
 const Blog = ({ blogId }: { blogId: string }) => {
-
 
   const breadcrumbItems = [
     { title: "خانه", link: "/" },
@@ -22,9 +20,11 @@ const Blog = ({ blogId }: { blogId: string }) => {
 
   return (
     <>
+      {/* @ts-ignore */}
       <BreadcrumbComp items={breadcrumbItems} />
-      <BlogDetailsPage />;
-    </>)
+      <BlogDetailsPage />
+    </>
+  );
 };
 
 export default Blog;

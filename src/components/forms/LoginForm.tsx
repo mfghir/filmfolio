@@ -23,8 +23,9 @@ import Link from "next/link";
 
 import { signIn } from "next-auth/react";
 import { useState } from "react";
-import SubmitButton from "@/templates/SubmitButton";
+
 import axios from "axios";
+import SubmitButton from "@/utilities/SubmitButton";
 
 
 const formSchema = z.object({
