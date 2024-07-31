@@ -34,9 +34,9 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 
-  await connectDB()
-  const session = await getServerSession(authOptions);
-  const user = await User?.findOne({ email: session?.user?.email });
+  // await connectDB()
+  // const session = await getServerSession(authOptions);
+  // const user = await User?.findOne({ email: session?.user?.email });
 
 
   return (
@@ -57,7 +57,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 // prefLangCookie={prefLangCookie}
                 // userInfo={user}
 
-                userInfo={JSON.parse(JSON.stringify(user))}
+                // userInfo={JSON.parse(JSON.stringify(user))}
                 />
                 <main className="p-6 pt-32  md:px-8 lg:px-20 dark:bg-gradient-to-bl dark:from-indigo-950/50 dark:via-indigo-950/25 dark:to-indigo-950/10">
                   {children}
