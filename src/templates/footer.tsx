@@ -136,12 +136,12 @@ const Footer = () => {
         </ul>
       </section>
 
-      <div className=" px-5 py-6 text-xs flex justify-between items-center w-full text-gray-500">
-        <p className="flex gap-x-8">
+      <div className=" px-5 py-6 text-xs flex justify-between items-center gap-y-4 flex-wrap md:flex-nowrap w-full text-gray-500">
+        <p className="w-full flex justify-between  md:justify-start md:gap-x-8">
           <Link href="/faq" className="hover:galaxy-gradient-text duration-300">سوالات متداول</Link>
           <Link href="/terms&conditions" className="hover:galaxy-gradient-text duration-300">قوانین و مقررات</Link>
         </p>
-        <p className="col-span-2 ">تمامی حقوق محفوظ و استفاده بدون کسب اجازه ممنوع است</p>
+        <p className="w-full text-right lg:text-left">تمامی حقوق محفوظ و استفاده بدون کسب اجازه ممنوع است</p>
       </div>
     </footer>
 
