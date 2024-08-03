@@ -4,6 +4,7 @@ import { Button } from '../ui/button'
 import ModeToggle from '@/utilities/mode-toggle'
 import { miniAdsList } from '@/utilities/types-data'
 import Image from 'next/image'
+import TitleSec from '@/utilities/title-sec'
 
 const HomePage = () => {
   return (
@@ -30,6 +31,7 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* mini ads */}
       <ul className="w-full h-fit mt-20 grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-10 lg:grid-cols-3 lg:gap-x-14">
         {miniAdsList.map((item, index) =>
           <li key={index} className="relative w-full md:min-w-60 lg:min-w-96 flex justify-end">
@@ -41,7 +43,7 @@ const HomePage = () => {
               alt="contact pic"
             />
 
-            <div className="flex flex-col gap-y-3 text-white bg-gray-800/80 rounded-xl p-3 w-60 absolute -top-1/2 -translate-x-0 -translate-y-1/2  right-0">
+            <div className="flex flex-col gap-y-3 text-white bg-gray-800/80 rounded-xl p-3 w-60 absolute top-1/2 -translate-x-0 -translate-y-1/2  right-0">
               <p className="text-2xl">{item.title}</p>
               <p className="text-sm">{item.text}</p>
               <Button
@@ -51,13 +53,17 @@ const HomePage = () => {
                 {item.textBtn}
               </Button>
             </div>
-
           </li>
-
         )}
-
       </ul>
 
+
+      {/* the best */}
+      <section className="flex flex-col gap-y-12 lg:gap-16 my-12 lg:my-32">
+        <TitleSec pageTitle="برترین ها" pageLink="/the-best" />
+
+        <div className="bg-red-600 w-full h-96">sdsds</div>
+      </section>
 
     </section>
   )

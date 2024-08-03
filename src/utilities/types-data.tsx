@@ -496,4 +496,8 @@ export const miniAdsList = [
 
 
 
-
+export const theBestList = [
+  { text: "برترین کاربران", imgUrl: "" },
+  { text: "برترین نظرات", imgUrl: "" },
+  { text: "برترین فیلم ها", imgUrl: "" }
+]
