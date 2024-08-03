@@ -25,7 +25,7 @@ const SubmitButton = ({ loading }: { loading: boolean }) => {
           Loading ...
         </>
         :
-        'Submit'
+        'ارسال'
       }
     </Button>
   )

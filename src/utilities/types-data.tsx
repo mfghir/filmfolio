@@ -473,7 +473,26 @@ export const faqList = [
 
 
 
-
+export const miniAdsList = [
+  {
+    title: "هر فیلم یک داستان، هر نقد یک تجربه!",
+    text: "نظراتت رو با دیگران به اشتراک بگذار",
+    textBtn: "شروع نقد",
+    imgUrl: "https://i.postimg.cc/wjqgwf2h/mini-ads-1.jpg"
+  },
+  {
+    title: "فیلم‌های مورد علاقه‌ات رو لیست کن!",
+    text: "با دوستانت به اشتراک بگذار و لذت ببر",
+    textBtn: "ایجاد لیست",
+    imgUrl: "https://i.postimg.cc/xTy9yDvf/mini-ads-2.jpg"
+  },
+  {
+    title: "محبوب‌ترین فیلم‌های این ماه",
+    text: "ببین بقیه کاربران چه فیلم‌هایی رو دوست دارن",
+    textBtn: "مشاهده",
+    imgUrl: "https://i.postimg.cc/x16YhvpB/mini-ads-3.jpg"
+  },
+]
 
 
 

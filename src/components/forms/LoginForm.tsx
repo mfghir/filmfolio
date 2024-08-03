@@ -124,17 +124,17 @@ export default function LoginForm() {
 
 
   return (
-    <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit p-6 mt-24 lg:mt-0 lg:px-20 lg:pt-28">
+    <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit place-content-center">
       <Image
-        className="hidden lg:block lg:w-[550px] m-auto rounded-3xl"
+        className="hidden lg:block lg:w-[550px] rounded-3xl"
         width={1080}
         height={1080}
-        src="https://i.postimg.cc/v8kJq31c/login.jpg"
+        src="https://i.postimg.cc/sD47z3xh/login.png"
         alt="Login illustration" />
 
 
       <div className="w-full md:w-[350px] mx-auto lg:w-[450px] flex flex-col items-start justify-start my-6">
-        <h1 className="text-2xl font-bold inline-block w-fit border-b-2 my-4">Login</h1>
+        <h1 className="text-2xl font-bold inline-block w-fit border-b-2 border-gray-500 my-4 galaxy-gradient-text">ورود</h1>
 
         <Form {...form}  >
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
@@ -143,10 +143,10 @@ export default function LoginForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>ایمیل</FormLabel>
 
                   <FormControl>
-                    <Input placeholder="email" {...field} className="py-4" />
+                    <Input placeholder="ایمیل تون رو وارد کنید" {...field} className="py-4" />
                   </FormControl>
 
                   <FormMessage />
@@ -159,10 +159,10 @@ export default function LoginForm() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>رمز</FormLabel>
 
                   <FormControl>
-                    <Input placeholder="password" {...field} className="py-4" />
+                    <Input placeholder="رمز عبورتون رو وارد کنید" {...field} className="py-4" />
                   </FormControl>
 
                   <FormMessage />
@@ -170,7 +170,7 @@ export default function LoginForm() {
               )}
             />
             <Link href="/forget-password" className="text-gray-500 text-xs mt-3 hover:text-blue-500 duration-300" >
-              forget password?
+              فراموش رمز عبور؟
             </Link>
 
             <SubmitButton loading={loading} />
@@ -179,16 +179,16 @@ export default function LoginForm() {
 
         <div className="flex justify-between items-center gap-x-2 my-6 w-full  text-zinc-600">
           <span className="w-full h-[1px] bg-zinc-600" />
-          <span>or</span>
+          <span>یا</span>
           <span className="w-full h-[1px] bg-zinc-600" />
         </div>
 
-        <GoogleButton text="Login" />
+        <GoogleButton text="ورود" />
 
-        <p className="text-sm mt-4">
-          Does not have an account?
-          <Link className=" text-blue-500 ml-1" href="/register" >
-            Register
+        <p className="text-sm mt-4 flex gap-x-2">
+          هنوز حساب ندارید؟
+          <Link className="galaxy-gradient-text" href="/register" >
+            ثبت نام
           </Link>
         </p>
       </div>

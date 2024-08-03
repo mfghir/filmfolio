@@ -20,7 +20,7 @@ const ContactPage = () => {
         className="lg:max-w-[550px] lg:max-h-[550px] w-fit h-fit object-fill rounded-3xl place-self-end self-start"
         width={1024}
         height={1024}
-        src="https://i.postimg.cc/1zhcQN4K/contact.jpg"
+        src="https://i.postimg.cc/Wzh2Db84/contact.png"
         alt="contact pic"
       />
     </section>

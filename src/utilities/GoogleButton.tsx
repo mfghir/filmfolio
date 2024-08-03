@@ -18,7 +18,7 @@ const GoogleButton = ({ text }: { text: string }) => {
         width={24}
         height={24}
       />
-      {text} with google
+      {text} با گوگل
     </Button>
   )
 }

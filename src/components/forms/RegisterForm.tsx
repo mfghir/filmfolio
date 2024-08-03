@@ -278,16 +278,16 @@ export default function RegisterForm() {
               </div>
             </div> */}
       </>
-      <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit p-6 mt-24 lg:mt-0 lg:px-20 lg:pt-28">
+      <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit place-content-center">
         <Image
           className="hidden lg:block lg:w-[550px] m-auto rounded-3xl"
           width={1080}
           height={1080}
-          src="https://i.postimg.cc/mgYKr9bj/signup.jpg"
+          src="https://i.postimg.cc/3Nh8K4x5/signup.png"
           alt="Sign up illustration" />
 
         <div className="w-full md:w-[350px] mx-auto lg:w-[450px] flex flex-col items-start justify-start my-6">
-          <h1 className="text-2xl font-bold inline-block w-fit border-b-2  my-4">Register</h1>
+          <h1 className="text-2xl font-bold inline-block w-fit border-b-2 border-gray-500 galaxy-gradient-text my-4">ثبتنام</h1>
 
           <Form {...form}  >
             <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
@@ -296,9 +296,9 @@ export default function RegisterForm() {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Full Name</FormLabel>
+                    <FormLabel>نام کامل</FormLabel>
                     <FormControl>
-                      <Input placeholder="fullName" {...field} className="py-4" />
+                      <Input placeholder="نام کامل تون رو وارد کنید" {...field} className="py-4" />
                     </FormControl>
 
                     <FormMessage />
@@ -311,9 +311,9 @@ export default function RegisterForm() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>ایمیل</FormLabel>
                     <FormControl>
-                      <Input placeholder="email" {...field} className="py-4" />
+                      <Input placeholder="ایمیل تون رو وارد کنید" {...field} className="py-4" />
                     </FormControl>
 
                     <FormMessage />
@@ -327,9 +327,9 @@ export default function RegisterForm() {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel>رمز</FormLabel>
                     <FormControl>
-                      <Input placeholder="password" {...field} className="py-4" />
+                      <Input placeholder="رمز عبورتون رو وارد کنید" {...field} className="py-4" />
                     </FormControl>
 
                     <FormMessage />
@@ -362,13 +362,13 @@ export default function RegisterForm() {
                               stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" className="text-gray-900">
                             </path>
                           </svg>
-                          Loading ...
+                          کمی صبر کنید ...
                         </>
                       }
                     </>
 
                   ) : (
-                    passwordGeneFunc || "Password Generator"
+                    passwordGeneFunc || "پسورد رندوم"
                   )}
                 </span>
 
@@ -388,16 +388,16 @@ export default function RegisterForm() {
 
           <div className="flex justify-between items-center gap-x-2 my-6 w-full text-zinc-600">
             <span className="w-full h-[1px] bg-zinc-600" />
-            <span>or</span>
+            <span>یا</span>
             <span className="w-full h-[1px] bg-zinc-600" />
           </div>
 
-          <GoogleButton text="Sign up" />
+          <GoogleButton text="ثبتنام" />
 
-          <p className="text-sm mt-4">
-            Already have an account?
-            <Link className=" text-blue-500 ml-1" href="/login" >
-              Login
+          <p className="text-sm mt-4 flex gap-x-2">
+            از قبل حساب دارید؟
+            <Link className="galaxy-gradient-text" href="/login" >
+              ورود
             </Link>
           </p>
         </div>
