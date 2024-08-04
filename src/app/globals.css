@@ -78,6 +78,10 @@
   .galaxy-gradient-bg {
     @apply transition-all duration-300 bg-gradient-to-tr from-fuchsia-500 to-cyan-500 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-fuchsia-500
   }
+
+  .galaxy-gradient-border {
+    @apply  bg-gradient-to-tr from-fuchsia-500 to-cyan-500
+  }
 }
 
 
@@ -107,6 +111,3 @@ body>.skiptranslate {
   }
 
 }
-
-
-

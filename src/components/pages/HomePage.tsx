@@ -63,28 +63,43 @@ const HomePage = () => {
       <section className="flex flex-col gap-y-12 lg:gap-16 my-12 lg:my-32">
         <TitleSec pageTitle="برترین ها" pageLink="/the-best" />
 
-        <ul className="bg-red-600 w-full grid grid-cols-1 md:grid-cols-3">
+        <ul className="w-full grid grid-cols-1 md:grid-cols-3 lg:gap-x-16">
           {
             theBestList.map((item, index) =>
-              <li key={index} className="flex flex-col justify-between items-center">
-                <Image
-                  className="lg:max-w-[244px] lg:max-h-[244px] w-fit h-fit object-fill rounded-xl "
-                  width={1024}
-                  height={1024}
-                  src={item.imgUrl}
-                  alt="contact pic"
-                />
-                <p className="text-xl lg:text-2xl font-bold">
-                  {item.text}
-                </p>
+              <li key={index} className="flex flex-col justify-between items-center rounded-xl bg-gray-800 px-4 p-2 relative">
+                <div className="w-full h-full galaxy-gradient-border p-1 rounded-[6px] ">
 
-                <Button
-                  variant="default"
-                  className="galaxy-gradient-bg text-base font-bold text-white px-4 w-fit  flex gap-x-1"
-                >
-                  مشاهده
-                  <IconArrowNarrowLeft stroke={1.5} />
-                </Button>
+                  <div className="w-full h-full flex flex-col justify-between items-center px-4 py-2
+                bg-gray-800
+               ">
+
+
+
+                    <Image
+                      className="lg:max-w-[244px] lg:max-h-[244px] w-fit h-fit object-fill rounded-xl "
+                      width={1024}
+                      height={1024}
+                      src={item.imgUrl}
+                      alt="contact pic"
+                    />
+
+                    <p className="text-xl lg:text-2xl font-bold px-1 galaxy-gradient-border rounded-m[] relative">
+                      <span className="w-full h-full bg-gray-800 after:content-[''] after:bg-black/60 after:absolute">
+                        {item.text}
+                      </span>
+                    </p>
+
+                    <Button
+                      variant="default"
+                      className="galaxy-gradient-bg text-base font-bold text-white px-4 w-fit flex gap-x-1 absolute -bottom-3 z-10"
+                    >
+                      مشاهده
+                      <IconArrowNarrowLeft stroke={1.5} />
+                    </Button>
+
+                  </div>
+                </div>
+
               </li>
             )
           }
