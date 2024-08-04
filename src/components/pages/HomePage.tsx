@@ -2,9 +2,10 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import ModeToggle from '@/utilities/mode-toggle'
-import { miniAdsList } from '@/utilities/types-data'
+import { miniAdsList, theBestList } from '@/utilities/types-data'
 import Image from 'next/image'
 import TitleSec from '@/utilities/title-sec'
+import { IconArrowNarrowLeft } from '@tabler/icons-react'
 
 const HomePage = () => {
   return (
@@ -62,7 +63,32 @@ const HomePage = () => {
       <section className="flex flex-col gap-y-12 lg:gap-16 my-12 lg:my-32">
         <TitleSec pageTitle="برترین ها" pageLink="/the-best" />
 
-        <div className="bg-red-600 w-full h-96">sdsds</div>
+        <ul className="bg-red-600 w-full grid grid-cols-1 md:grid-cols-3">
+          {
+            theBestList.map((item, index) =>
+              <li key={index} className="flex flex-col justify-between items-center">
+                <Image
+                  className="lg:max-w-[244px] lg:max-h-[244px] w-fit h-fit object-fill rounded-xl "
+                  width={1024}
+                  height={1024}
+                  src={item.imgUrl}
+                  alt="contact pic"
+                />
+                <p className="text-xl lg:text-2xl font-bold">
+                  {item.text}
+                </p>
+
+                <Button
+                  variant="default"
+                  className="galaxy-gradient-bg text-base font-bold text-white px-4 w-fit  flex gap-x-1"
+                >
+                  مشاهده
+                  <IconArrowNarrowLeft stroke={1.5} />
+                </Button>
+              </li>
+            )
+          }
+        </ul>
       </section>
 
     </section>
