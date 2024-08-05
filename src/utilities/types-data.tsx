@@ -473,7 +473,7 @@ export const faqList = [
 
 
 
-export const miniAdsList = [
+export const miniAdsSec = [
   {
     title: "هر فیلم یک داستان، هر نقد یک تجربه!",
     text: "نظراتت رو با دیگران به اشتراک بگذار",
@@ -496,8 +496,34 @@ export const miniAdsList = [
 
 
 
-export const theBestList = [
-  { text: "برترین کاربران", imgUrl: "https://svgshare.com/i/190S.svg" },
-  { text: "برترین نظرات", imgUrl: "https://svgshare.com/i/190T.svg" },
-  { text: "برترین فیلم ها", imgUrl: "https://svgshare.com/i/18z_.svg" }
+export const theBestSec = [
+  { text: "برترین کاربران", imgUrl: "https://svgshare.com/i/190S.svg", linkUrl: "/the-best/users" },
+  { text: "برترین نظرات", imgUrl: "https://svgshare.com/i/190T.svg", linkUrl: "/the-best/critics" },
+  { text: "برترین فیلم ها", imgUrl: "https://svgshare.com/i/18z_.svg", linkUrl: "/the-best/movies" }
+]
+
+
+export const moviesSec = [
+  { title: "اعلان های ویژه", svgUrl: "https://svgshare.com/i/192V.svg", linkUrl: "" },
+  { title: "محبوب ترین ها", svgUrl: "https://svgshare.com/i/191_.svg", linkUrl: "" },
+  { title: "جدید ترین ها", svgUrl: "https://svgshare.com/i/192J.svg", linkUrl: "" },
+  { title: "دسته بندی ها", svgUrl: "https://svgshare.com/i/190u.svg", linkUrl: "" }
+]
+
+
+
+
+export const aboutUsSec = [
+  {
+    title: "درباره ما",
+    text: "به وبسایت فیلم فولیو خوش اومدید! ما یک جامعه آنلاین برای فیلم‌بازان و علاقه‌مندان به فیلم و سریال هستیم و اینجا ، به شما این امکان رو می‌ده که لیست فیلم‌هایی که دیدین رو ثبت کنین و نظرات خودتون رو با دیگران به اشتراک بگذارید. هدف ما ایجاد یک فضای صمیمی و دوستانس که در اون کاربرها می‌تونن تجربه و نظرشون در مورد فیلم هایی که دیدن رو به اشتراک گذاری بگذارن و از نظرات و نقدهای دیگران بهره‌مند بشن."
+  },
+  {
+    title: "چشم‌انداز ماماموریت ما",
+    text: "ماموریت ما فراهم کردن بستری برای علاقه‌مندان به فیلمه تا بتونن به راحتی فیلم‌ های مورد علاقه خودشون رو پیدا کنن ، نظراتشون رو به اشتراک بگذارن و از نقدهای دیگر کاربران استفاده کنن. ما معتقدیم که نقدهای صادقانه و بحث‌های سازنده ، می‌تونن به بهبود تجربه تماشای فیلم کمک کنن."
+  },
+  {
+    title: "چشم‌انداز ما",
+    text: "چشم‌انداز ما تبدیل شدن به مرجع اصلی نقد و بررسی فیلم‌ها تو فضای مجازیه. ما به دنبال ایجاد یک پایگاه داده گسترده از فیلم‌ها و نقدهای متنوع هستیم که بتونه به علاقه‌مندان به فیلم و سریال در انتخاب فیلم‌های بعدیشون کمک کنه."
+  },
 ]
