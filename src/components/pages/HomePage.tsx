@@ -2,11 +2,12 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import ModeToggle from '@/utilities/mode-toggle'
-import { miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
+import { aboutUsSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
 import Image from 'next/image'
 import TitleSec from '@/utilities/title-sec'
 import { IconArrowNarrowLeft } from '@tabler/icons-react'
 import Link from 'next/link'
+import CustomShape from '@/utilities/CustomShape'
 
 const HomePage = () => {
   return (
@@ -148,16 +149,29 @@ const HomePage = () => {
 
 
       {/* about us sec */}
-      <section className="flex flex-col gap-y-12 lg:gap-16  my-12 lg:my-32">
+      <section className="w-full flex flex-col gap-y-12 lg:gap-16  my-12 lg:my-32">
         <TitleSec pageTitle="درباره فیلم فولیو" pageLink="/about-us" />
 
-        <ul className="grid grid-cols-1 md:grid-cols-2  lg:gap-y-12 lg:gap-x-20">
-          <li className="container-shape">
+        <ul className="w-full grid grid-cols-1 gap-y-28 md:grid-cols-3  lg:gap-y-12 lg:gap-x-20">
 
-          به وبسایت فیلم فولیو خوش اومدید! 
-ما یک جامعه آنلاین برای فیلم‌بازان و علاقه‌مندان به فیلم و سریال هستیم و اینجا ، به شما این امکان رو می‌ده که لیست فیلم‌هایی که دیدین رو ثبت کنین و نظرات خودتون رو با دیگران به اشتراک بگذارید. 
-هدف ما ایجاد یک فضای صمیمی و دوستانس که در اون کاربرها می‌تونن تجربه و نظرشون در مورد فیلم هایی که دیدن رو به اشتراک گذاری بگذارن و از نظرات و نقدهای دیگران بهره‌مند بشن.
-          </li>
+          {aboutUsSec.map((item, index) =>
+            <li key={index} className="relative">
+              <div className="w-fit absolute inset-0 -z-10">
+                <CustomShape />
+              </div>
+
+              <h3 className="text-xl lg:text-3xl font-bold galaxy-gradient-text mt-2 mr-4 lg:mt-4 lg:mr-6">{item.title}</h3>
+              <p className="text-sm lg:text-lg text-gray-800 dark:text-white mt-2 lg:mt-5 mx-4 lg:mx-6 my-auto self-center items-center">{item.text}</p>
+            </li>
+          )}
+
+
+
+
+
+
+
+
         </ul>
       </section>
     </section >

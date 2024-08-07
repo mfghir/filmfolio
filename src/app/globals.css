@@ -96,45 +96,6 @@
 
 
 
-.container-shape {
-  background-color: #1c2331;
-  color: #fff;
-  padding: 40px 20px;
-  border-radius: 20px;
-  max-width: 500px;
-  margin: 20px auto;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  position: relative;
-  overflow: hidden; /* Ensure that the pseudo-elements don't overflow */
-}
-
-.container-shape::before,
-.container-shape::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  background-color: rgba(50, 181, 255, 0.1); /* light blue color with transparency */
-  z-index: 0;
-}
-
-.container-shape::before {
-  width: 300px;
-  height: 300px;
-  top: -150px;
-  left: -150px;
-}
-
-.container-shape::after {
-  width: 400px;
-  height: 400px;
-  bottom: -200px;
-  right: -200px;
-}
-
-
-
-
 
 body>.skiptranslate {
   display: none;
