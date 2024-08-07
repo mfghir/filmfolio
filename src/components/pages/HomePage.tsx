@@ -68,10 +68,10 @@ const HomePage = () => {
         <ul className="w-full grid grid-cols-1 md:grid-cols-3 lg:gap-x-16">
           {
             theBestSec.map((item, index) =>
-              <li key={index} className="flex flex-col justify-between items-center rounded-xl bg-gray-800 px-4 p-2 relative">
+              <li key={index} className="flex flex-col justify-between items-center rounded-xl bg-gray-200 dark:bg-gray-800 px-4 p-2 relative">
                 <div className="w-full h-full galaxy-gradient-border p-1 rounded-[6px]">
 
-                  <div className="w-full h-full flex flex-col justify-between items-center px-4 py-2 bg-gray-800">
+                  <div className="w-full h-full flex flex-col justify-between items-center px-4 py-2 bg-gray-200 dark:bg-gray-800">
                     <Image
                       className="lg:max-w-[244px] lg:max-h-[244px] w-fit h-fit object-fill rounded-xl "
                       width={1024}
@@ -81,7 +81,7 @@ const HomePage = () => {
                     />
 
                     <p className="text-xl lg:text-2xl font-bold px-1 py-[10.5px] galaxy-gradient-border rounded-lg absolute -top-9">
-                      <span className=" bg-black/60  w-full  px-4 py-1 inset-0 rounded-lg">
+                      <span className=" bg-gray-100 dark:bg-black/60  w-full  px-4 py-1 inset-0 rounded-lg">
                         {item.text}
                       </span>
                     </p>
@@ -91,8 +91,8 @@ const HomePage = () => {
                       className="px-1 py-[10.5px] galaxy-gradient-border rounded-lg absolute -bottom-5"
                     >
                       <Link href={item.linkUrl}
-                        className="bg-black/60 w-fit px-4 py-1 inset-0 rounded-lg flex items-center justify-center gap-x-1 
-                        text-sm text-gray-400 hover:text-white duration-300"
+                        className="bg-gray-100 dark:bg-black/60 w-fit px-4 py-1 inset-0 rounded-lg flex items-center justify-center gap-x-1 
+                        text-sm text-gray-400 hover:text-gray-600 dark:hover:text-white duration-300"
                       >
                         مشاهده
                         <IconArrowNarrowLeft stroke={1.5} />
@@ -114,28 +114,24 @@ const HomePage = () => {
         <ul className="grid grid-cols-1 md:grid-cols-2  lg:gap-y-12 lg:gap-x-20">
           {
             moviesSec.map((item, index) =>
-              <li key={index} className="bg-gray-800 rounded-3xl p-4 lg:p-12 flex flex-col justify-center items-center relative    h-64">
+              <li key={index} className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-4 lg:p-12 flex flex-col justify-center items-center relative    h-64">
                 <div className="w-full h-full  galaxy-gradient-half-bg  rounded-xl">
                   {item.title}
                 </div>
 
-
-
-
                 <p className="text-xl lg:text-2xl font-bold px-1 py-[10.5px] galaxy-gradient-border rounded-lg absolute top-4">
-                  <span className=" bg-black/60  w-full  px-4 py-1 inset-0 rounded-lg">
+                  <span className="bg-gray-100 dark:bg-black/60  w-full  px-4 py-1 inset-0 rounded-lg">
                     {item.title}
                   </span>
                 </p>
 
-                <Link href={item.linkUrl} className="rounded-lg absolute bottom-4"
-                >
+                <Link href={item.linkUrl} className="rounded-lg absolute bottom-4">
                   <Button
                     variant="default"
-                    className="px-4 py-2 galaxy-gradient-bg  text-white font-bold text-base"
+                    className="px-4 py-2 galaxy-gradient-bg text-white font-bold text-base"
                   >
                     مشاهده لیست
-                    <IconArrowNarrowLeft stroke={1.5} />
+                    <IconArrowNarrowLeft stroke={1.5} className="mr-2" />
                   </Button>
                 </Link>
               </li>
@@ -143,8 +139,6 @@ const HomePage = () => {
           }
         </ul>
       </section>
-
-
 
 
 
@@ -160,8 +154,12 @@ const HomePage = () => {
                 <CustomShape />
               </div>
 
-              <h3 className="text-xl lg:text-3xl font-bold galaxy-gradient-text mt-2 mr-4 lg:mt-4 lg:mr-6">{item.title}</h3>
-              <p className="text-sm lg:text-lg text-gray-800 dark:text-white mt-2 lg:mt-5 mx-4 lg:mx-6 my-auto self-center items-center">{item.text}</p>
+              <h3 className="text-xl lg:text-3xl font-bold galaxy-gradient-text mt-2 mr-4 lg:mt-4 lg:mr-6">
+                {item.title}
+              </h3>
+              <p className="text-sm lg:text-lg text-gray-800 dark:text-white mt-2 lg:mt-5 mx-4 lg:mx-6 my-auto self-center items-center">
+                {item.text}
+              </p>
             </li>
           )}
 
