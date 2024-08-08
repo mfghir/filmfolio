@@ -8,7 +8,7 @@ const CustomShape = () => {
 
   return (
     <svg 
-    className="w-[280px] h-[204px] lg:w-[405px] lg:h-[368px]"
+    className="w-[280px] h-[254px] md:w-[240px] md:h-[240px] lg:w-[405px] lg:h-[368px]"
     width="405" height="368" viewBox="0 0 405 368" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"

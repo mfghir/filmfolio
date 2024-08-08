@@ -504,10 +504,34 @@ export const theBestSec = [
 
 
 export const moviesSec = [
-  { title: "اعلان های ویژه", svgUrl: "https://svgshare.com/i/192V.svg", linkUrl: "" },
-  { title: "محبوب ترین ها", svgUrl: "https://svgshare.com/i/191_.svg", linkUrl: "" },
-  { title: "جدید ترین ها", svgUrl: "https://svgshare.com/i/192J.svg", linkUrl: "" },
-  { title: "دسته بندی ها", svgUrl: "https://svgshare.com/i/190u.svg", linkUrl: "" }
+  {
+    title: "اعلان های ویژه",
+    svgUrl: "https://svgshare.com/i/1965.svg",
+    posterLink1: "https://i.postimg.cc/V6ZGv0R8/poster1.png",
+    posterLink2: "https://i.postimg.cc/xd0tP3pQ/poster2.png",
+    linkUrl: ""
+  },
+  {
+    title: "محبوب ترین ها",
+    svgUrl: "https://svgshare.com/i/191_.svg",
+    posterLink1: "https://i.postimg.cc/50rgbd49/poster3.png",
+    posterLink2: "https://i.postimg.cc/Gph6pRCv/poster4.png",
+    linkUrl: ""
+  },
+  {
+    title: "جدید ترین ها",
+    svgUrl: "https://svgshare.com/i/192J.svg",
+    posterLink1: "https://i.postimg.cc/FK5QF8KZ/poster7.png",
+    posterLink2: "https://i.postimg.cc/bvH4yvWy/poster8.png",
+    linkUrl: ""
+  },
+  {
+    title: "دسته بندی ها",
+    svgUrl: "https://svgshare.com/i/190u.svg",
+    posterLink1: "https://i.postimg.cc/4y3DFT8J/poster5.png",
+    posterLink2: "https://i.postimg.cc/FszvT0qj/poster6.png",
+    linkUrl: ""
+  }
 ]
 
 

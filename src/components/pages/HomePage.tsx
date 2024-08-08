@@ -1,22 +1,26 @@
 "use client"
-import React from 'react'
-import { Button } from '../ui/button'
-import ModeToggle from '@/utilities/mode-toggle'
-import { aboutUsSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
+
+
 import Image from 'next/image'
-import TitleSec from '@/utilities/title-sec'
-import { IconArrowNarrowLeft } from '@tabler/icons-react'
 import Link from 'next/link'
+import { IconArrowNarrowLeft } from '@tabler/icons-react'
+
+import { Button } from '../ui/button'
+import TitleSec from '@/utilities/title-sec'
 import CustomShape from '@/utilities/CustomShape'
+
+import { aboutUsSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
+
+
 
 const HomePage = () => {
   return (
     <section className="">
 
-      <section className='flex justify-center items-center flex-col relative' id='start-sec'>
-        <div className="w-full rounded-3xl min-h-[calc(100vh-120px)]
-                bg-[url('https://i.postimg.cc/1RbDBgFs/header-gif.gif')] 
-                bg-no-repeat bg-center bg-cover brightness-50" />
+      <section className="flex justify-center items-center flex-col relative">
+        <div className="w-full rounded-3xl min-h-[calc(100vh-120px)] bg-no-repeat bg-center bg-cover brightness-50
+                bg-[url('https://i.postimg.cc/1RbDBgFs/header-gif.gif')]"
+        />
 
         <div className="absolute bottom-12 flex justify-center items-center flex-col gap-y-6 bg-black/60 p-8 rounded-3xl">
           <p className="text-5xl lg:text-7xl font-bold  galaxy-gradient-text">
@@ -108,19 +112,48 @@ const HomePage = () => {
 
 
       {/* movies */}
-      <section className="flex flex-col gap-y-12 lg:gap-16  my-12 lg:my-32">
+      <section className="flex flex-col gap-y-12 lg:gap-16 my-12 lg:my-32">
         <TitleSec pageTitle="فیلم ها" pageLink="/movies" />
 
-        <ul className="grid grid-cols-1 md:grid-cols-2  lg:gap-y-12 lg:gap-x-20">
+        <ul className="grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-6 lg:gap-y-12 lg:gap-x-20">
           {
             moviesSec.map((item, index) =>
-              <li key={index} className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-4 lg:p-12 flex flex-col justify-center items-center relative    h-64">
-                <div className="w-full h-full  galaxy-gradient-half-bg  rounded-xl">
-                  {item.title}
+              <li key={index}
+                className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-4 lg:px-8 lg:py-10 flex flex-col justify-center items-center relative h-[257px] lg:h-[400px]">
+                <div className="w-full h-full galaxy-gradient-half-bg rounded-xl flex justify-between items-center">
+                  <Image
+                    className="w-[60px] h-[60px] md:w-[90px] md:h-[90px] lg:w-[120px] lg:h-[120px] self-end mr-2 mb-6 lg:mr-3 lg:mb-4"
+                    width={200}
+                    height={200}
+                    src={item.svgUrl}
+                    alt={item.title}
+                  />
+
+
+
+                  <div className="w-fit h-full flex flex-row items-center justify-end">
+                    <Image
+                      className="w-[100px] h-[146px] lg:w-[180px] lg:h-[264px] rounded-lg lg:rounded-xl -translate-x-8 -translate-y-2 lg:-translate-x-8 z-[2]"
+                      width={200}
+                      height={200}
+                      src={item.posterLink2}
+                      alt="poster 2"
+                    />
+                    <Image
+                      className="w-[100px] h-[146px] lg:w-[180px] lg:h-[264px] rounded-lg lg:rounded-xl translate-x-2 lg:translate-x-4 
+                      translate-y-8 lg:translate-y-1"
+                      width={200}
+                      height={200}
+                      src={item.posterLink1}
+                      alt="poster 1"
+                    />
+                  </div>
+
+
                 </div>
 
-                <p className="text-xl lg:text-2xl font-bold px-1 py-[10.5px] galaxy-gradient-border rounded-lg absolute top-4">
-                  <span className="bg-gray-100 dark:bg-black/60  w-full  px-4 py-1 inset-0 rounded-lg">
+                <p className="text-xl lg:text-2xl font-bold px-1 py-[10.5px] galaxy-gradient-border rounded-lg absolute top-4 z-10">
+                  <span className="bg-gray-100 dark:bg-black/60 w-full px-4 py-1 inset-0 rounded-lg">
                     {item.title}
                   </span>
                 </p>
@@ -146,30 +179,22 @@ const HomePage = () => {
       <section className="w-full flex flex-col gap-y-12 lg:gap-16  my-12 lg:my-32">
         <TitleSec pageTitle="درباره فیلم فولیو" pageLink="/about-us" />
 
-        <ul className="w-full grid grid-cols-1 gap-y-28 md:grid-cols-3  lg:gap-y-12 lg:gap-x-20">
+        <ul className="w-full grid grid-cols-1 gap-y-28 md:grid-cols-3 md:gap-x-6 lg:gap-y-12 lg:gap-x-20">
 
           {aboutUsSec.map((item, index) =>
-            <li key={index} className="relative">
-              <div className="w-fit absolute inset-0 -z-10">
+            <li key={index} className="relative ">
+              <div className="w-fill bg-red-700 absolute -z-10">
                 <CustomShape />
               </div>
 
-              <h3 className="text-xl lg:text-3xl font-bold galaxy-gradient-text mt-2 mr-4 lg:mt-4 lg:mr-6">
+              <h3 className="text-xl lg:text-3xl font-bold galaxy-gradient-text mt-2 mr-4 md:mr-9 lg:mt-4 lg:mr-6">
                 {item.title}
               </h3>
-              <p className="text-sm lg:text-lg text-gray-800 dark:text-white mt-2 lg:mt-5 mx-4 lg:mx-6 my-auto self-center items-center">
+              <p className="text-sm lg:text-lg text-gray-800 dark:text-white  translate-y-1/4 -translate-x-1/2 lg:mt-5 lg:mx-6 my-auto self-center items-center">
                 {item.text}
               </p>
             </li>
           )}
-
-
-
-
-
-
-
-
         </ul>
       </section>
     </section >
