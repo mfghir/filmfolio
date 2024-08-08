@@ -14,7 +14,10 @@ import {
   UsersRound,
   MessageSquare,
   KeyRound,
+  icons,
 } from "lucide-react";
+import { title } from "process";
+import { text } from "stream/consumers";
 
 
 export interface UserInfo {
@@ -551,4 +554,13 @@ export const aboutUsSec = [
     title: "چشم‌انداز ما",
     text: "چشم‌انداز ما تبدیل شدن به مرجع اصلی نقد و بررسی فیلم‌ها تو فضای مجازیه. ما به دنبال ایجاد یک پایگاه داده گسترده از فیلم‌ها و نقدهای متنوع هستیم که بتونه به علاقه‌مندان به فیلم و سریال در انتخاب فیلم‌های بعدیشون کمک کنه."
   },
+]
+
+
+export const featuresSec = [
+  {
+    title: "",
+    text: "",
+    icon: ""
+  }
 ]

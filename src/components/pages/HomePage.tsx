@@ -122,14 +122,12 @@ const HomePage = () => {
                 className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-4 lg:px-8 lg:py-10 flex flex-col justify-center items-center relative h-[257px] lg:h-[400px]">
                 <div className="w-full h-full galaxy-gradient-half-bg rounded-xl flex justify-between items-center">
                   <Image
-                    className="w-[60px] h-[60px] md:w-[90px] md:h-[90px] lg:w-[120px] lg:h-[120px] self-end mr-2 mb-6 lg:mr-3 lg:mb-4"
+                    className="w-[60px] h-[60px] md:w-[90px] md:h-[90px] lg:w-[120px] lg:h-[120px] self-end mr-2 mb-6 lg:mr-6 lg:mb-4"
                     width={200}
                     height={200}
                     src={item.svgUrl}
                     alt={item.title}
                   />
-
-
 
                   <div className="w-fit h-full flex flex-row items-center justify-end">
                     <Image
@@ -148,8 +146,6 @@ const HomePage = () => {
                       alt="poster 1"
                     />
                   </div>
-
-
                 </div>
 
                 <p className="text-xl lg:text-2xl font-bold px-1 py-[10.5px] galaxy-gradient-border rounded-lg absolute top-4 z-10">
@@ -174,28 +170,39 @@ const HomePage = () => {
       </section>
 
 
-
       {/* about us sec */}
-      <section className="w-full flex flex-col gap-y-12 lg:gap-16  my-12 lg:my-32">
+      <section className="w-full flex flex-col gap-y-12 lg:gap-16 my-12 lg:my-32">
         <TitleSec pageTitle="درباره فیلم فولیو" pageLink="/about-us" />
 
-        <ul className="w-full grid grid-cols-1 gap-y-28 md:grid-cols-3 md:gap-x-6 lg:gap-y-12 lg:gap-x-20">
+        <ul className="w-full grid grid-cols-1 gap-y-28 md:grid-cols-3 md:gap-x-8 ">
 
           {aboutUsSec.map((item, index) =>
             <li key={index} className="relative ">
-              <div className="w-fill bg-red-700 absolute -z-10">
+              <div className="w-fill absolute -z-10">
                 <CustomShape />
               </div>
 
-              <h3 className="text-xl lg:text-3xl font-bold galaxy-gradient-text mt-2 mr-4 md:mr-9 lg:mt-4 lg:mr-6">
+              <h3 className="text-xl lg:text-3xl font-bold galaxy-gradient-text mt-2 mr-4 md:mt-4 md:mr-2 lg:mt-4 lg:mr-6">
                 {item.title}
               </h3>
-              <p className="text-sm lg:text-lg text-gray-800 dark:text-white  translate-y-1/4 -translate-x-1/2 lg:mt-5 lg:mx-6 my-auto self-center items-center">
+              <p className="w-fit text-sm lg:text-lg text-gray-800 dark:text-white 
+              -translate-x-0 translate-y-1/4 
+              md:-translate-x-[5%] md:translate-y-0 md:mt-2 
+              lg:translate-x-0 lg:translate-y-1/3 lg:mt-5 lg:mx-6">
                 {item.text}
               </p>
             </li>
           )}
         </ul>
+      </section>
+
+      {/* features sec */}
+      <section className="w-full h-60 my-12 lg:my-96">
+        <h3 className="galaxy-gradient-text text-2xl lg:text-3xl font-bold text-center">ویژگی های فیلم فولیو چیه؟</h3>
+
+        <div className="">
+          sdd
+        </div>
       </section>
     </section >
   )
