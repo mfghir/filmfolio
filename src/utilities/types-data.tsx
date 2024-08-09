@@ -1,4 +1,4 @@
-import { IconAward, IconBulb, IconRosetteDiscountCheck, IconUsers } from "@tabler/icons-react";
+import { IconAward, IconBulb, IconDashboard, IconListNumbers, IconListSearch, IconMasksTheater, IconMessages, IconRosetteDiscountCheck, IconSocial, IconStars, IconUsers, IconWriting } from "@tabler/icons-react";
 import {
   ThumbsUp,
   ThumbsDown,
@@ -17,6 +17,7 @@ import {
   icons,
 } from "lucide-react";
 import { title } from "process";
+import React from "react";
 import { text } from "stream/consumers";
 
 
@@ -198,6 +199,11 @@ const GradientIcon = ({ IconComponent }: { IconComponent: any }) => (
 
 
 
+
+
+
+
+
 export const ourValues = [
   {
     title: "کیفیت بالا",
@@ -220,7 +226,6 @@ export const ourValues = [
     icon: <GradientIcon IconComponent={IconBulb} />
   },
 ];
-
 
 
 
@@ -475,7 +480,6 @@ export const faqList = [
 
 
 
-
 export const miniAdsSec = [
   {
     title: "هر فیلم یک داستان، هر نقد یک تجربه!",
@@ -539,7 +543,6 @@ export const moviesSec = [
 
 
 
-
 export const aboutUsSec = [
   {
     title: "درباره ما",
@@ -557,10 +560,73 @@ export const aboutUsSec = [
 ]
 
 
+
+
+const GradientDefss = () => (
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="galaxyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{ stopColor: "#f0abfc", stopOpacity: 1 }} />
+        <stop offset="100%" style={{ stopColor: "#67e8f9", stopOpacity: 1 }} />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+const GradientIconn = ({ IconComponent, ...props }: { IconComponent: React.ReactElement, [key: string]: any }) => (
+  <>
+    <GradientDefss />
+    {React.cloneElement(IconComponent, {
+      ...props,
+      fill: "url(#galaxyGradient)", // or use fill if the icon uses fill
+      width: 120,
+      height: 120
+    })}
+  </>
+);
+
+
+
+
 export const featuresSec = [
   {
-    title: "",
-    text: "",
-    icon: ""
+    title: "لیست تماشا",
+    text: "شما می‌تونید لیست فیلم‌هایی که دیدین و یا قصد دیدن اون ها رو دارین، به راحتی ثبت و مدیریت کنید. این امکان به شما کمک می‌کنه تا هیچ فیلم مهمی رو از دست ندید.",
+    icon: <GradientIconn IconComponent={<IconListNumbers />} />
+  },
+  {
+    title: "نقدهای کاربر",
+    text: "با نوشتن نقدهاتون درباره فیلم‌هایی که دیدین، نظرات و تجربیاتتون رو با دیگران به اشتراک بگذارید. همچنین می‌تونید نقدهای دیگرارن رو بخونید و از دیدگاه‌های مختلف بهره‌مند بشید.",
+    icon: <GradientIconn IconComponent={<IconWriting />} />
+  },
+  {
+    title: "امتیازدهی",
+    text: "به فیلم‌هایی که دیدین امتیاز بدید و به دیگر کاربران کمک کنید تا بهترین فیلم‌ها رو پیدا کنن. سیستم امتیازدهی ما به شما این امکان رو میده که فیلم‌ها رو بر اساس امتیازهای واقعی کاربران بررسی کنید.",
+    icon: <GradientIconn IconComponent={<IconStars />} />
+  },
+  {
+    title: "فیلم‌های پیشنهادی",
+    text: "با توجه به فیلم‌هایی که دیدین و نقدهایی که نوشتید، فیلم فولیو به شما پیشنهادات شخصی‌سازی‌شده‌ای ارائه میده تا بتونید فیلم‌های جدید و جالبی رو کشف کنید.",
+    icon: <GradientIconn IconComponent={<IconMessages />} />
+  },
+  {
+    title: "جست و جو و فیلترها",
+    text: "با استفاده از ابزارهای جست و جوی پیشرفته و فیلترهای دقیق ، می‌تونید به راحتی فیلم‌های مورد نظرتون رو بر اساس ژانر، سال تولید، کارگردان، بازیگران و ... پیدا کنید.",
+    icon: <GradientIconn IconComponent={<IconListSearch />} />
+  },
+  {
+    title: "مدیریت فعالیت ها",
+    text: "در داشبورد کاربر، می‌تونید تمامی فعالیت‌ها، لیست فیلم‌ها، نقدها و امتیازات خودتون رو مدیریت کنید. این بخش به شما کمک می‌کنه تا به راحتی به تمامی اطلاعات و فعالیت‌هاتون دسترسی داشته باشید.",
+    icon: <GradientIconn IconComponent={<IconDashboard />} />
+  },
+  {
+    title: "مطالب سینمایی",
+    text: "وبلاگ فیلم فولیو شامل مقالات تخصصی، اخبار سینما، مصاحبه‌ها و تحلیل‌های عمیق درباره فیلم‌ها و سریال‌هاس. با خوندن این مطالب ، می‌تونید دانش خودتون رو در زمینه فیلم و سریال افزایش بدید.",
+    icon: <GradientIconn IconComponent={<IconMasksTheater />} />
+  },
+  {
+    title: "شبکه اجتماعی",
+    text: "با دیگر کاربران فیلم فولیو ارتباط برقرار کنید، نظراتتون رو به اشتراک بگذارید و از تجربیات دیگران بهره‌مند بشید. این ویژگی به شما کمک می‌کنه تا یک جامعه پویا و فعال از فیلم‌بازان رو در کنار خودتون داشته باشید.",
+    icon: <GradientIconn IconComponent={<IconSocial />} />
   }
-]
+];

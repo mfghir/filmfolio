@@ -107,7 +107,6 @@ const AboutUSPage = () => {
         </ol>
       </section>
 
-
       <section className="w-full bg-gray-100 dark:bg-gray-800">
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
 
@@ -119,8 +118,8 @@ const AboutUSPage = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembers.map(item =>
-              <div className="w-full bg-gray-200 dark:bg-gray-900 rounded-xl p-12 flex flex-col justify-center items-center group">
+            {teamMembers.map((item, index) =>
+              <div key={index} className="w-full bg-gray-200 dark:bg-gray-900 rounded-xl p-12 flex flex-col justify-center items-center group">
                 <div className="mb-8">
                   <Image width={300} height={300}
                     className="object-center object-cover rounded-full h-36 w-36 grayscale group-hover:grayscale-0 duration-300"
@@ -158,17 +157,15 @@ const AboutUSPage = () => {
             </h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-y-6 md:gap-6">
-              {ourValues.map(item =>
-                <div className=" flex w-full  ">
+              {ourValues.map((item, index) =>
+                <div key={index} className=" flex w-full">
                   <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-4 flex-shrink-0">
                     {item.icon}
                   </div>
+
                   <div className="flex-grow pr-2">
                     <h2 className="text-white text-lg title-font font-medium mb-2">{item.title}</h2>
-                    <p className="leading-relaxed text-base">
-                      {item.text}
-                    </p>
-
+                    <p className="leading-relaxed text-base">{item.text}</p>
                   </div>
                 </div>
               )}

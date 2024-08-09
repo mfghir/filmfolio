@@ -9,13 +9,13 @@ import { Button } from '../ui/button'
 import TitleSec from '@/utilities/title-sec'
 import CustomShape from '@/utilities/CustomShape'
 
-import { aboutUsSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
+import { aboutUsSec, featuresSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
 
 
 
 const HomePage = () => {
   return (
-    <section className="">
+    <>
 
       <section className="flex justify-center items-center flex-col relative">
         <div className="w-full rounded-3xl min-h-[calc(100vh-120px)] bg-no-repeat bg-center bg-cover brightness-50
@@ -197,14 +197,30 @@ const HomePage = () => {
       </section>
 
       {/* features sec */}
-      <section className="w-full h-60 my-12 lg:my-96">
-        <h3 className="galaxy-gradient-text text-2xl lg:text-3xl font-bold text-center">ویژگی های فیلم فولیو چیه؟</h3>
+      <section className="w-full mt-48 mb-32">
+        <h3 className="galaxy-gradient-text text-2xl lg:text-3xl font-bold text-center mb-8 lg:mb-12">ویژگی های فیلم فولیو چیه؟</h3>
 
-        <div className="">
-          sdd
+        <div className="overflow-hidden w-[280px] md:w-full">
+          <ul className="flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-4 lg:gap-8 w-full overflow-x-scroll lg:overflow-hidden">
+            {featuresSec.map((item, index) =>
+              <li key={index} className="galaxy-gradient-border  rounded-xl p-1">
+
+                <div className="w-[280px] h-[332px] p-6 flex flex-col items-center justify-center rounded-xl lg:w-auto bg-gray-200 dark:bg-gray-800">
+                {item.icon}
+
+                  <h4 className="text-xl font-bold mt-3 mb-4">{item.title}</h4>
+                  <p className="text-sm lg:text-base text-gray-300">{item.text}</p>
+                </div>
+              </li>
+            )}
+          </ul>
         </div>
       </section>
-    </section >
+
+
+
+
+    </>
   )
 }
 
