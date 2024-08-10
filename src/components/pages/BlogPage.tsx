@@ -99,10 +99,10 @@ const BlogPage = () => {
 
               <article className="mt-3 flex flex-col  gap-y-4">
                 <div className="flex flex-row gap-x-2">
-                  {item.tags.map(i =>
-                    <span className="text-xs px-[6px] py-1 rounded bg-gray-200 text-gray-500
+                  {item.tags.map((tag, index) =>
+                    <span key={index} className="text-xs px-[6px] py-1 rounded bg-gray-200 text-gray-500
                       dark:bg-gray-600 dark:text-gray-300">
-                      {i}
+                      {tag}
                     </span>
                   )}
                 </div>
@@ -132,8 +132,7 @@ const BlogPage = () => {
                 </div>
               </article>
             </motion.div>
-          )
-          }
+          )}
         </section>
       </>
 

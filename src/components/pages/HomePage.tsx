@@ -3,13 +3,13 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { IconArrowNarrowLeft } from '@tabler/icons-react'
+import { IconArrowNarrowLeft, IconChevronLeft } from '@tabler/icons-react'
 
 import { Button } from '../ui/button'
 import TitleSec from '@/utilities/title-sec'
 import CustomShape from '@/utilities/CustomShape'
 
-import { aboutUsSec, featuresSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
+import { aboutUsSec, blogPosts, featuresSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
 
 
 
@@ -203,10 +203,16 @@ const HomePage = () => {
         <div className="overflow-hidden w-[280px] md:w-full">
           <ul className="flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-4 lg:gap-8 w-full overflow-x-scroll lg:overflow-hidden">
             {featuresSec.map((item, index) =>
-              <li key={index} className="galaxy-gradient-border  rounded-xl p-1">
+              <li key={index} className="galaxy-gradient-border rounded-xl p-1">
 
                 <div className="w-[280px] h-[332px] p-6 flex flex-col items-center justify-center rounded-xl lg:w-auto bg-gray-200 dark:bg-gray-800">
-                {item.icon}
+                  <Image
+                    className="w-[120px] h-[120px]"
+                    width={200}
+                    height={200}
+                    src={item.icon}
+                    alt={item.title}
+                  />
 
                   <h4 className="text-xl font-bold mt-3 mb-4">{item.title}</h4>
                   <p className="text-sm lg:text-base text-gray-300">{item.text}</p>
@@ -217,7 +223,69 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* blog sec */}
+      <section className="flex flex-col gap-y-12 my-12 lg:my-32">
+        <TitleSec pageTitle="وبلاگ" pageLink="/blog" />
 
+        <div className="overflow-hidden w-[280px] md:w-full">
+          <ul className=" flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-4 lg:gap-8 w-full overflow-x-scroll lg:overflow-hidden">
+
+            {blogPosts.slice(0, 4).map((item) =>
+              <li key={item.id}
+                className="lg:w-auto bg-gray-100 dark:bg-gray-800 rounded-lg px-3 py-4"
+              >
+                <div className="w-[280px]">
+                  <Image
+                    width={400}
+                    height={400}
+                    src={item.articleImg}
+                    alt="Placeholder Image"
+                    className="w-full h-48 rounded-md object-cover"
+                  />
+
+                  <article className="mt-3 flex flex-col  gap-y-4">
+                    <div className="flex flex-row gap-x-2">
+                      {item.tags.map((tag, index) =>
+                        <span key={index} className="text-xs px-[6px] py-1 rounded bg-gray-200 text-gray-500
+                      dark:bg-gray-600 dark:text-gray-300">
+                          {tag}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="h-full flex flex-col gap-y-2">
+                      <div className="w-full font-bold text-xl mb-2 text-gray-900 dark:text-white line-clamp-1">{item.title}</div>
+                      <p className="text-gray-700 dark:text-gray-300 text-base line-clamp-2">{item.summary}</p>
+                    </div>
+
+                    <div className="flex justify-between items-center ">
+                      <div className="flex justify-between items-center gap-x-2">
+                        <Image
+                          width={400}
+                          height={400}
+                          src={item.authorImage}
+                          alt={item.authorName}
+                          className="w-9 h-9 rounded-full object-cover"
+                        />
+                        <span className="text-sm text-gray-400">{item.authorName}</span>
+                      </div>
+
+                      <Link href={`/blog/${item.id}`}
+                        className="flex items-center gap-x-1 text-xs text-gray-700 hover:text-gray-400 dark:text-gray-500 dark:hover:text-white duration-300">
+                        ادامه
+                        <IconChevronLeft stroke={1.5} size={18} />
+                      </Link>
+                    </div>
+                  </article>
+
+                </div>
+
+              </li>
+            )
+            }
+          </ul>
+        </div>
+      </section>
 
 
     </>
