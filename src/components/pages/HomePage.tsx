@@ -9,7 +9,9 @@ import { Button } from '../ui/button'
 import TitleSec from '@/utilities/title-sec'
 import CustomShape from '@/utilities/CustomShape'
 
-import { aboutUsSec, blogPosts, featuresSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
+import { aboutUsSec, blogPosts, faqList, featuresSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion'
+import HexagonGradientIcon from '@/utilities/HexagonGradientIcon'
 
 
 
@@ -287,7 +289,40 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* faq sec */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 lg:gap-y-12 my-12 lg:my-32">
+        <Image
+          className="lg:max-w-[550px] lg:max-h-[550px] w-fit h-fit object-fill rounded-3xl place-self-start self-center"
+          width={1024}
+          height={1024}
+          src="https://i.postimg.cc/13KF9d6N/faq.png"
+          alt="faq Image"
+        />
 
+
+        <div className="flex flex-col gap-y-12">
+          <TitleSec pageTitle="پرسش های پرتکرار" pageLink="/faq" />
+
+
+          <Accordion type="single" collapsible >
+            {faqList.slice(0, 6).map(item =>
+              <AccordionItem value={item.question} key={item.id} className="border-b-0">
+                <AccordionTrigger className="text-gray-900 dark:text-white text-base decoration-transparent hover:text-fuchsia-500 duration-300 
+                flex justify-start items-start gap-x-2
+                ">
+                  span
+                <HexagonGradientIcon sortType="" /> {item.question}
+                </AccordionTrigger>
+
+                <AccordionContent className="text-gray-700 dark:text-gray-300 text-sm">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            )}
+          </Accordion>
+        </div>
+
+      </section>
     </>
   )
 }

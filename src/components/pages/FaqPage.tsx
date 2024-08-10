@@ -24,29 +24,24 @@ const FaqPage = () => {
 
 
           <Accordion type="single" collapsible >
-            {
-              faqList.map(item =>
-                <AccordionItem value={item.question} key={item.id} className="border-b-gray-500">
-                  <AccordionTrigger className="text-gray-900 dark:text-white text-lg decoration-transparent hover:text-fuchsia-500 duration-300">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-700 dark:text-gray-300 text-sm">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              )
-            }
+            {faqList.map(item =>
+              <AccordionItem value={item.question} key={item.id} className="border-b-gray-500">
+                <AccordionTrigger className="text-gray-900 dark:text-white text-lg decoration-transparent hover:text-fuchsia-500 duration-300">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 dark:text-gray-300 text-sm">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            )}
           </Accordion>
-
-
-
         </div>
 
         <Image
           className="lg:max-w-[550px] lg:max-h-[550px] w-fit h-fit object-fill rounded-3xl place-self-end self-start"
           width={1024}
           height={1024}
-          src="https://i.postimg.cc/vHkcGgj6/faq.jpg"
+          src="https://i.postimg.cc/13KF9d6N/faq.png"
           alt="faq pic"
         />
       </section>
