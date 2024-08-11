@@ -12,6 +12,7 @@ import CustomShape from '@/utilities/CustomShape'
 import { aboutUsSec, blogPosts, faqList, featuresSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion'
 import HexagonGradientIcon from '@/utilities/HexagonGradientIcon'
+import { Textarea } from '../ui/textarea'
 
 
 
@@ -32,8 +33,6 @@ const HomePage = () => {
           <Button
             variant="default"
             className="galaxy-gradient-bg text-base font-bold text-white px-10"
-          // iconPlacement="right"
-          // onClick={() => lenis?.scrollTo("#fans-title", { lerp: 0.02 })}
           >
             بزن بریم
           </Button>
@@ -290,28 +289,18 @@ const HomePage = () => {
       </section>
 
       {/* faq sec */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 lg:gap-y-12 my-12 lg:my-32">
-        <Image
-          className="lg:max-w-[550px] lg:max-h-[550px] w-fit h-fit object-fill rounded-3xl place-self-start self-center"
-          width={1024}
-          height={1024}
-          src="https://i.postimg.cc/13KF9d6N/faq.png"
-          alt="faq Image"
-        />
-
+      <section className="grid grid-cols-1 lg:grid-cols-2 lg:gap-y-12 my-12 lg:my-32 place-content-center">
 
         <div className="flex flex-col gap-y-12">
           <TitleSec pageTitle="پرسش های پرتکرار" pageLink="/faq" />
 
-
           <Accordion type="single" collapsible >
             {faqList.slice(0, 6).map(item =>
               <AccordionItem value={item.question} key={item.id} className="border-b-0">
-                <AccordionTrigger className="text-gray-900 dark:text-white text-base decoration-transparent hover:text-fuchsia-500 duration-300 
-                flex justify-start items-start gap-x-2
-                ">
-                  span
-                <HexagonGradientIcon sortType="" /> {item.question}
+                <AccordionTrigger className="text-gray-900 dark:text-white text-base decoration-transparent flex justify-between items-start gap-x-2">
+                  <span className="flex gap-x-2 hover:text-gray-400 duration-300 ">
+                    <HexagonGradientIcon sortType="fill" /> {item.question}
+                  </span>
                 </AccordionTrigger>
 
                 <AccordionContent className="text-gray-700 dark:text-gray-300 text-sm">
@@ -322,6 +311,47 @@ const HomePage = () => {
           </Accordion>
         </div>
 
+        <Image
+          className="lg:max-w-[450px] lg:max-h-[450px] w-fit h-fit object-fill rounded-full  place-self-end self-center"
+          width={1024}
+          height={1024}
+          src="https://i.postimg.cc/13KF9d6N/faq.png"
+          alt="faq Image"
+        />
+      </section>
+
+
+      {/* suggestion sec */}
+      <section className="galaxy-gradient-border rounded-xl p-1 relative grid grid-cols-1 lg:grid-cols-2 my-12 mb-40 md:mb-60 lg:my-32 min-h-96">
+        <Image
+          className="w-fit h-fit md:max-w-[350px] md:max-h-[350px]  lg:max-w-[450px] lg:max-h-[450px]  object-fill rounded-3xl self-center absolute
+          translate-y-52 md:translate-y-60 lg:translate-y-0
+          -translate-x-1/2 left-1/2  lg:translate-x-28
+          "
+          width={1024}
+          height={1024}
+          src="https://i.postimg.cc/RZXrqL4q/suggestion.png"
+          alt="suggestion Image"
+        />
+
+
+        <div className="rounded-xl  w-full bg-gray-200 dark:bg-gray-800 col-span-2 flex md:justify-center lg:justify-end">
+
+          <div className=" md:w-3/5 md:mt-10 lg:w-2/5 lg:mt-0 lg:content-center px-2 pt-4 lg:p-12 lg:ml-32">
+            <h4 className="text-2xl lg:text-3xl font-bold galaxy-gradient-text mb-1">همراه با شما، رو به جلو!</h4>
+            <p className="text-sm lg:text-lg text-gray-800 dark:text-white">هرپیشنهاد و یا نظری داری ، برامون بنویس</p>
+
+            <div className="w-full mt-4 flex flex-col gap-y-2 md:flex-row md:gap-x-3 md:items-end">
+              <Textarea placeholder="پیام" className="border-gray-400 bg-transparent" />
+              <Button
+                variant="default"
+                className="galaxy-gradient-bg text-base font-bold text-white px-10 md:w-fit"
+              >
+                ارسال
+              </Button>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   )
