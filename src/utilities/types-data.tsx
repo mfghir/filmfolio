@@ -1,13 +1,5 @@
 import { IconAward, IconBulb, IconDashboard, IconListNumbers, IconListSearch, IconMasksTheater, IconMessages, IconRosetteDiscountCheck, IconSocial, IconStars, IconUsers, IconWriting } from "@tabler/icons-react";
 import {
-  ThumbsUp,
-  ThumbsDown,
-  Star,
-  Heart,
-  HeartOff,
-  ArrowDown,
-  ArrowRight,
-  ArrowUp,
   Gauge,
   ListFilter,
   SquareUserRound,
@@ -558,9 +550,6 @@ export const aboutUsSec = [
     text: "چشم‌انداز ما تبدیل شدن به مرجع اصلی نقد و بررسی فیلم‌ها تو فضای مجازیه. ما به دنبال ایجاد یک پایگاه داده گسترده از فیلم‌ها و نقدهای متنوع هستیم که بتونه به علاقه‌مندان به فیلم و سریال در انتخاب فیلم‌های بعدیشون کمک کنه."
   },
 ]
-
-
-
 
 
 

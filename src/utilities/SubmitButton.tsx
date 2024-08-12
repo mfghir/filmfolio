@@ -22,7 +22,7 @@ const SubmitButton = ({ loading }: { loading: boolean }) => {
               stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" className="text-gray-900">
             </path>
           </svg>
-          Loading ...
+          در حال ارسال ...
         </>
         :
         'ارسال'
