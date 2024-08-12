@@ -21,7 +21,8 @@ const BlogPage = () => {
     if (page > 0) {
       loadCards();
     }
-  }, [page]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page,initialItems,itemsPerPage]);
 
   const loadCards = () => {
     const offset = initialItems + (page - 1) * itemsPerPage;

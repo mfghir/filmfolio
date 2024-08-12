@@ -322,18 +322,15 @@ const HomePage = () => {
 
 
       {/* suggestion sec */}
-      <section className="galaxy-gradient-border rounded-xl p-1 relative grid grid-cols-1 lg:grid-cols-2 my-12 mb-40 md:mb-60 lg:my-32 min-h-96">
+      <section className="galaxy-gradient-border rounded-xl p-1 relative grid grid-cols-1 lg:grid-cols-2 my-12 mb-40 md:mb-60 lg:my-32 min-h-96 lg:min-h-72">
         <Image
-          className="w-fit h-fit md:max-w-[350px] md:max-h-[350px]  lg:max-w-[450px] lg:max-h-[450px]  object-fill rounded-3xl self-center absolute
-          translate-y-52 md:translate-y-60 lg:translate-y-0
-          -translate-x-1/2 left-1/2  lg:translate-x-28
-          "
+          className="w-fit h-fit md:max-w-[350px] md:max-h-[350px]  lg:max-w-[450px] lg:max-h-[450px] object-fill rounded-3xl self-center absolute
+          translate-y-52 md:translate-y-60 lg:translate-y-0  -translate-x-1/2 left-1/2  lg:translate-x-28"
           width={1024}
           height={1024}
           src="https://i.postimg.cc/RZXrqL4q/suggestion.png"
           alt="suggestion Image"
         />
-
 
         <div className="rounded-xl  w-full bg-gray-200 dark:bg-gray-800 col-span-2 flex md:justify-center lg:justify-end">
 

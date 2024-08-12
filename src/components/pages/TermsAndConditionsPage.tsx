@@ -14,8 +14,8 @@ const TermsAndConditionsPage = () => {
         </div>
 
         <ul className="my-10 ">
-          {termsItems.map(item =>
-            <li className="my-8 flex flex-col gap-y-2">
+          {termsItems.map((item,index) =>
+            <li key={index} className="my-8 flex flex-col gap-y-2">
               <div className="flex gap-x-2">
                 <HexagonGradientIcon sortType="" />
                 <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-200">{item.title}</h4>

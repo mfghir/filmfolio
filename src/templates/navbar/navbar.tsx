@@ -18,8 +18,8 @@ import { UserInfo } from "@/utilities/types-data";
 import { LanguageToggle } from "@/utilities/language-toggle";
 
 
-const Navbar = () => {
-  // const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
+// const Navbar = () => {
+  const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
   const { data: session, status } = useSession();
   const path = usePathname();
 
@@ -80,8 +80,8 @@ const Navbar = () => {
           </div> */}
 
           <div className="lg:hidden">
-            PhoneNav
-            {/* <PhoneNav userInfo={userInfo} /> */}
+            {/* PhoneNav */}
+            <PhoneNav userInfo={userInfo} />
           </div>
 
 {/*           
