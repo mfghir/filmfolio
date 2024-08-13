@@ -8,8 +8,9 @@ export const metadata: Metadata = {
 }
 
 
+{/* @ts-ignore */ }
 
-const Blog = ({ blogId }: { blogId: string }) => {
+const page = ({ blogId }: { blogId: string }) => {
 
   const breadcrumbItems = [
     { title: "خانه", link: "/" },
@@ -27,4 +28,4 @@ const Blog = ({ blogId }: { blogId: string }) => {
   );
 };
 
-export default Blog;
+export default page;

@@ -63,6 +63,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                   {children}
                 </main>
                 <Toaster />
+
                 <Footer />
               </ThemeProvider>
             </SessionProviderComp>

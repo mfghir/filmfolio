@@ -1,4 +1,5 @@
 import { IconAward, IconBulb, IconDashboard, IconListNumbers, IconListSearch, IconMasksTheater, IconMessages, IconRosetteDiscountCheck, IconSocial, IconStars, IconUsers, IconWriting } from "@tabler/icons-react";
+import { m } from "framer-motion";
 import {
   Gauge,
   ListFilter,
@@ -595,3 +596,97 @@ export const featuresSec = [
     icon: "https://svgshare.com/i/19BU.svg"
   }
 ];
+
+
+
+
+
+
+
+
+export const theBestUSersList = [
+  // {
+  //   id: 1,
+  //   userPic: "",
+  //   userId: "",
+  //   userName: "",
+  //   userComments: "",
+  //   userScore: ""
+
+  // }
+
+  {
+    id: 1,
+    userPic: "https://i.postimg.cc/VkQsqMbr/team-mate-4.png",
+    userId: "sina-rahmaniii",
+    userName: "سینا رحمانی",
+    userComments: "270",
+    userScore: "120"
+
+  },
+  {
+    id: 2,
+    userPic: "https://i.postimg.cc/JhK1C2YZ/team-mate-3.png",
+    userId: "nahid410",
+    userName: "ناهید احدی",
+    userComments: "320",
+    userScore: "95"
+
+  },
+  {
+    id: 3,
+    userPic: "https://i.postimg.cc/Pq6PQJjg/team-mate-2.png" ,
+    userId: "yekta987",
+    userName: "یکتا ناصری",
+    userComments: "124",
+    userScore: "92"
+
+  },
+  {
+    id: 4,
+    userPic: "https://i.postimg.cc/vZbTRfHR/team-mate-1.png",
+    userId: "omid608",
+    userName: "امید بهبهانی",
+    userComments: "100",
+    userScore: "90"
+  },
+
+  {
+    id: 5,
+    userPic: "https://i.postimg.cc/rpN1DtvM/uer-pic.jpg",
+    userId: "majid0909",
+    userName: "مجید قویانی",
+    userComments: "120",
+    userScore: "84"
+
+  },
+  {
+    id: 6,
+    userPic: "https://i.postimg.cc/rpN1DtvM/uer-pic.jpg",
+    userId: "tnia89",
+    userName: "تینا رضایی",
+    userComments: "220",
+    userScore: "80"
+
+  },
+  {
+    id: 7,
+    userPic: "https://i.postimg.cc/rpN1DtvM/uer-pic.jpg",
+    userId: "meli12",
+    userName: "ملینا موسوی",
+    userComments: "123",
+    userScore: "75"
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+]
