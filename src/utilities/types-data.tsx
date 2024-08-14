@@ -602,7 +602,7 @@ export const featuresSec = [
 
 
 
-
+// -----------------------------------------------------------------------------------------------------------
 
 export const theBestUSersList = [
   // {
@@ -635,7 +635,7 @@ export const theBestUSersList = [
   },
   {
     id: 3,
-    userPic: "https://i.postimg.cc/Pq6PQJjg/team-mate-2.png" ,
+    userPic: "https://i.postimg.cc/Pq6PQJjg/team-mate-2.png",
     userId: "yekta987",
     userName: "یکتا ناصری",
     userComments: "124",
@@ -680,13 +680,97 @@ export const theBestUSersList = [
   }
 
 
+]
 
 
 
+// let options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' }; // مشخص کردن نوع
+// let randomDate = new Date(Math.random() * (new Date().getTime() - new Date(0).getTime()) + new Date(0).getTime()).toLocaleDateString('fa-IR', options);
 
 
+export const topOpinionsList = [
+  {
+    id: 1,
+    userPic: "https://i.postimg.cc/JhK1C2YZ/team-mate-3.png",
+    userGenre: "کمدی",
+    userName: "سینا رحمانی",
+    opDate: "16 مرداد 1403",
+    opText: "فیلم Inception یکی از بهترین آثار کریستوفر نولانه که به شما اجازه می‌ده تا توی دنیای رویاها غوطه‌ور بشید. داستان پیچیده و بازی‌های خارق‌العاده بازیگران واقعاً آدم رو به فکر فرو می‌بره. هر بار که این فیلم رو تماشا می‌کنم، نکات جدیدی کشف می‌کنم.",
+    like: "45",
+    dislike: "20",
+    userScore: "120"
 
+  },
+  {
+    id: 2,
+    userPic: "https://i.postimg.cc/VkQsqMbr/team-mate-4.png",
+    userGenre: "علمی-تخیلی",
+    userName: "ناهید احدی",
+    opDate: "10 مرداد 1403",
+    opText: "فیلم Interstellar یکی از بهترین آثار علمی-تخیلی است که به شما اجازه می‌دهد تا به عمق کیهان و زمان سفر کنید. داستان پیچیده و بازی‌های خارق‌العاده بازیگران واقعاً آدم رو به فکر فرو می‌بره. هر بار که این فیلم رو تماشا می‌کنم، نکات جدیدی کشف می‌کنم.",
+    like: "50",
+    dislike: "15",
+    userScore: "95"
 
+  },
+  {
+    id: 3,
+    userPic: "https://i.postimg.cc/Pq6PQJjg/team-mate-2.png",
+    userGenre: "درام",
+    userName: "یکتا ناصری",
+    opDate: "6 مرداد 1403",
+    opText: "فیلم The Shawshank Redemption یکی از بهترین فیلم‌های تاریخ سینما است. داستان این فیلم به گونه‌ای است که شما را به فکر فرو می‌برد و به شما می‌آموزد که چگونه در شرایط سخت مقاومت کنید. بازی‌های خارق‌العاده بازیگران و داستان جذاب فیلم، آن را به یکی از فیلم‌های مورد علاقه من تبدیل کرده است.",
+    like: "30",
+    dislike: "10",
+    userScore: "92"
 
+  },
+  {
+    id: 4,
+    userPic: "https://i.postimg.cc/vZbTRfHR/team-mate-1.png",
+    userGenre: "ترسناک",
+    userName: "امید بهبهانی",
+    opDate: "27 تیر 1403",
+    opText: "فیلم The Dark Knight یکی از بهترین فیلم‌های تاریخ سینما است. داستان این فیلم به گونه‌ای است که شما را به فکر فرو می‌برد و به شما می‌آموزد که چگونه در شرایط سخت مقاومت کنید. بازی‌های خارق‌العاده بازیگران و داستان جذاب فیلم، آن را به یکی از فیلم‌های مورد علاقه من تبدیل کرده است.",
+    like: "40",
+    dislike: "5",
+    userScore: "98"
+  },
 
+  {
+    id: 5,
+    userPic: "https://i.postimg.cc/rpN1DtvM/uer-pic.jpg",
+    userGenre: "کلاسیک",
+    userName: "مجید قویانی",
+    opDate: "25 مرداد 1403",
+    opText: "فیلم The Shawshank Redemption یکی از بهترین فیلم‌های تاریخ سینما است. داستان این فیلم به گونه‌ای است که شما را به فکر فرو می‌برد و به شما می‌آموزد که چگونه در شرایط سخت مقاومت کنید. بازی‌های خارق‌العاده بازیگران و داستان جذاب فیلم، آن را به یکی از فیلم‌های مورد علاقه من تبدیل کرده است.",
+    like: "60",
+    dislike: "20",
+    userScore: "84"
+
+  },
+  {
+    id: 6,
+    userPic: "https://i.postimg.cc/rpN1DtvM/uer-pic.jpg",
+    userGenre: "تاریخی",
+    userName: "تینا رضایی",
+    opDate: "22 مرداد 1403",
+    opText: "فیلم The Matrix یکی از بهترین فیلم‌های علمی-تخیلی است که به شما اجازه می‌دهد تا به عمق جهان و زمان سفر کنید. داستان پیچیده و بازی‌های خارق‌العاده بازیگران واقعاً آدم رو به فکر فرو می‌بره. هر بار که این فیلم رو تماشا می‌کنم، نکات جدیدی کشف می‌کنم.",
+    like: "70",
+    dislike: "20",
+    userScore: "85"
+
+  },
+  {
+    id: 7,
+    userPic: "https://i.postimg.cc/rpN1DtvM/uer-pic.jpg",
+    userGenre: "جنایی",
+    userName: "ملینا موسوی",
+    opDate: "6 تیر 1403",
+    opText: "فیلم The Matrix یکی از بهترین فیلم‌های علمی-تخیلی است که به شما اجازه می‌دهد تا به عمق جهان و زمان سفر کنید. داستان پیچیده و بازی‌های خارق‌العاده بازیگران واقعاً آدم رو به فکر فرو می‌بره. هر بار که این فیلم رو تماشا می‌کنم، نکات جدیدی کشف می‌کنم.",
+    like: "80",
+    dislike: "10",
+    userScore: "95"
+
+  }
 ]

@@ -4,12 +4,12 @@ const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      // required: true,
-      // default: () => `user_${Math.random().toString(36).substr(2, 5)}`,
+      required: true,
+      default: () => `user_${Math.random().toString(36).substr(2, 5)}`,
     },
     name: {
       type: String,
-      // required: true,
+      required: true,
     },
     email: {
       type: String,
@@ -17,7 +17,7 @@ const UserSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      // required: true,
+      required: true,
     },
     role: {
       type: String,

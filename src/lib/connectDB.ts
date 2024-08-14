@@ -34,7 +34,7 @@ async function connectDB() {
 
   try {
     await mongoose.connect(
-      "mongodb+srv://fatemeghafari77:NoERisX99wBrN4Bl@cluster0.xhmztka.mongodb.net/filmfolioTest",
+      `mongodb+srv://${process.env.MONGO_USER!}:${process.env.MONGO_PASS!}@cluster0.xhmztka.mongodb.net/filmfolioTest`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,

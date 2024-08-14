@@ -19,8 +19,8 @@ import { generatePassword } from "@/utilities/ninjas-api";
 
 import { Copy, Dices, KeyRound } from "lucide-react";
 import { useToast } from "../ui/use-toast";
-
 import { Input } from "@/components/ui/input"
+
 import {
   Form,
   FormControl,
@@ -30,17 +30,19 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import SubmitButton from "@/utilities/SubmitButton";
+import Dots from "@/utilities/dots";
+import Loading from "@/utilities/loading";
 
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Username must be at least 2 characters.", }),
+  name: z.string().min(2, { message: "نام کاربری باید حداقل ۲ کاراکتر داشته باشد.", }),
   email: z.string()
     .email("This is not a valid email.")
-    .min(5, { message: "This field has to be filled." }),
+    .min(5, { message: "این فیلد باید پر شود." }),
   password: z.string()
     .min(8, { message: 'You must be at least 8 character' })
     .refine((value) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$/.test(value),
-      { message: 'Password must contain at least one letter, one number, and one special character' }
+      { message: "رمز باید حداقل یک حرف، یک عدد و یک کاراکتر ویژه داشته باشد" }
     ),
 })
 
@@ -78,8 +80,8 @@ export default function RegisterForm() {
 
       toast({
         variant: "success",
-        title: "Success",
-        description: "Successfully Registered!"
+        title: "موفقیت",
+        description: "ثبت نام با موفقیت انجام شد!"
       });
 
       // biome-ignore lint/suspicious/noExplicitAny: <explanation>
@@ -88,7 +90,7 @@ export default function RegisterForm() {
 
       toast({
         variant: "destructive",
-        title: "Uh oh! Something went wrong.",
+        title: "اوه! چیزی اشتباه رفت.",
         description: error,
       });
     } finally {
@@ -210,21 +212,21 @@ export default function RegisterForm() {
     });
 
 
-  const handleGeneratePassword = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-    refetch();
-  };
+  // const handleGeneratePassword = (e: { preventDefault: () => void; }) => {
+  //   e.preventDefault();
+  //   refetch();
+  // };
 
   const copyHandler = (text: string) => {
     navigator.clipboard.writeText(text)
     toast({
       variant: "success",
-      title: "Copy to clipboard! ✔",
+      title: "به کلیپبورد کپی شد! ✔",
     })
   }
 
   if (sessionStatus === "loading") {
-    return <h1>Loading...</h1>;
+    return <Loading />
   }
 
   return (
@@ -395,7 +397,7 @@ export default function RegisterForm() {
           <GoogleButton text="ثبتنام" />
 
           <p className="text-sm mt-4 flex gap-x-2">
-            از قبل حساب دارید؟
+            حساب دارید؟
             <Link className="galaxy-gradient-text" href="/login" >
               ورود
             </Link>

@@ -21,21 +21,22 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useState } from "react";
 
 import axios from "axios";
 import SubmitButton from "@/utilities/SubmitButton";
+import Loading from "@/utilities/loading";
 
 
 const formSchema = z.object({
   email: z.string()
-    .email("This is not a valid email.")
-    .min(5, { message: "This field has to be filled." }),
+    .email("این یک ایمیل معتبر نیست.")
+    .min(5, { message: "این فیلد باید پر شود." }),
   password: z.string()
-    .min(8, { message: 'You must be at least 8 character' })
+    .min(8, { message: "باید حداقل ۸ کاراکتر باشد" })
     .refine((value) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$/.test(value),
-      { message: 'Password must contain at least one letter, one number, and one special character' }
+      { message: "رمز عبور باید حداقل یک حرف، یک عدد و یک کاراکتر ویژه داشته باشد" }
     ),
 })
 
@@ -45,6 +46,9 @@ export default function LoginForm() {
   const router = useRouter();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+
+  const { status: sessionStatus } = useSession();
+
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -73,8 +77,8 @@ export default function LoginForm() {
 
       toast({
         variant: "success",
-        title: "Success",
-        description: "Welcome back"
+        title: "موفقیت",
+        description: "خوش آمدید"
       });
 
       // if (res?.error) {
@@ -93,7 +97,7 @@ export default function LoginForm() {
 
       toast({
         variant: "destructive",
-        title: "Uh oh! Something went wrong.",
+        title: "اوه! چیزی اشتباه شد.",
         description: error,
       });
     }
@@ -122,6 +126,10 @@ export default function LoginForm() {
   //   }
   // };
 
+
+  if (sessionStatus === "loading") {
+    return <Loading />
+  }
 
   return (
     <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit place-content-center">

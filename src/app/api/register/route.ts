@@ -12,13 +12,13 @@ export async function POST(req: Request) {
     const hashedPassword = await bcrypt.hash(userData.password, 10);
 
     await connectDB();
-    // await User.create({ ...userData, password: hashedPassword });
-    await User.create({
-      // name: "fateme ghafari",
-      // password: "Mfghir98**",
-      email: "fatemeghafari98@gmail.com",
-      // username: "fatemeweb",
-    });
+    await User.create({ ...userData, password: hashedPassword });
+    // await User.create({
+    //   name: "fateme ghafari",
+    //   password: "Mfghir98**",
+    //   email: "fatemeghafari98@gmail.com",
+    //   username: "fatemeweb",
+    // });
 
     return NextResponse.json({ message: "User registered." }, { status: 201 });
   } catch (error) {
