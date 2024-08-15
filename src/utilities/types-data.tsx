@@ -774,3 +774,119 @@ export const topOpinionsList = [
 
   }
 ]
+
+
+export const topMoviesList = [
+  {
+    id: 1,
+    moviePic: "https://i.postimg.cc/V6ZGv0R8/poster1.png",
+    title: "The Dark Knight",
+    comments: "120",
+    score: "98"
+  },
+  {
+    id: 2,
+    moviePic: "https://i.postimg.cc/3rJYB9Bn/poster2.jpg",
+    title: "The Shawshank Redemption",
+    comments: "150",
+    score: "92"
+  },
+  {
+    id: 3,
+    moviePic: "https://i.postimg.cc/4x4K6B1n/poster3.jpg",
+    title: "The Godfather",
+    comments: "180",
+    score: "96"
+  },
+  {
+    id: 4,
+    moviePic: "https://i.postimg.cc/9fG9B9Bn/poster4.jpg",
+    title: "The Matrix",
+    comments: "200",
+    score: "90"
+  },
+  {
+    id: 5,
+    moviePic: "https://i.postimg.cc/3rJYB9Bn/poster5.jpg",
+    title: "Pulp Fiction",
+    comments: "220",
+    score: "95"
+  },
+  {
+    id: 6,
+    moviePic: "https://i.postimg.cc/4x4K6B1n/poster6.jpg",
+    title: "The Lord of the Rings",
+    comments: "250",
+    score: "94"
+  },
+  {
+    id: 7,
+    moviePic: "https://i.postimg.cc/9fG9B9Bn/poster7.jpg",
+    title: "The Silence of the Lambs",
+    comments: "280",
+    score: "93"
+  },
+  {
+    id: 8,
+    moviePic: "https://i.postimg.cc/3rJYB9Bn/poster8.jpg",
+    title: "Star Wars",
+    comments: "300",
+    score: "91"
+  },
+  {
+    id: 9,
+    moviePic: "https://i.postimg.cc/4x4K6B1n/poster9.jpg",
+    title: "The Princess Bride",
+    comments: "320",
+    score: "92"
+  },
+  {
+    id: 10,
+    moviePic: "https://i.postimg.cc/9fG9B9Bn/poster10.jpg",
+    title: "The Terminator",
+    comments: "350",
+    score: "90"
+  },
+  {
+    id: 11,
+    moviePic: "https://i.postimg.cc/3rJYB9Bn/poster11.jpg",
+    title: "The Hunger Games",
+    comments: "380",
+    score: "94"
+  },
+  {
+    id: 12,
+    moviePic: "https://i.postimg.cc/4x4K6B1n/poster12.jpg",
+    title: "The Avengers",
+    comments: "400",
+    score: "95"
+  },
+  {
+    id: 13,
+    moviePic: "https://i.postimg.cc/9fG9B9Bn/poster13.jpg",
+    title: "The Dark Knight Rises",
+    comments: "420",
+    score: "93"
+  },
+  {
+    id: 14,
+    moviePic: "https://i.postimg.cc/3rJYB9Bn/poster14.jpg",
+    title: "Inception",
+    comments: "450",
+    score: "92"
+  },
+  {
+    id: 15,
+    moviePic: "https://i.postimg.cc/4x4K6B1n/poster15.jpg",
+    title: "Interstellar",
+    comments: "480",
+    score: "91"
+  },
+  {
+    id: 16,
+    moviePic: "https://i.postimg.cc/9fG9B9Bn/poster16.jpg",
+    title: "The Martian",
+    comments: "500",
+    score: "90"
+  }
+]
