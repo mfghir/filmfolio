@@ -1,17 +1,16 @@
 "use client"
 
 import Image from 'next/image'
-import Link from 'next/link'
-import { IconCrown, IconHeart, IconInfoCircle, IconMessageCircle, IconMessageReport, IconStar, IconThumbDown, IconThumbUp } from '@tabler/icons-react'
+import { IconHeart, IconInfoCircle, IconMessageCircle, IconStar } from '@tabler/icons-react'
 
 import { convertToPersianNumbers, gregorianToPersian } from '@/utilities/funcs'
 import { theBestUSersList, topMoviesList, topOpinionsList } from '@/utilities/types-data'
 import TitleSec from '@/utilities/title-sec'
 
 import { Button } from '../ui/button'
-import Report from '@/utilities/report'
 import CmCard from '@/templates/cm-card'
 import ProfileCard from '@/templates/profile-card'
+import ModalMovieDetails from '@/templates/modal-movie-details'
 
 
 export const TheBestPage = () => {
@@ -45,7 +44,7 @@ export const TheBestPage = () => {
         <TitleSec pageTitle="برترین کاربران" pageLink="/the-best/top-users" />
 
         <div className="overflow-hidden w-[280px] md:w-full">
-          <ul className=" flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-4 lg:gap-8 w-full overflow-x-scroll lg:overflow-hidden">
+          <ul className=" flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-4 w-full overflow-x-scroll lg:overflow-hidden">
             {
               theBestUSersList.slice(0, 4).map((item) =>
                 <li key={item.id} className="lg:w-auto bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center">
@@ -62,7 +61,7 @@ export const TheBestPage = () => {
         <TitleSec pageTitle="برترین نظرات" pageLink="/the-best/top-opinions" />
 
         <div className="overflow-hidden w-[280px] md:w-full">
-          <ul className=" flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-3 lg:gap-8 w-full overflow-x-scroll lg:overflow-hidden">
+          <ul className="flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-3 w-full overflow-x-scroll lg:overflow-hidden">
             {
               topOpinionsList.slice(0, 3).map((item) =>
                 <li key={item.id} className="lg:w-auto bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
@@ -79,12 +78,12 @@ export const TheBestPage = () => {
         <TitleSec pageTitle="برترین فیلم ها" pageLink="/the-best/top-movies" />
 
         <div className="overflow-hidden w-[280px] md:w-full">
-          <ul className=" flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-4 lg:gap-8 w-full overflow-x-scroll lg:overflow-hidden">
+          <ul className="flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-5 w-full overflow-x-scroll lg:overflow-hidden">
             {
               topMoviesList.slice(0, 5).map((item) =>
-                <li key={item.id} className="lg:w-auto bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center">
-                  <div className="w-[280px] lg:w-full flex flex-col items-center justify-center gap-y-4 p-4">
+                <li key={item.id} className="lg:w-auto bg-gray-100 dark:bg-gray-800 rounded-lg">
 
+                  <div className="w-[230px] lg:w-full flex flex-col items-center justify-center rounded-lg overflow-hidden">
                     <Image
                       width={400}
                       height={400}
@@ -92,42 +91,35 @@ export const TheBestPage = () => {
                       alt="moviePic"
                       className="w-full h-48 object-cover"
                     />
+                    <article className="w-full  flex flex-col items-center justify-center gap-y-4 p-4">
+                      <ul className="w-full flex justify-between items-center text-sm text-gray-400">
+                        <li className="flex flex-row gap-x-1 items-center ">
+                          <span>{convertToPersianNumbers(item.comments)}</span>
+                          <IconMessageCircle stroke={1.5} size={18} color="#e879f9" />
+                        </li>
 
+                        <li className="flex flex-row gap-x-1 items-center">
+                          <span>{convertToPersianNumbers(item.score)}</span>
+                          <IconStar stroke={1.5} size={18} color="#facc15" />
+                        </li>
+                      </ul>
 
-                    <ul className="w-full flex justify-between items-center text-sm text-gray-400">
-                      <li className="flex flex-row gap-x-1 items-center ">
-                        <span>{convertToPersianNumbers(item.comments)}</span>
-                        <IconMessageCircle stroke={1.5} size={18} color="#e879f9" />
-                      </li>
+                      <h4 className=" text-lg font-bold  line-clamp-1 bg-red-300 flex-wrap-reverse text-center">{item.title}</h4>
 
-                      <li className="flex flex-row gap-x-1 items-center">
-                        <span>{convertToPersianNumbers(item.score)}</span>
-                        <IconStar stroke={1.5} size={18} color="#facc15" />
-                      </li>
-                    </ul>
+                      <div className=" w-full flex justify-between items-center">
+                        <ModalMovieDetails item={item} />
 
+                        <Button variant="default"
+                          className="w-fit py-2 px-4 font-semibold text-base text-white galaxy-gradient-bg"
+                        >
+                          مشاهده
+                        </Button>
 
-                    <h4 className="text-lg font-bold">{item.title}</h4>
-
-
-
-                    <div className="flex justify-between items-center">
-                      <Button variant="ghost" size="icon">
-                        <IconInfoCircle stroke={1.5} />
-                      </Button>
-
-                      <Button
-                        variant="default"
-                        className="w-fit py-2 px-4 font-semibold text-base text-white galaxy-gradient-bg"
-                      >
-                        مشاهده
-                      </Button>
-
-                      <Button variant="ghost" size="icon" className="w-fit h-fit bg-red-600">
-                        <IconHeart stroke={1.5} />
-                      </Button>
-
-                    </div>
+                        <Button variant="ghost" size="icon" className="w-fit h-fit hover:text-fuchsia-500 duration-300">
+                          <IconHeart stroke={1.5} />
+                        </Button>
+                      </div>
+                    </article>
 
                   </div>
                 </li>

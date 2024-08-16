@@ -19,7 +19,7 @@ interface ReportProps {
   cmId: number;
 }
 
-const Report = ({ cmId }: ReportProps) => {
+const ModalReport = ({ cmId }: ReportProps) => {
   const [reportText, setReportText] = useState("");
 
   const handleReportSubmit = async () => {
@@ -79,8 +79,7 @@ const Report = ({ cmId }: ReportProps) => {
         </div>
       </DialogContent>
     </Dialog>
-
   )
 }
 
-export default Report
+export default ModalReport

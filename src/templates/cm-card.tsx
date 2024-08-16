@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { IconStar, IconThumbDown, IconThumbUp } from "@tabler/icons-react"
 
 import { convertToPersianNumbers, gregorianToPersian } from "@/utilities/funcs"
-import Report from "@/utilities/report"
+import ModalReport from "./modal-report"
 
 
 
@@ -26,7 +26,6 @@ interface itemTypes {
 
 const CmCard = ({ item }: { item: itemTypes }) => {
   return (
-
     <div className="w-[280px] md:w-96">
 
       <article className="mt-3 flex justify-between flex-row gap-y-4">
@@ -91,7 +90,7 @@ const CmCard = ({ item }: { item: itemTypes }) => {
         </ul>
 
 
-        <Report cmId={item.id} />
+        <ModalReport cmId={item.id} />
       </article>
 
 

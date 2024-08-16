@@ -786,49 +786,49 @@ export const topMoviesList = [
   },
   {
     id: 2,
-    moviePic: "https://i.postimg.cc/3rJYB9Bn/poster2.jpg",
+    moviePic: "https://i.postimg.cc/4y3DFT8J/poster5.png",
     title: "The Shawshank Redemption",
     comments: "150",
     score: "92"
   },
   {
     id: 3,
-    moviePic: "https://i.postimg.cc/4x4K6B1n/poster3.jpg",
+    moviePic: "https://i.postimg.cc/bvH4yvWy/poster8.png",
     title: "The Godfather",
     comments: "180",
     score: "96"
   },
   {
     id: 4,
-    moviePic: "https://i.postimg.cc/9fG9B9Bn/poster4.jpg",
+    moviePic: "https://i.postimg.cc/FszvT0qj/poster6.png",
     title: "The Matrix",
     comments: "200",
     score: "90"
   },
   {
     id: 5,
-    moviePic: "https://i.postimg.cc/3rJYB9Bn/poster5.jpg",
+    moviePic: "https://i.postimg.cc/FK5QF8KZ/poster7.png",
     title: "Pulp Fiction",
     comments: "220",
     score: "95"
   },
   {
     id: 6,
-    moviePic: "https://i.postimg.cc/4x4K6B1n/poster6.jpg",
+    moviePic: "https://i.postimg.cc/Gph6pRCv/poster4.png",
     title: "The Lord of the Rings",
     comments: "250",
     score: "94"
   },
   {
     id: 7,
-    moviePic: "https://i.postimg.cc/9fG9B9Bn/poster7.jpg",
+    moviePic: "https://i.postimg.cc/50rgbd49/poster3.png",
     title: "The Silence of the Lambs",
     comments: "280",
     score: "93"
   },
   {
     id: 8,
-    moviePic: "https://i.postimg.cc/3rJYB9Bn/poster8.jpg",
+    moviePic: "https://i.postimg.cc/xd0tP3pQ/poster2.png",
     title: "Star Wars",
     comments: "300",
     score: "91"
