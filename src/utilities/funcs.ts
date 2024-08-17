@@ -37,11 +37,18 @@ export const gregorianToPersian = (gregorianDate: Date): string => {
 
 
 
-
-
-
-
-
-
-
-
+export const fetchMovieList = async () => {
+  try {
+    const response = await fetch(process.env.TMDB_API_KEY!);
+    if (!response.ok) {
+      throw new Error('خطا در دریافت داده‌ها از API');
+    }
+    const data = await response.json();
+    
+    console.log('data film ---------->' ,data)
+    return data;
+  } catch (error) {
+    console.error('خطا در دریافت داده‌ها از API:', error);
+    throw error;
+  }
+};

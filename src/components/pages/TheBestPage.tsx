@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { IconHeart, IconInfoCircle, IconMessageCircle, IconStar } from '@tabler/icons-react'
 
-import { convertToPersianNumbers, gregorianToPersian } from '@/utilities/funcs'
+import { convertToPersianNumbers, fetchMovieList, gregorianToPersian } from '@/utilities/funcs'
 import { theBestUSersList, topMoviesList, topOpinionsList } from '@/utilities/types-data'
 import TitleSec from '@/utilities/title-sec'
 
@@ -14,6 +14,9 @@ import ModalMovieDetails from '@/templates/modal-movie-details'
 
 
 export const TheBestPage = () => {
+
+  const movieData = fetchMovieList()
+  console.log("t----------->", movieData)
 
 
   return (
@@ -79,15 +82,15 @@ export const TheBestPage = () => {
 
         <div className="overflow-hidden w-[280px] md:w-full">
           <ul className="flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-5 w-full overflow-x-scroll lg:overflow-hidden">
-            {
-              topMoviesList.slice(0, 5).map((item) =>
+            {/* {
+              fetchMovieList().then((movies) => movies.slice(0, 5).map((item: any) =>
                 <li key={item.id} className="lg:w-auto bg-gray-100 dark:bg-gray-800 rounded-lg">
 
                   <div className="w-[230px] lg:w-full flex flex-col items-center justify-center rounded-lg overflow-hidden">
                     <Image
                       width={400}
                       height={400}
-                      src={item.moviePic}
+                      src={item.poster_path}
                       alt="moviePic"
                       className="w-full h-48 object-cover"
                     />
@@ -104,7 +107,7 @@ export const TheBestPage = () => {
                         </li>
                       </ul>
 
-                      <h4 className=" text-lg font-bold  line-clamp-1 bg-red-300 flex-wrap-reverse text-center">{item.title}</h4>
+                      <h4 className=" text-lg font-bold  line-clamp-1 flex-wrap-reverse text-center">{item.title}</h4>
 
                       <div className=" w-full flex justify-between items-center">
                         <ModalMovieDetails item={item} />
@@ -123,7 +126,7 @@ export const TheBestPage = () => {
 
                   </div>
                 </li>
-              )}
+              ))} */}
           </ul>
         </div>
       </section>

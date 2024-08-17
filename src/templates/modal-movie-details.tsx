@@ -12,16 +12,16 @@ import { toast } from "@/components/ui/use-toast";
 import { IconInfoCircle, IconMessageReport } from "@tabler/icons-react"
 
 
-interface itemsType {
-  id: number;
-  title: string;
-  moviePic: string;
-  comments: string;
-  score: string;
-}
+// interface itemsType {
+//   id: number;
+//   title: string;
+//   moviePic: string;
+//   comments: string;
+//   score: string;
+// }
 
 
-const ModalMovieDetails = ({ item }: { item: itemsType }) => {
+const ModalMovieDetails = ({ item }: { item: any }) => {
   return (
     <Dialog>
       <DialogTrigger>
@@ -33,7 +33,7 @@ const ModalMovieDetails = ({ item }: { item: itemsType }) => {
 
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="text-white text-center">{item.title}</DialogTitle>
+          <DialogTitle className="text-white text-center">{item.Title}</DialogTitle>
           {/* <DialogDescription>
           لطفا دلیل گزارش خود را به مدیران سایت اطلاع دهید.
         </DialogDescription> */}
