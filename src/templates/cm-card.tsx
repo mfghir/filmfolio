@@ -56,7 +56,7 @@ const CmCard = ({ item }: { item: itemTypes }) => {
           </li>
 
           <li className="text-xs text-gray-400">
-            {convertToPersianNumbers(gregorianToPersian(new Date(item.opDate)))}
+            {/* {convertToPersianNumbers(gregorianToPersian(new Date(item.opDate)))} */}
           </li>
         </ul>
       </article>

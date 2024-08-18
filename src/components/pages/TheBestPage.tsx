@@ -11,12 +11,31 @@ import { Button } from '../ui/button'
 import CmCard from '@/templates/cm-card'
 import ProfileCard from '@/templates/profile-card'
 import ModalMovieDetails from '@/templates/modal-movie-details'
+import { useEffect, useState } from 'react'
 
 
 export const TheBestPage = () => {
 
-  const movieData = fetchMovieList()
-  console.log("t----------->", movieData)
+
+  const [movies, setMovies] = useState<any[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const movieList = await fetchMovieList();
+        console.log( "movieList ------------->",movieList)
+        setMovies(movieList);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching movie list:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
 
 
   return (
@@ -82,51 +101,52 @@ export const TheBestPage = () => {
 
         <div className="overflow-hidden w-[280px] md:w-full">
           <ul className="flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-5 w-full overflow-x-scroll lg:overflow-hidden">
-            {/* {
-              fetchMovieList().then((movies) => movies.slice(0, 5).map((item: any) =>
-                <li key={item.id} className="lg:w-auto bg-gray-100 dark:bg-gray-800 rounded-lg">
+            {movies.slice(0, 5).map((item: any) =>
+              <li key={item.id} className="lg:w-auto bg-gray-100 dark:bg-gray-800 rounded-lg">
+                <div className="w-[230px] lg:w-full flex flex-col items-center justify-center rounded-lg overflow-hidden">
+                  <Image
 
-                  <div className="w-[230px] lg:w-full flex flex-col items-center justify-center rounded-lg overflow-hidden">
-                    <Image
-                      width={400}
-                      height={400}
-                      src={item.poster_path}
-                      alt="moviePic"
-                      className="w-full h-48 object-cover"
-                    />
-                    <article className="w-full  flex flex-col items-center justify-center gap-y-4 p-4">
-                      <ul className="w-full flex justify-between items-center text-sm text-gray-400">
-                        <li className="flex flex-row gap-x-1 items-center ">
-                          <span>{convertToPersianNumbers(item.comments)}</span>
-                          <IconMessageCircle stroke={1.5} size={18} color="#e879f9" />
-                        </li>
+// https://media.themoviedb.org/t/p/w440_and_h660_face/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg
+                    width={400}
+                    height={400}
+                    // src={`https://api.themoviedb.org/3/movie/${item.id}/images/2`}
+                    src={"https://media.themoviedb.org/t/p/w500" + item.backdrop_path}
+                    alt="moviePic"
+                    className="w-full h-48 object-cover"
+                  />
+                  <article className="w-full  flex flex-col items-center justify-center gap-y-4 p-4">
+                    <ul className="w-full flex justify-between items-center text-sm text-gray-400">
+                      <li className="flex flex-row gap-x-1 items-center ">
+                        {/* <span>{convertToPersianNumbers(item.comments)}</span> */}
+                        <IconMessageCircle stroke={1.5} size={18} color="#e879f9" />
+                      </li>
 
-                        <li className="flex flex-row gap-x-1 items-center">
-                          <span>{convertToPersianNumbers(item.score)}</span>
-                          <IconStar stroke={1.5} size={18} color="#facc15" />
-                        </li>
-                      </ul>
+                      <li className="flex flex-row gap-x-1 items-center">
+                        {/* <span>{convertToPersianNumbers(item.score)}</span> */}
+                        <IconStar stroke={1.5} size={18} color="#facc15" />
+                      </li>
+                    </ul>
 
-                      <h4 className=" text-lg font-bold  line-clamp-1 flex-wrap-reverse text-center">{item.title}</h4>
+                    <h4 className=" text-lg font-bold  line-clamp-1 flex-wrap-reverse text-center">{item.title}</h4>
 
-                      <div className=" w-full flex justify-between items-center">
-                        <ModalMovieDetails item={item} />
+                    <div className=" w-full flex justify-between items-center">
+                      <ModalMovieDetails item={item} />
 
-                        <Button variant="default"
-                          className="w-fit py-2 px-4 font-semibold text-base text-white galaxy-gradient-bg"
-                        >
-                          مشاهده
-                        </Button>
+                      <Button variant="default"
+                        className="w-fit py-2 px-4 font-semibold text-base text-white galaxy-gradient-bg"
+                      >
+                        مشاهده
+                      </Button>
 
-                        <Button variant="ghost" size="icon" className="w-fit h-fit hover:text-fuchsia-500 duration-300">
-                          <IconHeart stroke={1.5} />
-                        </Button>
-                      </div>
-                    </article>
+                      <Button variant="ghost" size="icon" className="w-fit h-fit hover:text-fuchsia-500 duration-300">
+                        <IconHeart stroke={1.5} />
+                      </Button>
+                    </div>
+                  </article>
 
-                  </div>
-                </li>
-              ))} */}
+                </div>
+              </li>
+            )}
           </ul>
         </div>
       </section>
