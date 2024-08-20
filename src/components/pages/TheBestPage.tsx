@@ -24,7 +24,7 @@ export const TheBestPage = () => {
     const fetchData = async () => {
       try {
         const movieList = await fetchMovieList();
-        console.log( "movieList ------------->",movieList)
+        console.log("movieList ------------->", movieList)
         setMovies(movieList);
         setLoading(false);
       } catch (error) {
@@ -106,11 +106,12 @@ export const TheBestPage = () => {
                 <div className="w-[230px] lg:w-full flex flex-col items-center justify-center rounded-lg overflow-hidden">
                   <Image
 
-// https://media.themoviedb.org/t/p/w440_and_h660_face/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg
+                    // https://media.themoviedb.org/t/p/w440_and_h660_face/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg
                     width={400}
                     height={400}
                     // src={`https://api.themoviedb.org/3/movie/${item.id}/images/2`}
-                    src={"https://media.themoviedb.org/t/p/w500" + item.backdrop_path}
+                    src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
+                    // src={"https://image.tmdb.org/t/p/w500" + item.backdrop_path}
                     alt="moviePic"
                     className="w-full h-48 object-cover"
                   />
