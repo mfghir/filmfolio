@@ -1,7 +1,22 @@
+"use client"
+
+
+import FilterDropdown from '@/utilities/FilterDropdown'
+import { IconCalendar, IconListNumbers, IconMessage, IconMessages, IconSortAscending, IconStar, IconStars } from '@tabler/icons-react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 const TopUsersPage = () => {
+  const [sortBy, setSortBy] = useState<{ label: string; order: 'asc' | 'desc' | null }>({
+    label: 'نام',
+    order: null,
+  });
+
+  const handleSortChange = (label: string, order: 'asc' | 'desc') => {
+    setSortBy({ label, order });
+    // Perform the sorting logic here, or call an API with the sort parameters
+    console.log(`Sorting by ${label} in ${order} order`);
+  };
   return (
     <>
       <section className="w-full h-full  place-items-center lg:place-items-start content-between grid grid-cols-1 gap-y-6 lg:grid-cols-2">
@@ -19,13 +34,41 @@ const TopUsersPage = () => {
           className=" md:max-w-[450px] md:max-h-[450px] w-fit h-fit object-fill rounded-3xl self-center lg:place-self-end lg:self-start"
           width={1024}
           height={1024}
-          src="https://i.postimg.cc/N0H54xCQ/the-best.jpg"
-          alt="the best pic"
+          src="https://i.postimg.cc/634CMnBc/the-best-users.png"
+          alt="the best users pic"
         />
       </section>
 
 
+      <section className="">
+        <div className="">
+          <p className="text-2xl font-bold">فیلتر براساس:</p>
+        </div>
 
+
+        <div className="flex space-x-4">
+      <FilterDropdown
+        label="نام"
+        icon={<IconListNumbers size={16} />}
+        onSortChange={(order) => handleSortChange('نام', order)}
+      />
+      <FilterDropdown
+        label="تاریخ"
+        icon={<IconCalendar size={16} />}
+        onSortChange={(order) => handleSortChange('تاریخ', order)}
+      />
+      <FilterDropdown
+        label="نظرات"
+        icon={<IconMessages size={16} />}
+        onSortChange={(order) => handleSortChange('نظرات', order)}
+      />
+      <FilterDropdown
+        label="امتیاز"
+        icon={<IconStars size={16} />}
+        onSortChange={(order) => handleSortChange('امتیاز', order)}
+      />
+    </div>
+      </section>
 
 
 
