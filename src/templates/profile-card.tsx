@@ -9,9 +9,9 @@ interface itemTypes {
   id: number;
   userPic: string;
   userName: string;
-  userId: string;
-  userComments: string;
-  userScore: string;
+  userId: string | number;
+  userComments: string| number;
+  userScore: string |number;
 }
 
 

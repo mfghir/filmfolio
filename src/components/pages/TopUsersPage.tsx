@@ -1,22 +1,49 @@
 "use client"
 
 
-import FilterDropdown from '@/utilities/FilterDropdown'
-import { IconCalendar, IconListNumbers, IconMessage, IconMessages, IconSortAscending, IconStar, IconStars } from '@tabler/icons-react'
+import ProfileCard from '@/templates/profile-card'
+import FilterSelect from '@/utilities/FilterSelect'
+import { usersList } from '@/utilities/types-data'
+import { IconCalendar, IconListNumbers, IconMessage, IconMessages, IconSortAscending, IconSortAZ, IconStar, IconStars } from '@tabler/icons-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
 const TopUsersPage = () => {
-  const [sortBy, setSortBy] = useState<{ label: string; order: 'asc' | 'desc' | null }>({
-    label: 'نام',
-    order: null,
-  });
+  const [sortedUsers, setSortedUsers] = useState(usersList);
 
-  const handleSortChange = (label: string, order: 'asc' | 'desc') => {
-    setSortBy({ label, order });
-    // Perform the sorting logic here, or call an API with the sort parameters
-    console.log(`Sorting by ${label} in ${order} order`);
+  const handleSortChange = (type: string, order: string) => {
+    const sorted = [...usersList].sort((a, b) => {
+      let comparison = 0;
+
+      switch (type) {
+        case 'امتیاز':
+          comparison = b.userScore - a.userScore;
+          break;
+        case 'نظرات':
+          comparison = b.userComments - a.userComments;
+          break;
+        case 'نام':
+          comparison = b.userName.localeCompare(a.userName);
+          break;
+        case 'تاریخ':
+          // Assuming `opDate` is a string you can parse into a Date object
+          const dateA = new Date(a.opDate);
+          const dateB = new Date(b.opDate);
+          comparison = dateA.getTime() - dateB.getTime();
+          break;
+        default:
+          break;
+      }
+
+      return order === 'asc' ? comparison : -comparison;
+    });
+
+    setSortedUsers(sorted);
   };
+
+
+
+
   return (
     <>
       <section className="w-full h-full  place-items-center lg:place-items-start content-between grid grid-cols-1 gap-y-6 lg:grid-cols-2">
@@ -40,34 +67,95 @@ const TopUsersPage = () => {
       </section>
 
 
-      <section className="">
-        <div className="">
+      <section className="my-12">
+        <div className="flex gap-y-3 md:gap-x-8 flex-wrap items-center">
           <p className="text-2xl font-bold">فیلتر براساس:</p>
+
+          {/* <div className="flex gap-3 md:gap-x-6 flex-wrap">
+            <FilterSelect
+              label="امتیاز"
+              icon={<IconStars stroke={1.5} size={16} />}
+              onSortChange={(order) => handleSortChange('امتیاز', order)}
+            />
+            <FilterSelect
+              label="نظرات"
+              icon={<IconMessages stroke={1.5} size={16} />}
+              onSortChange={(order) => handleSortChange('نظرات', order)}
+            />
+            <FilterSelect
+              label="نام"
+              icon={<IconSortAZ stroke={1.5} size={16} />}
+              onSortChange={(order) => handleSortChange('نام', order)}
+            />
+            <FilterSelect
+              label="تاریخ"
+              icon={<IconCalendar stroke={1.5} size={16} />}
+              onSortChange={(order) => handleSortChange('تاریخ', order)}
+            />
+          </div> */}
+
+
+
+
+<div className="flex gap-y-3 md:gap-x-8 flex-wrap items-center">
+        <p className="text-2xl font-bold">فیلتر براساس:</p>
+
+        <div className="flex gap-3 md:gap-x-6 flex-wrap">
+          <FilterSelect
+            label="امتیاز"
+            icon={<IconStars stroke={1.5} size={16} />}
+            onSortChange={(order) => handleSortChange('امتیاز', order)}
+          />
+          <FilterSelect
+            label="نظرات"
+            icon={<IconMessages stroke={1.5} size={16} />}
+            onSortChange={(order) => handleSortChange('نظرات', order)}
+          />
+          <FilterSelect
+            label="نام"
+            icon={<IconSortAZ stroke={1.5} size={16} />}
+            onSortChange={(order) => handleSortChange('نام', order)}
+          />
+          <FilterSelect
+            label="تاریخ"
+            icon={<IconCalendar stroke={1.5} size={16} />}
+            onSortChange={(order) => handleSortChange('تاریخ', order)}
+          />
+        </div>
+      </div>
+
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+        {sortedUsers.map((user) => (
+          <UserCard key={user.id} user={user} />
+        ))}
+      </div> */}
         </div>
 
 
-        <div className="flex space-x-4">
-      <FilterDropdown
-        label="نام"
-        icon={<IconListNumbers size={16} />}
-        onSortChange={(order) => handleSortChange('نام', order)}
-      />
-      <FilterDropdown
-        label="تاریخ"
-        icon={<IconCalendar size={16} />}
-        onSortChange={(order) => handleSortChange('تاریخ', order)}
-      />
-      <FilterDropdown
-        label="نظرات"
-        icon={<IconMessages size={16} />}
-        onSortChange={(order) => handleSortChange('نظرات', order)}
-      />
-      <FilterDropdown
-        label="امتیاز"
-        icon={<IconStars size={16} />}
-        onSortChange={(order) => handleSortChange('امتیاز', order)}
-      />
-    </div>
+
+
+
+        <div className="my-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+          {sortedUsers.map((user: any) => (
+            <div key={user.id} className="lg:w-auto bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center">
+              <ProfileCard  item={user} />
+            </div>
+          ))}
+        </div>
+
+
+        {/* <div className="overflow-hidden w-[280px] md:w-full my-12">
+          <ul className=" flex flex-row items-start gap-x-8 lg:grid lg:grid-cols-4 lg:gap-8 w-full overflow-x-scroll lg:overflow-hidden">
+            {
+              usersList.map((item) =>
+                <ProfileCard item={item} />
+              )}
+          </ul>
+        </div> */}
+
+
+
       </section>
 
 

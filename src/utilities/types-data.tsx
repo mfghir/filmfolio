@@ -893,6 +893,225 @@ export const topOpinionsList = [
 // ]
 
 
+export const usersList = [
+  {
+    id: 1,
+    userId: "sina_rahmani",
+    userPic: "https://i.postimg.cc/JhK1C2YZ/team-mate-3.png",
+    userGenre: "کمدی",
+    userName: "سینا رحمانی",
+    opDate: "16 مرداد 1403",
+    opText: "فیلم Inception یکی از بهترین آثار کریستوفر نولان است که با داستان پیچیده و بازی‌های فوق‌العاده، بیننده را به دنیای رویاها می‌برد. هر بار که این فیلم را تماشا می‌کنم، نکات جدیدی کشف می‌کنم و از تماشای آن لذت می‌برم.",
+    like: 45,
+    dislike: 20,
+    userScore: 120,
+    userComments: 63
+  },
+  {
+    id: 2,
+    userId: "nahid_ahdi",
+    userPic: "https://i.postimg.cc/VkQsqMbr/team-mate-4.png",
+    userGenre: "علمی-تخیلی",
+    userName: "ناهید احدی",
+    opDate: "10 مرداد 1403",
+    opText: "فیلم Interstellar یکی از بهترین آثار علمی-تخیلی است که به عمق کیهان و زمان سفر می‌کند. داستان پیچیده و بازی‌های قوی بازیگران، این فیلم را به یک تجربه سینمایی بی‌نظیر تبدیل کرده است.",
+    like: 50,
+    dislike: 15,
+    userScore: 95,
+    userComments: 47
+  },
+  {
+    id: 3,
+    userId: "yekta_naseri",
+    userPic: "https://i.postimg.cc/Pq6PQJjg/team-mate-2.png",
+    userGenre: "درام",
+    userName: "یکتا ناصری",
+    opDate: "6 مرداد 1403",
+    opText: "فیلم The Shawshank Redemption یکی از بهترین فیلم‌های تاریخ سینما است. داستان این فیلم به طور عمیق و تاثیرگذار به مشکلات و امیدهای انسانی پرداخته و بازی‌های عالی بازیگران، آن را به یک کلاسیک سینمایی تبدیل کرده است.",
+    like: 30,
+    dislike: 10,
+    userScore: 92,
+    userComments: 52
+  },
+  {
+    id: 4,
+    userId: "arman_shafiei",
+    userPic: "https://i.postimg.cc/XYwS0p0h/team-mate-1.png",
+    userGenre: "ماجراجویی",
+    userName: "آرمان شفیعی",
+    opDate: "25 تیر 1403",
+    opText: "فیلم Avengers: Endgame یکی از بهترین فیلم‌های اکشن و ماجراجویی است که با داستانی قوی و کاراکترهای جذاب، تجربه‌ای هیجان‌انگیز را به تماشاگران ارائه می‌دهد.",
+    like: 80,
+    dislike: 8,
+    userScore: 130,
+    userComments: 72
+  },
+  {
+    id: 5,
+    userId: "parastoo_jamshidi",
+    userPic: "https://i.postimg.cc/2yzB6R2P/team-mate-5.png",
+    userGenre: "رمانتیک",
+    userName: "پرستو جمشیدی",
+    opDate: "12 مرداد 1403",
+    opText: "فیلم The Notebook یک درام رمانتیک زیبا است که به داستانی عاشقانه و جذاب پرداخته و به خوبی احساسات عمیق انسان‌ها را به تصویر کشیده است.",
+    like: 60,
+    dislike: 12,
+    userScore: 110,
+    userComments: 55
+  },
+  {
+    id: 6,
+    userId: "mehdi_rezaei",
+    userPic: "https://i.postimg.cc/tCpKQk3T/team-mate-6.png",
+    userGenre: "کمدی",
+    userName: "مهدی رضایی",
+    opDate: "30 تیر 1403",
+    opText: "فیلم The Grand Budapest Hotel یک کمدی با استایل منحصر به فرد و داستان جذاب است که به خوبی توانسته است نظر بینندگان را جلب کند.",
+    like: 40,
+    dislike: 25,
+    userScore: 85,
+    userComments: 40
+  },
+  {
+    id: 7,
+    userId: "farnaz_abbaspour",
+    userPic: "https://i.postimg.cc/zG1MTktQ/team-mate-7.png",
+    userGenre: "علمی-تخیلی",
+    userName: "فرناز عباسپور",
+    opDate: "7 مرداد 1403",
+    opText: "فیلم Blade Runner 2049 یک اثر علمی-تخیلی جذاب و بصری است که با دنیای آینده‌نگرانه و داستان پیچیده خود، تماشاگر را به چالش می‌کشد.",
+    like: 55,
+    dislike: 18,
+    userScore: 100,
+    userComments: 60
+  },
+  {
+    id: 8,
+    userId: "amirhossein_goodarzi",
+    userPic: "https://i.postimg.cc/YqF9YJ2R/team-mate-8.png",
+    userGenre: "اکشن",
+    userName: "امیرحسین گودرزی",
+    opDate: "20 تیر 1403",
+    opText: "فیلم Mad Max: Fury Road یکی از بهترین فیلم‌های اکشن و پسا-آخرالزمانی است که با صحنه‌های هیجان‌انگیز و داستان قوی، تماشاگران را مجذوب می‌کند.",
+    like: 70,
+    dislike: 22,
+    userScore: 125,
+    userComments: 65
+  },
+  {
+    id: 9,
+    userId: "sara_naderi",
+    userPic: "https://i.postimg.cc/7YZJfMh0/team-mate-9.png",
+    userGenre: "تخیلی",
+    userName: "سارا نادری",
+    opDate: "15 تیر 1403",
+    opText: "فیلم The Matrix یک تجربه سینمایی منحصر به فرد است که با داستان پیچیده و تکنولوژی پیشرفته، دنیای جدیدی از تخیلات را به نمایش می‌گذارد.",
+    like: 65,
+    dislike: 14,
+    userScore: 110,
+    userComments: 50
+  },
+  {
+    id: 10,
+    userId: "ailin_fathi",
+    userPic: "https://i.postimg.cc/Z5r4WdfF/team-mate-10.png",
+    userGenre: "درام",
+    userName: "آیلین فتحی",
+    opDate: "28 تیر 1403",
+    opText: "فیلم The Pursuit of Happyness داستانی الهام‌بخش از تلاش و اراده انسانی را روایت می‌کند و با بازی بی‌نظیر ویل اسمیت، تجربه‌ای تاثیرگذار را ارائه می‌دهد.",
+    like: 85,
+    dislike: 9,
+    userScore: 140,
+    userComments: 70
+  },
+  {
+    id: 11,
+    userId: "reza_akbari",
+    userPic: "https://i.postimg.cc/xCz9gS8R/team-mate-11.png",
+    userGenre: "تاریخی",
+    userName: "رضا اکبری",
+    opDate: "5 مرداد 1403",
+    opText: "فیلم Schindler's List یکی از آثار تاریخی تاثیرگذار است که با داستان واقعی و نمایش وقایع تاریخی، تجربه‌ای عمیق و آموزنده را ارائه می‌دهد.",
+    like: 75,
+    dislike: 16,
+    userScore: 115,
+    userComments: 58
+  },
+  {
+    id: 12,
+    userId: "mahsam_mohseni",
+    userPic: "https://i.postimg.cc/7hP4rfXZ/team-mate-12.png",
+    userGenre: "کمدی-درام",
+    userName: "مهسا محسنی",
+    opDate: "23 تیر 1403",
+    opText: "فیلم Little Miss Sunshine یک کمدی-درام دلنشین است که با داستان جذاب و شخصیت‌های دوست‌داشتنی، تماشاگران را به دنیای جالبی می‌برد.",
+    like: 50,
+    dislike: 10,
+    userScore: 90,
+    userComments: 45
+  },
+  {
+    id: 13,
+    userPic: "https://i.postimg.cc/Pq6PQJjg/team-mate-2.png",
+    userGenre: "درام",
+    userName: "یکتا ناصری",
+    userId: "yekta_naseri",
+    opDate: "6 مرداد 1403",
+    opText: "فیلم The Shawshank Redemption یکی از بهترین فیلم‌های تاریخ سینما است. داستان این فیلم به طور عمیق و تاثیرگذار به مشکلات و امیدهای انسانی پرداخته و بازی‌های عالی بازیگران، آن را به یک کلاسیک سینمایی تبدیل کرده است.",
+    like: 30,
+    dislike: 10,
+    userScore: 92,
+    userComments: 52
+  },
+  {
+    id: 14,
+    userPic: "https://i.postimg.cc/XYwS0p0h/team-mate-1.png",
+    userGenre: "ماجراجویی",
+    userName: "آرمان شفیعی",
+    userId: "arman_shafiei",
+    opDate: "25 تیر 1403",
+    opText: "فیلم Avengers: Endgame یکی از بهترین فیلم‌های اکشن و ماجراجویی است که با داستانی قوی و کاراکترهای جذاب، تجربه‌ای هیجان‌انگیز را به تماشاگران ارائه می‌دهد.",
+    like: 80,
+    dislike: 8,
+    userScore: 130,
+    userComments: 72
+  },
+  {
+    id: 15,
+    userPic: "https://i.postimg.cc/2yzB6R2P/team-mate-5.png",
+    userGenre: "رمانتیک",
+    userName: "پرستو جمشیدی",
+    userId: "parasto_jamshidi",
+    opDate: "12 مرداد 1403",
+    opText: "فیلم The Notebook یک درام رمانتیک زیبا است که به داستانی عاشقانه و جذاب پرداخته و به خوبی احساسات عمیق انسان‌ها را به تصویر کشیده است.",
+    like: 60,
+    dislike: 12,
+    userScore: 110,
+    userComments: 55
+  },
+  {
+    id: 16,
+    userPic: "https://i.postimg.cc/tCpKQk3T/team-mate-6.png",
+    userGenre: "کمدی",
+    userName: "مهدی رضایی",
+    userId: "mehdi_rezaei",
+    opDate: "30 تیر 1403",
+    opText: "فیلم The Grand Budapest Hotel یک کمدی با استایل منحصر به فرد و داستان جذاب است که به خوبی توانسته است نظر بینندگان را جلب کند.",
+    like: 40,
+    dislike: 25,
+    userScore: 85,
+    userComments: 40
+  }
+]
+
+
+
+
+
+
+
+
+
 
 export const topMoviesList = [
 
@@ -1001,7 +1220,7 @@ export const topMoviesList = [
     "imdbID": "tt0848228",
     "Type": "movie",
     "Response": "True",
-     "Images": [
+    "Images": [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTA0NjY0NzE4OTReQTJeQWpwZ15BbWU3MDczODg2Nzc@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE1MzEzMjcyM15BMl5BanBnXkFtZTcwNDM4ODY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMwMzM2MTg1M15BMl5BanBnXkFtZTcwNjM4ODY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
@@ -1179,7 +1398,7 @@ export const topMoviesList = [
     "Type": "series",
     "totalSeasons": "3",
     "Response": "True",
-     "Images": [
+    "Images": [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc2ODg0MzMzM15BMl5BanBnXkFtZTgwODYxODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTcyMjA0MzczNV5BMl5BanBnXkFtZTgwNTIyODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk0MTI0NzQ2NV5BMl5BanBnXkFtZTgwMDkxODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
@@ -1209,7 +1428,7 @@ export const topMoviesList = [
     "Type": "series",
     "totalSeasons": "2",
     "Response": "True",
-     "Images": [
+    "Images": [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2MDMzMTc0MF5BMl5BanBnXkFtZTgwMTAyMzA1OTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxMDkyOTEyNV5BMl5BanBnXkFtZTgwNjY3Mjc3OTE@._V1_SY1000_SX1500_AL_.jpg",
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA2NDUwMTU2NV5BMl5BanBnXkFtZTgwNTI1Mzc3OTE@._V1_SY1000_CR0,0,1499,1000_AL_.jpg",
