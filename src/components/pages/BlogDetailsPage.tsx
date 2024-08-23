@@ -1,17 +1,20 @@
 "use client"
 
-import { blogPosts } from "@/utilities/types-data"
 import Image from "next/image"
-import { useParams, useRouter } from "next/navigation"
 import { useState, useEffect } from "react"
+import { useParams, useRouter } from "next/navigation"
+
+import { blogPosts } from "@/utilities/types-data"
 import { Button } from "../ui/button"
-import connectDB from "@/lib/connectDB"
 import { ThumbsUp, ThumbsDown, Flag } from "lucide-react"
+
+import connectDB from "@/lib/connectDB"
 
 const BlogDetailsPage = () => {
   const { blogId } = useParams()
   const postId = parseInt(blogId as string)
   const post = blogPosts.find(post => post.id === postId)
+  
   const [comments, setComments] = useState<Array<{ id: string, text: string, date: Date, likes: number, dislikes: number }>>([])
   const [newComment, setNewComment] = useState("")
 

@@ -6,8 +6,8 @@ export const metadata: Metadata = {
 }
 
 
-const Faq = () => {
+const TopUsers = () => {
   return <TopUsersPage />;
 };
 
-export default Faq;
+export default TopUsers;

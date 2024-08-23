@@ -1,5 +1,7 @@
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
 import { convertToPersianNumbers } from '@/utilities/funcs'
+
 import { IconCrown, IconMessageCircle } from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,8 +12,8 @@ interface itemTypes {
   userPic: string;
   userName: string;
   userId: string | number;
-  userComments: string| number;
-  userScore: string |number;
+  userComments: string | number;
+  userScore: string | number;
 }
 
 
@@ -33,17 +35,24 @@ const ProfileCard = ({ item }: { item: itemTypes }) => {
         </li>
       </ul>
 
-      <Image
-        width={400}
-        height={400}
-        src={item.userPic}
-        alt="userPic"
-        className="w-36 h-36 rounded-full object-cover"
-      />
-
+      {!item.userPic ?
+        <Skeleton className="w-36 h-36 rounded-full" />
+        :
+        <Image
+          width={400}
+          height={400}
+          src={item.userPic ? item.userPic : "https://i.postimg.cc/rpN1DtvM/uer-pic.jpg"}
+          alt="userPic"
+          className="w-36 h-36 rounded-full object-cover"
+        />
+      }
 
       <article className="mt-3 flex flex-col gap-y-4 items-center">
-        <h3 className="text-xl text-gray-800 dark:text-white font-bold">{item.userName}</h3>
+        {!item.userName ?
+          <Skeleton className="w-28 h-8 bg-emerald-500" />
+          :
+          <h3 className="text-xl text-gray-800 dark:text-white font-bold">{item.userName}</h3>
+        }
         <p className="text-base text-gray-500">{item.userId}</p>
 
 
@@ -52,7 +61,7 @@ const ProfileCard = ({ item }: { item: itemTypes }) => {
         <Link href={`/the-best/top-users/${item.id}`} className="w-fit">
           <Button
             variant="default"
-            className="w-fit py-2 px-12 font-semibold text-base text-white galaxy-gradient-bg"
+            className="w-fit py-2 px-8 font-semibold text-base text-white galaxy-gradient-bg"
           >
             مشاهده پروفایل
           </Button>

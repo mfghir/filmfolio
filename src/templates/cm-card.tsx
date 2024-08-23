@@ -7,9 +7,6 @@ import { convertToPersianNumbers, gregorianToPersian } from "@/utilities/funcs"
 import ModalReport from "./modal-report"
 
 
-
-
-
 interface itemTypes {
   id: number;
   userPic: string;

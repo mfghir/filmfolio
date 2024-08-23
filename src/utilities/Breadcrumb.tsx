@@ -10,7 +10,7 @@ import React from "react";
 
 interface BreadcrumbItem {
   title: string;
-  href: string;
+  link: string;
 }
 
 interface BreadcrumbProps {
@@ -27,7 +27,7 @@ const BreadcrumbComp = ({ items }: BreadcrumbProps) => {
         {breadcrumbItems.map((item: BreadcrumbItem, index: number) => (
           <React.Fragment key={index}>
             <BreadcrumbItem>
-              <BreadcrumbLink href={item.href}>{item.title}</BreadcrumbLink>
+              <BreadcrumbLink href={item.link}>{item.title}</BreadcrumbLink>
             </BreadcrumbItem>
             {index < breadcrumbItems.length - 1 && (
               <BreadcrumbSeparator>

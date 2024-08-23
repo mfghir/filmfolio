@@ -6,8 +6,8 @@ export const metadata: Metadata = {
 }
 
 
-const Faq = () => {
+const TheBest = () => {
   return <TheBestPage />;
 };
 
-export default Faq;
+export default TheBest;
