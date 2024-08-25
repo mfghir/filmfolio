@@ -34,9 +34,9 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 
-  // await connectDB()
-  // const session = await getServerSession(authOptions);
-  // const user = await User?.findOne({ email: session?.user?.email });
+  await connectDB()
+  const session = await getServerSession(authOptions);
+  const user = await User?.findOne({ email: session?.user?.email });
 
 
   return (
@@ -55,7 +55,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
               >
                 <Navbar
                 // prefLangCookie={prefLangCookie}
-                // userInfo={user}
+                userInfo={user}
 
                 // userInfo={JSON.parse(JSON.stringify(user))}
                 />

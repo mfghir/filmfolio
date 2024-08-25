@@ -7,6 +7,7 @@ import { usersList } from "@/utilities/types-data"
 import { Skeleton } from "../ui/skeleton"
 import { Button } from "../ui/button"
 import { IconCarambola, IconMessageCircle, IconMovie, IconPlus, IconUsersGroup, IconUsersPlus } from "@tabler/icons-react"
+import { ShareBtn } from "@/templates/share-btn"
 
 
 
@@ -19,8 +20,14 @@ const TopDetailUserPage = () => {
 
   return (
     <>
-      <section className="my-12 grid gap-y-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 bg-gray-200 dark:bg-gray-800 py-6 md:p-6 rounded-xl items-center">
-        <div className="flex flex-col md:flex-row justify-center md:justify-normal items-center gap-x-8 gap-y-3 md:gap-y-0 md:col-span-2 self-center">
+
+      <div className="absolute left-6 top-40 md:left-8 md:top-32 lg:left-20 lg:top-28">
+        <ShareBtn />
+      </div>
+
+
+      <section className="my-12 grid gap-y-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 bg-gray-200 dark:bg-gray-800 py-6 md:p-6 rounded-xl items-center place-items-center">
+        <div className="flex flex-col md:flex-row justify-center md:justify-normal items-center gap-x-8 gap-y-3 md:gap-y-0 md:col-span-2 lg:col-span-1">
           {!user?.userPic ?
             <Skeleton className="h-full w-full" />
             :
@@ -88,7 +95,7 @@ const TopDetailUserPage = () => {
         <div className=" flex flex-col gap-y-4 lg:gap-y-6 mx-auto">
           <p className="text-lg font-bold text-center">ID: {user?.userId}</p>
 
-          <ul className="flex flex-col gap-y-4 bg-red-500">
+          <ul className="flex flex-col gap-y-3">
             <li className="flex flex-row justify-between items-center">
               <p className="flex flex-row  items-center gap-x-1">
 

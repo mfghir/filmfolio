@@ -1,5 +1,3 @@
-// components/LanguageToggle.js
-import React from 'react';
 import Image from 'next/image';
 import { useGoogleTranslate } from './google-translate';
 

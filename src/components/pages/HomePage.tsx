@@ -5,15 +5,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { IconArrowNarrowLeft, IconChevronLeft } from '@tabler/icons-react'
 
-import { Button } from '../ui/button'
 import TitleSec from '@/utilities/title-sec'
 import CustomShape from '@/utilities/CustomShape'
+import HexagonGradientIcon from '@/utilities/HexagonGradientIcon'
+
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion'
+import { Textarea } from '../ui/textarea'
+import { Button } from '../ui/button'
 
 import { aboutUsSec, blogPosts, faqList, featuresSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion'
-import HexagonGradientIcon from '@/utilities/HexagonGradientIcon'
-import { Textarea } from '../ui/textarea'
-
 
 
 const HomePage = () => {

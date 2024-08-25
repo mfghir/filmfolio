@@ -1,22 +1,20 @@
 "use client"
 
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { IconHeart, IconInfoCircle, IconMessageCircle, IconStar } from '@tabler/icons-react'
 
-import { convertToPersianNumbers, fetchMovieList, gregorianToPersian } from '@/utilities/funcs'
-import { theBestUSersList, topMoviesList, topOpinionsList } from '@/utilities/types-data'
+import {  fetchMovieList } from '@/utilities/funcs'
 import TitleSec from '@/utilities/title-sec'
-
 import { Button } from '../ui/button'
+
 import CmCard from '@/templates/cm-card'
 import ProfileCard from '@/templates/profile-card'
 import ModalMovieDetails from '@/templates/modal-movie-details'
-import { useEffect, useState } from 'react'
 
+import { theBestUSersList, topOpinionsList } from '@/utilities/types-data'
+import { IconHeart, IconMessageCircle, IconStar } from '@tabler/icons-react'
 
 export const TheBestPage = () => {
-
-
   const [movies, setMovies] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
