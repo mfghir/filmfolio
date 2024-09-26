@@ -24,12 +24,15 @@ import { UserInfo } from "@/utilities/types-data"
 
 
 import { signOut, useSession } from 'next-auth/react';
+import { useGoogleTranslate } from "@/utilities/google-translate"
 
 
 
 
 const UserNav = ({ userInfo }: { userInfo: UserInfo }) => {
   const { data: session } = useSession();
+  const { language } = useGoogleTranslate();
+
   // console.log("session - userNav===>>>" , session );
   // console.log("image - userNav===>>>" , session?.user?.image );
   // status === "authenticated"
@@ -44,8 +47,9 @@ const UserNav = ({ userInfo }: { userInfo: UserInfo }) => {
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
+      {/* <DialogHeader className={`w-full ${language === "fa" ? "flex flex-col items-start flex-reverse mt-10" : ""}`} > */}
 
-      <DropdownMenuContent className="w-56" align="end" forceMount>
+      <DropdownMenuContent className="w-56" align="start" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">{userInfo?.name}</p>
@@ -57,11 +61,11 @@ const UserNav = ({ userInfo }: { userInfo: UserInfo }) => {
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuGroup>
-          <Link href="/dashboard">
+        <DropdownMenuGroup >
+          <Link href="/dashboard"  className={`${language === "fa" ? "flex bg-red-200 justify-between flex-row-reverse" : ""}`}>
             <DropdownMenuItem>
-              Dashboard
               <DropdownMenuShortcut><Gauge /></DropdownMenuShortcut>
+              داشبورد
             </DropdownMenuItem>
           </Link>
 
@@ -80,7 +84,7 @@ const UserNav = ({ userInfo }: { userInfo: UserInfo }) => {
         <DropdownMenuSeparator />
 
         <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/" })}>
-          Log out
+          خروج
           <DropdownMenuShortcut><LogOutIcon /></DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>

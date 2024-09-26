@@ -84,7 +84,7 @@ import { LanguageToggle } from "@/utilities/language-toggle";
             <PhoneNav userInfo={userInfo} />
           </div>
 
-{/*           
+          
           {session?.user ?
             <UserNav userInfo={userInfo} />
             :
@@ -96,7 +96,7 @@ import { LanguageToggle } from "@/utilities/language-toggle";
                 <Link href="/register">ثبت نام</Link>
               </Button>
             </>
-          } */}
+          }
         </section>
       </div>
     </div>

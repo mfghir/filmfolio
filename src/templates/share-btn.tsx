@@ -37,7 +37,7 @@ export function ShareBtn() {
 
   return (
     <Dialog>
-      <DialogTrigger asChild>
+      <DialogTrigger asChild> 
         <Button variant="ghost">
           <IconShare stroke={1.5} />
         </Button>

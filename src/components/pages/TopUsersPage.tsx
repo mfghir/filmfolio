@@ -5,6 +5,7 @@ import ProfileCard from '@/templates/profile-card'
 import FilterSelect from '@/utilities/FilterSelect'
 import { usersList } from '@/utilities/types-data'
 import { IconCalendar, IconListNumbers, IconMessage, IconMessages, IconSortAscending, IconSortAZ, IconStar, IconStars } from '@tabler/icons-react'
+
 import Image from 'next/image'
 import React, { useState } from 'react'
 
