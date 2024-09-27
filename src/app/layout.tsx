@@ -54,12 +54,14 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 disableTransitionOnChange
               >
                 <Navbar
-                // prefLangCookie={prefLangCookie}
-                userInfo={user}
+                  // prefLangCookie={prefLangCookie}
+                  userInfo={user}
 
                 // userInfo={JSON.parse(JSON.stringify(user))}
                 />
-                <main className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20 dark:bg-gradient-to-bl dark:from-indigo-950/50 dark:via-indigo-950/25 dark:to-indigo-950/10">
+                <main className=" 
+                dark:bg-gradient-to-bl dark:from-indigo-950/50 dark:via-indigo-950/25 dark:to-indigo-950/10"
+                >
                   {children}
                 </main>
                 <Toaster />

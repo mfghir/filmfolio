@@ -37,7 +37,7 @@ export const TheBestPage = () => {
 
 
   return (
-    <>
+    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
       <section className="w-full h-full  place-items-center lg:place-items-start content-between grid grid-cols-1 gap-y-6 lg:grid-cols-2">
         <div className="flex flex-col gap-y-3 lg:mt-12">
           <h3 className="text-2xl lg:text-3xl font-bold galaxy-gradient-text">برترین ها</h3>
@@ -149,6 +149,7 @@ export const TheBestPage = () => {
           </ul>
         </div>
       </section>
-    </>
+
+    </section>
   )
 }

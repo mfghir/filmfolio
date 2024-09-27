@@ -18,7 +18,7 @@ import { aboutUsSec, blogPosts, faqList, featuresSec, miniAdsSec, moviesSec, the
 
 const HomePage = () => {
   return (
-    <>
+    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
 
       <section className="flex justify-center items-center flex-col relative">
         <div className="w-full rounded-3xl min-h-[calc(100vh-120px)] bg-no-repeat bg-center bg-cover brightness-50
@@ -350,7 +350,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-    </>
+    </section>
   )
 }
 

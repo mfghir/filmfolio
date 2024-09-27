@@ -19,7 +19,7 @@ const TopDetailUserPage = () => {
 
 
   return (
-    <>
+    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
 
       <div className="absolute left-6 top-40 md:left-8 md:top-32 lg:left-20 lg:top-28">
         <ShareBtn />
@@ -131,7 +131,7 @@ const TopDetailUserPage = () => {
 
 
 
-    </>
+    </section>
   )
 }
 

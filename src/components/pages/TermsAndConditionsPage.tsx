@@ -4,6 +4,7 @@ import HexagonGradientIcon from '@/utilities/HexagonGradientIcon'
 
 const TermsAndConditionsPage = () => {
   return (
+    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
     <section className="w-full h-full place-content-between justify-between  grid grid-cols-1 gap-y-6 lg:grid-cols-2">
       <section>
         <div className="flex flex-col gap-y-3">
@@ -38,6 +39,7 @@ const TermsAndConditionsPage = () => {
         src="https://i.postimg.cc/8kJ8pXNb/terms.jpg"
         alt="terms pic"
       />
+    </section>
     </section>
   )
 }

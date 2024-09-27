@@ -3,6 +3,7 @@ import Image from "next/image"
 
 const ContactPage = () => {
   return (
+    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
     <section className="w-full h-full place-items-center grid grid-cols-1 gap-y-6 lg:grid-cols-2">
       <div className="w-full flex flex-col gap-y-4">
         <div className="flex flex-col gap-y-3">
@@ -23,6 +24,7 @@ const ContactPage = () => {
         src="https://i.postimg.cc/Wzh2Db84/contact.png"
         alt="contact pic"
       />
+    </section>
     </section>
   )
 }

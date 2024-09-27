@@ -20,7 +20,8 @@ const Dashboard = async () => {
   return (
     <TabDashboard
       role={user.role as string}
-      usersList={JSON.parse(JSON.stringify(usersList))} />
+      usersList={JSON.parse(JSON.stringify(usersList))}
+    />
   )
 }
 

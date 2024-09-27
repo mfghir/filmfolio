@@ -12,6 +12,7 @@ import {
 
 const FaqPage = () => {
   return (
+    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
     <section className="w-full h-full place-items-start content-between grid grid-cols-1 gap-y-6 lg:grid-cols-2">
       <div className="flex flex-col gap-y-3">
         <h3 className="text-2xl lg:text-3xl font-bold galaxy-gradient-text">سوالات متداول</h3>
@@ -41,6 +42,7 @@ const FaqPage = () => {
         src="https://i.postimg.cc/13KF9d6N/faq.png"
         alt="faq pic"
       />
+    </section>
     </section>
   )
 }

@@ -46,7 +46,7 @@ const TopUsersPage = () => {
 
 
   return (
-    <>
+    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
       <section className="w-full h-full  place-items-center lg:place-items-start content-between grid grid-cols-1 gap-y-6 lg:grid-cols-2">
         <div className="flex flex-col gap-y-3 lg:mt-12">
           <h3 className="text-2xl lg:text-3xl font-bold galaxy-gradient-text">برترین کاربران</h3>
@@ -98,34 +98,34 @@ const TopUsersPage = () => {
 
 
 
-<div className="flex gap-y-3 md:gap-x-8 flex-wrap items-center">
-        <p className="text-2xl font-bold">فیلتر براساس:</p>
+          <div className="flex gap-y-3 md:gap-x-8 flex-wrap items-center">
+            <p className="text-2xl font-bold">فیلتر براساس:</p>
 
-        <div className="flex gap-3 md:gap-x-6 flex-wrap">
-          <FilterSelect
-            label="امتیاز"
-            icon={<IconStars stroke={1.5} size={16} />}
-            onSortChange={(order) => handleSortChange('امتیاز', order)}
-          />
-          <FilterSelect
-            label="نظرات"
-            icon={<IconMessages stroke={1.5} size={16} />}
-            onSortChange={(order) => handleSortChange('نظرات', order)}
-          />
-          <FilterSelect
-            label="نام"
-            icon={<IconSortAZ stroke={1.5} size={16} />}
-            onSortChange={(order) => handleSortChange('نام', order)}
-          />
-          <FilterSelect
-            label="تاریخ"
-            icon={<IconCalendar stroke={1.5} size={16} />}
-            onSortChange={(order) => handleSortChange('تاریخ', order)}
-          />
-        </div>
-      </div>
+            <div className="flex gap-3 md:gap-x-6 flex-wrap">
+              <FilterSelect
+                label="امتیاز"
+                icon={<IconStars stroke={1.5} size={16} />}
+                onSortChange={(order) => handleSortChange('امتیاز', order)}
+              />
+              <FilterSelect
+                label="نظرات"
+                icon={<IconMessages stroke={1.5} size={16} />}
+                onSortChange={(order) => handleSortChange('نظرات', order)}
+              />
+              <FilterSelect
+                label="نام"
+                icon={<IconSortAZ stroke={1.5} size={16} />}
+                onSortChange={(order) => handleSortChange('نام', order)}
+              />
+              <FilterSelect
+                label="تاریخ"
+                icon={<IconCalendar stroke={1.5} size={16} />}
+                onSortChange={(order) => handleSortChange('تاریخ', order)}
+              />
+            </div>
+          </div>
 
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         {sortedUsers.map((user) => (
           <UserCard key={user.id} user={user} />
         ))}
@@ -140,7 +140,7 @@ const TopUsersPage = () => {
 
           {sortedUsers.map((user: any) => (
             <div key={user.id} className="lg:w-auto bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center">
-              <ProfileCard  item={user} />
+              <ProfileCard item={user} />
             </div>
           ))}
         </div>
@@ -154,14 +154,11 @@ const TopUsersPage = () => {
               )}
           </ul>
         </div> */}
-
-
-
       </section>
 
 
 
-    </>
+    </section>
   )
 }
 

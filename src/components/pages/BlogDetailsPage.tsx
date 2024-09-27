@@ -99,7 +99,7 @@ const BlogDetailsPage = () => {
   };
 
   return (
-    <>
+    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
       <section className="w-full h-full grid grid-cols-1 gap-y-6 lg:grid-cols-3 lg:gap-x-12 mt-3 ">
 
         <div className="lg:col-span-2 w-full lg:w-3/4 place-content-center mt-3">
@@ -159,9 +159,6 @@ const BlogDetailsPage = () => {
       </div>
 
 
-
-
-
       <div className="mt-12 lg:w-3/4 mx-auto">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">نظرات</h2>
         <ul className="space-y-4">
@@ -203,7 +200,7 @@ const BlogDetailsPage = () => {
           </Button>
         </form>
       </div>
-    </>
+    </section>
   )
 }
 
