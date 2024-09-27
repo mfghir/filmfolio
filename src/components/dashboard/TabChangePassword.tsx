@@ -5,7 +5,7 @@ import { useState } from 'react'
 import axios from "axios";
 import { useForm } from "react-hook-form"
 
-import { Heading } from '@/templates/heading'
+// import { Heading } from '@/templates/heading'
 import { useToast } from "../ui/use-toast";
 import { Button } from '../ui/button'
 
@@ -22,6 +22,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
+import { Heading } from '@/templates/dashboard/heading';
 
 
 

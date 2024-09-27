@@ -21,9 +21,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "../ui/use-toast";
 
-import { Heading } from '@/templates/heading'
-import FileUpload from "@/utilities/file-upload";
+// import { Heading } from '@/templates/heading'
+// import FileUpload from "@/utilities/file-upload";
 import axios from "axios";
+import { Heading } from "@/templates/dashboard/heading";
+import FileUpload from "@/utilities/pic-uploader/file-upload";
 
 
 const formSchema = z.object({

@@ -6,7 +6,8 @@ import { Dice5, Flower2, Hash, Quote, Smile, User } from 'lucide-react'
 import { Skeleton } from '../ui/skeleton'
 
 import { useQuery } from '@tanstack/react-query'
-import { Heading } from '@/templates/heading'
+import { Heading } from '@/templates/dashboard/heading'
+// import { Heading } from '@/templates/heading'
 
 
 

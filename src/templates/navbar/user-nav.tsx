@@ -61,11 +61,11 @@ const UserNav = ({ userInfo }: { userInfo: UserInfo }) => {
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuGroup >
-          <Link href="/dashboard"  className={`${language === "fa" ? "flex bg-red-200 justify-between flex-row-reverse" : ""}`}>
-            <DropdownMenuItem>
-              <DropdownMenuShortcut><Gauge /></DropdownMenuShortcut>
+        <DropdownMenuGroup className={`${language === "fa" ? "w-full flex  justify-between" : ""}`}>
+          <Link href="/dashboard" className={`${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`} >
+            <DropdownMenuItem className={`${language === "fa" ? "w-full flex-row-reverse justify-between" : ""}`}>
               داشبورد
+              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} ><Gauge /></DropdownMenuShortcut>
             </DropdownMenuItem>
           </Link>
 
@@ -83,12 +83,15 @@ const UserNav = ({ userInfo }: { userInfo: UserInfo }) => {
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/" })}>
+
+
+        <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/" })}
+          className={`${language === "fa" ? "w-full flex-row-reverse justify-between" : ""}`}>
           خروج
-          <DropdownMenuShortcut><LogOutIcon /></DropdownMenuShortcut>
+          <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} ><LogOutIcon /></DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
-    </DropdownMenu>
+    </DropdownMenu >
   )
 }
 
