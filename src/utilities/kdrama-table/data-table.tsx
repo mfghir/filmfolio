@@ -30,7 +30,8 @@ import { useKdramasData } from "@/lib/queries"
 import { columns } from '@/utilities/kdrama-table/columns'
 
 import { useToast } from "@/components/ui/use-toast"
-import { Heading } from "../../templates/heading"
+import { Heading } from "@/templates/dashboard/heading"
+// import { Heading } from "../../templates/heading"
 
 
 

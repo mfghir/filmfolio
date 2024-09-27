@@ -22,8 +22,9 @@ import { useToast } from "@/components/ui/use-toast"
 import { Dialog, DialogTrigger } from "@/components/ui/dialog"
 import { useState } from "react"
 
-import KdramaEdit from "@/components/KdramaEdit"
+// import KdramaEdit from "@/components/KdramaEdit"
 import { z } from "zod"
+import KdramaEdit from "@/components/kdrama/KdramaEdit"
 
 
 

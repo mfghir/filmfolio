@@ -9,10 +9,11 @@ import { genres, statuses } from "@/lib/data"
 import { DataTableFacetedFilter } from "./data-table-faceted-filter"
 
 import { DataTableViewOptions } from "./data-table-view-options"
-import KdramaAdd from "@/components/KdramaAdd"
+// import KdramaAdd from "@/components/KdramaAdd"
 // import { useSession } from "next-auth/react"
 
 import { usePathname } from "next/navigation"
+import KdramaAdd from "@/components/kdrama/KdramaAdd"
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>
