@@ -5,10 +5,13 @@ import { Badge } from "@/components/ui/badge"
 import { labels, genres, statuses, MovieList } from "@/lib/data"
 
 import { DataTableColumnHeader } from "./DataTableColumnHeader"
-import KdramaEdit from "@/components/KdramaEdit"
+import KdramaEdit from "@/components/kdrama/KdramaEdit"
+import KdramaDelete from "@/components/kdrama/KdramaDelete"
+import KdramaCopy from "@/components/kdrama/KdramaCopy"
+// import KdramaEdit from "@/components/KdramaEdit"
 
-import KdramaDelete from "@/components/KdramaDelete"
-import KdramaCopy from "@/components/KdramaCopy"
+// import KdramaDelete from "@/components/KdramaDelete"
+// import KdramaCopy from "@/components/KdramaCopy"
 // import { DataTableRowActions } from "./DataTableRowActions"
 
 
