@@ -7,10 +7,16 @@ export const metadata: Metadata = {
   title: 'Blog Details',
 }
 
+interface PageProps {
+  params: {
+    blogId: string;
+  };
+}
 
 {/* @ts-ignore */ }
+export default function Page({ params: { blogId } }: PageProps) {
 
-const page = ({ blogId }: { blogId: string }) => {
+// const page = ({ blogId }: { blogId: string }) => {
 
   const breadcrumbItems = [
     { title: "خانه", link: "/" },
@@ -28,4 +34,4 @@ const page = ({ blogId }: { blogId: string }) => {
   );
 };
 
-export default page;
+// export default page;
