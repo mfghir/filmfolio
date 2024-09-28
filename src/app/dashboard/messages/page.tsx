@@ -1,6 +1,7 @@
 import TabMessages from '@/components/dashboard/TabMessages'
 import { ScrollArea } from "@/components/ui/scroll-area";
-import BreadCrumb from "@/utilities/breadcrumb";
+import BreadcrumbComp from '@/utilities/Breadcrumb';
+// import BreadCrumb from "@/utilities/breadcrumb";
 
 
 const Page = () => {
@@ -10,7 +11,7 @@ const Page = () => {
 
   return (
     <div className="flex-1 space-y-4">
-      <BreadCrumb items={breadcrumbItems} />
+      <BreadcrumbComp items={breadcrumbItems} />
       <TabMessages />
     </div>
   )

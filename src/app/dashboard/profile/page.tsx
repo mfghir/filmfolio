@@ -5,8 +5,9 @@ import User from '@/models/user';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import TabProfile from '@/components/dashboard/TabProfile'
+import BreadcrumbComp from '@/utilities/Breadcrumb';
 
-import BreadCrumb from '@/utilities/breadcrumb';
+// import BreadCrumb from '@/utilities/breadcrumb';
 
 
 const Page = async () => {
@@ -23,7 +24,7 @@ const Page = async () => {
 
   return (
     <>
-      <BreadCrumb items={breadcrumbItems} />
+      <BreadcrumbComp items={breadcrumbItems} />
       <TabProfile userInfo={JSON.parse(JSON.stringify(user))} />
     </>
   )

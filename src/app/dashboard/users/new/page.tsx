@@ -1,5 +1,6 @@
 import TabUserAdd from '@/components/dashboard/user-add'
-import BreadCrumb from "@/utilities/breadcrumb";
+import BreadcrumbComp from '@/utilities/Breadcrumb';
+// import BreadCrumb from "@/utilities/breadcrumb";
 
 const page = () => {
   const breadcrumbItems = [
@@ -9,7 +10,7 @@ const page = () => {
 
   return (
     <div className="flex-1 space-y-4 h-auto">
-      <BreadCrumb items={breadcrumbItems} />
+      <BreadcrumbComp items={breadcrumbItems} />
       <TabUserAdd />
     </div>
   )

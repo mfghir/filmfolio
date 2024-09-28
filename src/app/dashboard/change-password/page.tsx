@@ -1,5 +1,6 @@
 import TabChangePassword from "@/components/dashboard/TabChangePassword";
-import BreadCrumb from "@/utilities/breadcrumb";
+import BreadcrumbComp from "@/utilities/Breadcrumb";
+// import BreadCrumb from "@/utilities/breadcrumb";
 
 const page = async () => {
   const breadcrumbItems = [
@@ -8,7 +9,7 @@ const page = async () => {
 
   return (
     <>
-      <BreadCrumb items={breadcrumbItems} />
+      <BreadcrumbComp items={breadcrumbItems} />
       <TabChangePassword />
     </>
   )

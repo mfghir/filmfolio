@@ -1,10 +1,11 @@
 import EditProfile from '@/components/dashboard/edit-profile'
-import BreadCrumb from '@/utilities/breadcrumb'
+// import BreadcrumbComp from '@/utilities/breadcrumb'
 import connectDB from '@/lib/connectDB';
 
 import User from '@/models/user';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/auth-options';
+import BreadcrumbComp from '@/utilities/Breadcrumb';
 
 
 const Page = async () => {
@@ -20,8 +21,8 @@ const Page = async () => {
 
   return (
     <>
-      <BreadCrumb items={breadcrumbItems} />
-      <EditProfile userInfo={JSON.parse(JSON.stringify(user))} />
+      <BreadcrumbComp items={breadcrumbItems} />
+      <EditProfile userInfo={user} />
     </>
   )
 }

@@ -1,8 +1,9 @@
 import TabUsers from '@/components/dashboard/TabUsers';
 import connectDB from "@/lib/connectDB";
 import User from "@/models/user";
+import BreadcrumbComp from '@/utilities/Breadcrumb';
 
-import BreadCrumb from '@/utilities/breadcrumb';
+// import BreadCrumb from '@/utilities/breadcrumb';
 
 const DashboardUsers = async () => {
   await connectDB()
@@ -27,7 +28,7 @@ const DashboardUsers = async () => {
 
   return (
     <>
-      <BreadCrumb items={breadcrumbItems} />
+      <BreadcrumbComp items={breadcrumbItems} />
       <TabUsers data={JSON.parse(JSON.stringify(usersList))} />
     </>
   )
