@@ -8,23 +8,23 @@ import {
 import { Slash } from "lucide-react";
 import React from "react";
 
-interface BreadcrumbItem {
+type BreadCrumbType = {
   title: string;
   link: string;
-}
+};
 
-interface BreadcrumbProps {
-  items: BreadcrumbItem;
-}
+type BreadCrumbPropsType = {
+  items: BreadCrumbType[];
+};
 
-const BreadcrumbComp = ({ items }: BreadcrumbProps) => {
+const BreadcrumbComp = ({ items }: BreadCrumbPropsType) => {
   // Ensure items is an array
   const breadcrumbItems = Array.isArray(items) ? items : [];
 
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        {breadcrumbItems.map((item: BreadcrumbItem, index: number) => (
+        {breadcrumbItems.map((item: BreadCrumbType, index: number) => (
           <React.Fragment key={index}>
             <BreadcrumbItem>
               <BreadcrumbLink href={item.link}>{item.title}</BreadcrumbLink>
