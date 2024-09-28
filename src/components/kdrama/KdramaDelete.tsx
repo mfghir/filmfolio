@@ -8,12 +8,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { useDeleteDrama } from "@/lib/mutations"
 
-import { Button } from './ui/button'
-import { useToast } from "./ui/use-toast"
-import { useDeleteDrama } from '@/lib/mutations'
+// import { Button } from './ui/button'
+// import { useToast } from "./ui/use-toast"
+// import { useDeleteDrama } from '@/lib/mutations'
 
 import { usePathname } from 'next/navigation'
+import { useToast } from "../ui/use-toast"
+import { Button } from "../ui/button"
 
 const KdramaDelete = ({ row }: { row: any }): JSX.Element => {
   const { mutate } = useDeleteDrama()

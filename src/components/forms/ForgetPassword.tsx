@@ -16,16 +16,17 @@ import {
 
 import { useToast } from "../ui/use-toast";
 import { Input } from "@/components/ui/input"
-import SubmitButton from '@/templates/SubmitButton'
+// import SubmitButton from '@/templates/SubmitButton'
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
 import { useState } from 'react'
-import { mailAction } from '@/lib/mailAction'
+// import { mailAction } from '@/lib/mailAction'
 import { MoveLeft } from 'lucide-react'
 import axios from 'axios';
+import SubmitButton from '@/utilities/SubmitButton';
 
 
 
@@ -53,7 +54,7 @@ const ForgetPassword = () => {
     setLoading(true);
 
     try {
-      await mailAction(values)
+      // await mailAction(values)
       // await axios.post('/api/mailtrap', values.email);
       router.push("/login")
 

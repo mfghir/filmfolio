@@ -16,13 +16,15 @@ import {
 
 import { Input } from "@/components/ui/input"
 import { useToast } from "../ui/use-toast";
-import SubmitButton from '@/templates/SubmitButton'
+// import SubmitButton from '@/templates/SubmitButton'
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { updatePassword } from '@/lib/updatePassword'
+// import { updatePassword } from '@/lib/updatePassword'
+import SubmitButton from '@/utilities/SubmitButton';
+import { updatePassword } from '@/lib/utils';
 
 interface InputError {
   [key: string]: string;
