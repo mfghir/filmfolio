@@ -87,9 +87,9 @@ export default function FileUpload({
   return (
     <>
       <div className="w-[90%] md:w-full md:h-full">
-        <div className="mb-4 flex items-center gap-4 ">
+        <div className="mb-4 flex items-center gap-4">
           {imgUrl ?
-            <div className="relative  rounded-md overflow-hidden">
+            <div className="relative rounded-md overflow-hidden">
               <div className="z-10 absolute top-2 right-2">
                 <Button
                   type="button"
@@ -106,7 +106,7 @@ export default function FileUpload({
                   fill
                   className="object-cover"
                   alt="Image"
-                  src={imgUrl || ""}
+                  src={imgUrl}
                 />
               </div>
             </div>
@@ -133,7 +133,13 @@ export default function FileUpload({
 
             onClientUploadComplete={(res) => {
               const data: UploadFileResponse[] | undefined = res;
+              console.log("Files: ", res);
               if (data) onUpdateFile(data);
+              toast({
+                variant: "success",
+                title: "Success!",
+                description: "your picture has been upload successfully!",
+              });
             }}
             onUploadError={(error: Error) => {
               console.log("error upload ===>", error.message);
