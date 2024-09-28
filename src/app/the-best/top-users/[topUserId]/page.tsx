@@ -8,7 +8,15 @@ export const metadata: Metadata = {
 }
 
 
-const TopUser = ({ topUserId }: { topUserId: string }) => {
+interface PageProps {
+  params: {
+    topUserId: string;
+  };
+}
+
+export default function Page({ params: { topUserId } }: PageProps) {
+
+// const TopUser = ({ topUserId }: { topUserId: string }) => {
 
   const breadcrumbItems = [
     { title: "خانه", link: "/" },
@@ -25,4 +33,4 @@ const TopUser = ({ topUserId }: { topUserId: string }) => {
   )
 };
 
-export default TopUser;
+// export default TopUser;
