@@ -32,8 +32,6 @@ export default function FileUpload({
   // }: any) {
 }: ImageUploadProps) {
   const { toast } = useToast();
-  const router = useRouter();
-
   const [imgUrl, setImgUrl] = useState('');
   const [imgDelete, setImgDelete] = useState('');
 
@@ -49,11 +47,11 @@ export default function FileUpload({
 
     } catch (error) {
       console.log(error);
-      // toast({
-      //   title: "Error",
-      //   variant: "destructive",
-      //   description: error.message,
-      // });
+      toast({
+        title: "Error",
+        variant: "destructive",
+        description: "An error occurred",
+      });
     }
   };
 
@@ -69,8 +67,6 @@ export default function FileUpload({
     setImgDelete(newFiles[0].key)
 
     onChange(value);
-    // onChange({value:fileUrl[0]});
-    // onChange([...value, fileUrl[0]]);
 
     // Save the image URL in local storage
     localStorage.setItem('imgUrl', fileUrl[0]);
@@ -84,40 +80,39 @@ export default function FileUpload({
     if (storedImgUrl) setImgUrl(storedImgUrl);
   }, [imgUrl]);
 
+
+
   return (
     <>
-      <div className="w-[90%] md:w-full md:h-full">
-        <div className="mb-4 flex items-center gap-4">
+      <div className="w-[calc(100%-40px)] md:w-1/2 md:h-full flex items-center justify-center content-center flex-wrap md:flex-nowrap md:gap-x-4">
+        <div className="w-48 md:w-64 h-48 relative">
           {imgUrl ?
-            <div className="relative rounded-md overflow-hidden">
-              <div className="z-10 absolute top-2 right-2">
-                <Button
-                  type="button"
-                  onClick={deleteHandler}
-                  variant="destructive"
-                  size="sm"
-                >
-                  <Trash className="h-4 w-4" />
-                </Button>
-              </div>
+            <>
+              <Button
+                type="button"
+                onClick={deleteHandler}
+                variant="destructive"
+                size="sm"
+                className="z-10 absolute top-2 right-2"
+              >
+                <Trash className="h-4 w-4" />
+              </Button>
 
-              <div>
-                <Image
-                  fill
-                  className="object-cover"
-                  alt="Image"
-                  src={imgUrl}
-                />
-              </div>
-            </div>
+              <Image
+                fill
+                className="object-cover rounded-xl"
+                alt="Image"
+                src={imgUrl}
+              />
+            </>
             : null
           }
         </div>
 
-        <>
+        <div className="bg-green-300 w-full">
           {/* @ts-ignore  */}
           <UploadDropzone<OurFileRouter>
-            className=" dark:bg-zinc-800 py-2 ut-label:text-sm ut-allowed-content:ut-uploading:text-red-300"
+            className="dark:bg-zinc-800 py-2 ut-label:text-sm ut-allowed-content:ut-uploading:text-red-300"
             endpoint="imageUploader"
             config={{ mode: "auto" }}
             content={{
@@ -133,7 +128,8 @@ export default function FileUpload({
 
             onClientUploadComplete={(res) => {
               const data: UploadFileResponse[] | undefined = res;
-              console.log("Files: ", res);
+              // console.log("Files: ", res);
+              // console.log("data: ", data);
               if (data) onUpdateFile(data);
               toast({
                 variant: "success",
@@ -151,7 +147,7 @@ export default function FileUpload({
             }}
             onUploadBegin={() => { }}
           />
-        </>
+        </div>
       </div>
     </>
   );

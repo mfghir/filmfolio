@@ -99,6 +99,7 @@ const EditProfile = ({ userInfo }: { userInfo: UserInfo }) => {
   };
 
 
+
   return (
     <>
       <div className="flex items-center justify-between mr-3">
@@ -116,7 +117,7 @@ const EditProfile = ({ userInfo }: { userInfo: UserInfo }) => {
               height={200}
               className="rounded-2xl"
             />
- 
+
             <FormField
               control={form.control}
               name="imgUrl"
