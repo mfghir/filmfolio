@@ -100,58 +100,61 @@ const ResetPassword = ({ params }: ResetPasswordProps) => {
   }
 
   return (
-    <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit p-6 mt-24 lg:mt-0 lg:px-20 lg:pt-28">
-      <Image
-        className="hidden lg:block lg:w-[550px] m-auto rounded-3xl"
-        width={1080}
-        height={1080}
-        src="https://i.postimg.cc/YSwB8kDG/reset-pass.jpg"
-        alt="reset password illustration" />
+    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
 
-      <div className="w-full md:w-[350px] mx-auto lg:w-[450px] flex flex-col justify-center my-6">
-        <h1 className="text-2xl font-bold inline-block w-fit border-b-2 ">Reset Password</h1>
-        <p className='text-sm text-gray-400 mt-2 mb-8'>
-          Don't worry if you've forgotten your password.
-          Follow our easy password reset process to get back into your account.
-        </p>
+      <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit p-6 mt-24 lg:mt-0 lg:px-20 lg:pt-28">
+        <Image
+          className="hidden lg:block lg:w-[550px] m-auto rounded-3xl"
+          width={1080}
+          height={1080}
+          src="https://i.postimg.cc/YSwB8kDG/reset-pass.jpg"
+          alt="reset password illustration" />
 
-        <Form {...form}  >
-          <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
-            <FormField
-              control={form.control}
-              name="newPassword"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>New Password</FormLabel>
-                  <FormControl>
-                    <Input placeholder="new password" {...field} className="py-4" />
-                  </FormControl>
+        <div className="w-full md:w-[350px] mx-auto lg:w-[450px] flex flex-col justify-center my-6">
+          <h1 className="text-2xl font-bold inline-block w-fit border-b-2 ">Reset Password</h1>
+          <p className='text-sm text-gray-400 mt-2 mb-8'>
+            Don't worry if you've forgotten your password.
+            Follow our easy password reset process to get back into your account.
+          </p>
 
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <Form {...form}  >
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
+              <FormField
+                control={form.control}
+                name="newPassword"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>New Password</FormLabel>
+                    <FormControl>
+                      <Input placeholder="new password" {...field} className="py-4" />
+                    </FormControl>
 
-            <FormField
-              control={form.control}
-              name="confirmPassword"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Confirm Password</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Confirm Password" {...field} className="py-4" />
-                  </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+              <FormField
+                control={form.control}
+                name="confirmPassword"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Confirm Password</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Confirm Password" {...field} className="py-4" />
+                    </FormControl>
 
-            <SubmitButton loading={loading} />
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          </form>
-        </Form>
-      </div>
+              <SubmitButton loading={loading} />
+
+            </form>
+          </Form>
+        </div>
+      </section>
     </section>
   )
 }

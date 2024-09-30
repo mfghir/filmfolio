@@ -64,7 +64,7 @@ const ForgetPassword = () => {
         description: "Check your inbox!"
       });
 
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     } catch (error: any) {
       console.log("forget password - error ---->", error)
       toast({
@@ -78,51 +78,54 @@ const ForgetPassword = () => {
   }
 
   return (
-    <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit p-6 mt-24 lg:mt-0 lg:px-20 lg:pt-28">
-      <Image
-        className="hidden lg:block lg:w-[550px] m-auto rounded-3xl"
-        width={1080}
-        height={1080}
-        src="https://i.postimg.cc/7YPZySS3/forget-pass.jpg"
-        alt="forget password illustration" />
+    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
 
-      <div className="w-full md:w-[350px] mx-auto lg:w-[450px] flex flex-col items-start justify-start my-6 ">
-        <Link href="/login"
-          className="flex justify-start items-center gap-x-2 text-gray-500 text-xs mb-6 hover:text-blue-500 duration-300"
-        >
-          <MoveLeft size={16} />
-          Back to Login
-        </Link>
+      <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit p-6 mt-24 lg:mt-0 lg:px-20 lg:pt-28">
+        <Image
+          className="hidden lg:block lg:w-[550px] m-auto rounded-3xl"
+          width={1080}
+          height={1080}
+          src="https://i.postimg.cc/7YPZySS3/forget-pass.jpg"
+          alt="forget password illustration" />
 
-        <h1 className="text-2xl font-bold inline-block w-fit border-b-2 ">Forget Password</h1>
-        <p className='text-sm text-gray-400 mt-2 mb-8'>
-          Don't worry if you've forgotten your password.
-          Follow our easy password reset process to get back into your account.
-        </p>
+        <div className="w-full md:w-[350px] mx-auto lg:w-[450px] flex flex-col items-start justify-start my-6 ">
+          <Link href="/login"
+            className="flex justify-start items-center gap-x-2 text-gray-500 text-xs mb-6 hover:text-blue-500 duration-300"
+          >
+            <MoveLeft size={16} />
+            Back to Login
+          </Link>
 
-        <Form {...form}  >
-          <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="email" {...field} className="py-4" />
-                  </FormControl>
+          <h1 className="text-2xl font-bold inline-block w-fit border-b-2 ">Forget Password</h1>
+          <p className='text-sm text-gray-400 mt-2 mb-8'>
+            Don't worry if you've forgotten your password.
+            Follow our easy password reset process to get back into your account.
+          </p>
 
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <Form {...form}  >
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="email" {...field} className="py-4" />
+                    </FormControl>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
 
-            <SubmitButton loading={loading} />
+              <SubmitButton loading={loading} />
 
-          </form>
-        </Form>
-      </div>
+            </form>
+          </Form>
+        </div>
+      </section>
     </section>
   )
 }
