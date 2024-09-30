@@ -1,6 +1,5 @@
 import TabKdramaList from '@/components/dashboard/TabKdramaList'
 import BreadcrumbComp from '@/utilities/Breadcrumb';
-// import BreadCrumb from '@/utilities/breadcrumb';
 
 const Page = () => {
   const breadcrumbItems = [

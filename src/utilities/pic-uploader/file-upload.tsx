@@ -85,9 +85,9 @@ export default function FileUpload({
   return (
     <>
       <div className="w-[calc(100%-40px)] md:w-1/2 md:h-full flex items-center justify-center content-center flex-wrap md:flex-nowrap md:gap-x-4">
-        <div className="w-48 md:w-64 h-48 relative">
+        <>
           {imgUrl ?
-            <>
+            <div className="w-48 md:w-64 h-48 relative">
               <Button
                 type="button"
                 onClick={deleteHandler}
@@ -104,10 +104,10 @@ export default function FileUpload({
                 alt="Image"
                 src={imgUrl}
               />
-            </>
+            </div>
             : null
           }
-        </div>
+        </>
 
         <div className="w-full">
           {/* @ts-ignore  */}
