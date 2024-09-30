@@ -216,7 +216,7 @@ const HomePage = () => {
                   />
 
                   <h4 className="text-xl font-bold mt-3 mb-4">{item.title}</h4>
-                  <p className="text-sm lg:text-base text-gray-300">{item.text}</p>
+                  <p className="text-sm lg:text-base text-gray-800 dark:text-gray-300">{item.text}</p>
                 </div>
               </li>
             )}

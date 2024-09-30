@@ -109,7 +109,7 @@ export default function FileUpload({
           }
         </div>
 
-        <div className="bg-green-300 w-full">
+        <div className="w-full">
           {/* @ts-ignore  */}
           <UploadDropzone<OurFileRouter>
             className="dark:bg-zinc-800 py-2 ut-label:text-sm ut-allowed-content:ut-uploading:text-red-300"
