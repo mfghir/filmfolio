@@ -4,12 +4,9 @@ import { useState } from "react";
 import { MenuIcon } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-// import { ModeToggle } from "@/utilities/ModeToggle";
-// import ThemeSelector from "../theme/ThemeSelector";
-import DashboardNav from "./DashboardNav";
-
 import { UserInfo } from "@/lib/data";
 import ModeToggle from "@/utilities/mode-toggle";
+import DashboardNav from "@/templates/navbar/dashboard-nav";
 
 
 const MobileSidebar = ({ userInfo }: { userInfo: UserInfo }) => {

@@ -10,6 +10,7 @@ export async function PATCH(req: Request) {
   await connectDB();
   const session = await getServerSession(authOptions);
   const user = await User.findOne({ email: session?.user?.email });
+  console.log("user - update-password *************", user);
 
   try {
     const userData = await req.json();

@@ -1,5 +1,7 @@
-import { IconAward, IconBulb, IconDashboard, IconListNumbers, IconListSearch, IconMasksTheater, IconMessages, IconRosetteDiscountCheck, IconSocial, IconStars, IconUsers, IconWriting } from "@tabler/icons-react";
-import { m } from "framer-motion";
+import { IconAward, IconBulb, IconDashboard, IconListNumbers, 
+  IconListSearch, IconMasksTheater, IconMessages, IconRosetteDiscountCheck, 
+  IconSocial, IconStars, IconUsers, IconWriting } from "@tabler/icons-react";
+
 import {
   Gauge,
   ListFilter,
@@ -9,10 +11,9 @@ import {
   KeyRound,
   icons,
 } from "lucide-react";
-import { title } from "process";
-import React from "react";
-import { text } from "stream/consumers";
 
+
+import React from "react";
 
 export interface UserInfo {
   _id: string;
@@ -37,11 +38,6 @@ export interface NavItemMenu {
   label?: string;
 }
 
-
-
-
-
-
 export interface NavItem {
   title: string;
   href?: string;
@@ -51,44 +47,59 @@ export interface NavItem {
   label?: string;
   role: string[];
 }
-export const navItems: NavItem[] = [
+
+
+
+
+export interface NavItemsDashboard {
+  title: string;
+  href?: string;
+  disabled?: boolean;
+  external?: boolean;
+  icon?: unknown;
+  label?: string;
+  role: string[];
+}
+
+// export const navItems: NavItem[] = [
+  export const navItemsDashboard: NavItemsDashboard[] = [
   {
-    title: "Dashboard",
+    title: "داشبورد",
     href: "/dashboard",
     icon: Gauge,
     label: "Dashboard",
     role: ["user", "admin"],
   },
   {
-    title: "Profile",
+    title: "پروفایل",
     href: "/dashboard/profile",
     icon: SquareUserRound,
     label: "Profile",
     role: ["user", "admin"],
   },
   {
-    title: "Users",
+    title: "کاربران",
     href: "/dashboard/users",
     icon: UsersRound,
     label: "Users",
     role: ["admin"],
   },
   {
-    title: "Messages",
+    title: "پیام ها",
     href: "/dashboard/messages",
     icon: MessageSquare,
     label: "Messages",
     role: ["user"],
   },
   {
-    title: "KDrama List",
+    title: "لیست فیلم ها",
     href: "/dashboard/kdrama-list",
     icon: ListFilter,
     label: "KDrama List",
     role: ["user", "admin"],
   },
   {
-    title: "Change Password",
+    title: "تغییر رمز عبور",
     href: "/dashboard/change-password",
     icon: KeyRound,
     label: "Change Password",
@@ -139,60 +150,51 @@ export const navItemsMenu: NavItemMenu[] = [
 ]
 
 
-export interface NavItemsDashboard {
-  title: string;
-  href?: string;
-  disabled?: boolean;
-  external?: boolean;
-  icon?: unknown;
-  label?: string;
-  role: string[];
-}
 
-export const navItemsDashboard: NavItemsDashboard[] = [
-  {
-    title: "Dashboard",
-    href: "/dashboard",
-    icon: Gauge,
-    label: "Dashboard",
-    role: ["user", "admin"],
-  },
-  {
-    title: "Profile",
-    href: "/dashboard/profile",
-    icon: SquareUserRound,
-    label: "Profile",
-    role: ["user", "admin"],
-  },
-  {
-    title: "Users",
-    href: "/dashboard/users",
-    icon: UsersRound,
-    label: "Users",
-    role: ["admin"],
-  },
-  {
-    title: "Messages",
-    href: "/dashboard/messages",
-    icon: MessageSquare,
-    label: "Messages",
-    role: ["user"],
-  },
-  {
-    title: "KDrama List",
-    href: "/dashboard/kdrama-list",
-    icon: ListFilter,
-    label: "KDrama List",
-    role: ["user", "admin"],
-  },
-  {
-    title: "Change Password",
-    href: "/dashboard/change-password",
-    icon: KeyRound,
-    label: "Change Password",
-    role: ["user", "admin"],
-  },
-];
+// export const navItemsDashboard: NavItemsDashboard[] = [
+//   {
+//     title: "Dashboard",
+//     href: "/dashboard",
+//     icon: Gauge,
+//     label: "Dashboard",
+//     role: ["user", "admin"],
+//   },
+//   {
+//     title: "Profile",
+//     href: "/dashboard/profile",
+//     icon: SquareUserRound,
+//     label: "Profile",
+//     role: ["user", "admin"],
+//   },
+//   {
+//     title: "Users",
+//     href: "/dashboard/users",
+//     icon: UsersRound,
+//     label: "Users",
+//     role: ["admin"],
+//   },
+//   {
+//     title: "Messages",
+//     href: "/dashboard/messages",
+//     icon: MessageSquare,
+//     label: "Messages",
+//     role: ["user"],
+//   },
+//   {
+//     title: "KDrama List",
+//     href: "/dashboard/kdrama-list",
+//     icon: ListFilter,
+//     label: "KDrama List",
+//     role: ["user", "admin"],
+//   },
+//   {
+//     title: "Change Password",
+//     href: "/dashboard/change-password",
+//     icon: KeyRound,
+//     label: "Change Password",
+//     role: ["user", "admin"],
+//   },
+// ];
 
 
 

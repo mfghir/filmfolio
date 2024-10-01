@@ -28,16 +28,16 @@ import { Heading } from "@/templates/dashboard/heading";
 
 const formSchema = z.object({
   newPassword: z.string()
-    .min(8, { message: "You must be at least 8 character" })
+    .min(8, { message: "رمز شما حداقل باید 8 کاراکتر باشه" })
     .refine((value) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$/.test(value),
-      { message: "Password must contain at least one letter, one number, and one special character" }
+      { message: "رمز شما باید شامل حداقل یک حرف بزرگ،یک عدد و یک کاراکتر خاص باشه" }
     ),
   confirmPassword: z.string()
-    .min(8, { message: "Password must be at least 6 characters" })
+    .min(8, { message: "رمز شما حداقل باید 8 کاراکتر باشه" })
 })
   .refine((data) => data.newPassword === data.confirmPassword, {
     path: ["confirmPassword"],
-    message: "Passwords does not match"
+    message: "رمز درست نیست"
   })
 
 
@@ -54,31 +54,29 @@ const TabChangePassword = () => {
   })
 
 
-  // console.log("form forget ---->" , form.control)
 
 
 
   const onSubmit = async (values: z.infer<typeof formSchema>): Promise<void> => {
     setLoading(true);
-    console.log("values forget 1 ---->" , values)
 
     try {
       await axios.patch("/api/update-password", values);
-      console.log("values forget 2 ---->" , values)
+      // console.log("values forget 2 ---->", values)
 
       toast({
         variant: "success",
-        title: "Success",
-        description: "Your password successfully changed!"
+        title: "موفقیت",
+        description: "رمز شما با موفقیت عوض شد"
       });
 
     } catch (error: any) {
       console.log("forget password ---->", error)
       toast({
         variant: "destructive",
-        title: "Error",
-        // description: "Failed to send reset password email"
-        description: error.message
+        title: "شکست",
+        description: "متاسفانه مشکلی پیش اومد "
+        // description: error.message
       });
     }
 
@@ -90,7 +88,7 @@ const TabChangePassword = () => {
   return (
     <>
       <div className="flex items-start justify-start ">
-        <Heading title="Change Password" description="change your password" />
+        <Heading title="تعویض رمز" description="رمز عبورتون رو تغییر بدین" />
       </div>
 
 
@@ -102,9 +100,9 @@ const TabChangePassword = () => {
               name="newPassword"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>New Password</FormLabel>
+                  <FormLabel>رمز جدید</FormLabel>
                   <FormControl>
-                    <Input placeholder="new password" {...field} className="py-4" />
+                    <Input placeholder="رمز جدید" {...field} className="py-4" />
                   </FormControl>
 
                   <FormMessage />
@@ -117,9 +115,9 @@ const TabChangePassword = () => {
               name="confirmPassword"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Confirm Password</FormLabel>
+                  <FormLabel>تکرار رمز</FormLabel>
                   <FormControl>
-                    <Input placeholder="Confirm Password" {...field} className="py-4" />
+                    <Input placeholder="تکرار رمز" {...field} className="py-4" />
                   </FormControl>
 
                   <FormMessage />
@@ -128,7 +126,7 @@ const TabChangePassword = () => {
             />
 
             <Button disabled={loading} className="ml-auto" type="submit" >
-              {loading ? "Saving changes..." : "Save changes"}
+              {loading ? "ذخیره تغییرات..." : "ذخیره تغییرات"}
             </Button>
 
           </form>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 import { UserInfo, navItemsDashboard } from '@/utilities/types-data';
+import { useGoogleTranslate } from '@/utilities/google-translate';
 
 
 const DashboardNav = ({ setOpen, userInfo }: {
@@ -12,6 +13,8 @@ const DashboardNav = ({ setOpen, userInfo }: {
   userInfo: UserInfo
 }) => {
   const path = usePathname();
+  const { language } = useGoogleTranslate();
+
 
   if (!navItemsDashboard?.length) return null;
 
@@ -36,8 +39,7 @@ const DashboardNav = ({ setOpen, userInfo }: {
                   )}
                 >
                   {/* @ts-ignore  */}
-                  <item.icon className="mr-2 h-4 w-4" />
-
+                  <item.icon className={`h-4 w-4 ${language === "fa" ? "ml-2" : "mr-2"}`} />
                   <span>{item.title}</span>
                 </span>
               </Link>

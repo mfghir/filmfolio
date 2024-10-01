@@ -21,23 +21,22 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "../ui/use-toast";
 
-// import { Heading } from '@/templates/heading'
-// import FileUpload from "@/utilities/file-upload";
-import axios from "axios";
 
+import axios from "axios";
 import { UserInfo } from '@/lib/data';
 import { Heading } from "@/templates/dashboard/heading";
+
 import FileUpload from "@/utilities/pic-uploader/file-upload";
 
 
 const formSchema = z.object({
   name: z.string()
-    .min(3, { message: "Product Name must be at least 3 characters" }),
+    .min(3, { message: "اسم حداقل دو حرف باید باشه" }),
   imgUrl: z.string()
     .refine((files) => { return files?.[0] }),
   email: z.string()
-    .min(5, { message: "This field has to be filled." })
-    .email("This is not a valid email."),
+    .min(5, { message: "اینفیلد حتما باید پر بشه" })
+    .email("این ایمیل معتبر نیس"),
   role: z.string().default("user")
 });
 
@@ -81,8 +80,8 @@ const EditProfile = ({ userInfo }: { userInfo: UserInfo }) => {
 
       toast({
         variant: "success",
-        title: "Success!",
-        description: "Your Profile successfully edited!",
+        title: "موفقیت آمیز",
+        description: "تغییرات ذخیره شد",
       });
 
     } catch (error: any) {
@@ -90,8 +89,8 @@ const EditProfile = ({ userInfo }: { userInfo: UserInfo }) => {
 
       toast({
         variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request.",
+        title: "خطا!",
+        description: "متاسفانه مشکلی پیش  اومد",
       });
     } finally {
       setLoading(false);
@@ -143,7 +142,7 @@ const EditProfile = ({ userInfo }: { userInfo: UserInfo }) => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>اسم</FormLabel>
                   <FormControl>
                     <Input placeholder={userInfo?.name} disabled={loading} {...field} />
                   </FormControl>
@@ -157,7 +156,7 @@ const EditProfile = ({ userInfo }: { userInfo: UserInfo }) => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>ایمیل</FormLabel>
                   <FormControl>
                     <Input placeholder={userInfo?.email} disabled={loading} {...field} />
                   </FormControl>
@@ -196,7 +195,7 @@ const EditProfile = ({ userInfo }: { userInfo: UserInfo }) => {
           </div>
 
           <Button disabled={loading} className="ml-auto" type="submit" >
-            {loading ? "Saving changes..." : "Save changes"}
+            {loading ? "ذخیره تغییرات..." : "ذخیره تغییرات"}
           </Button>
         </form>
       </Form>

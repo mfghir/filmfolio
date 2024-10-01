@@ -3,7 +3,7 @@ import BreadcrumbComp from "@/utilities/Breadcrumb";
 
 const page = async () => {
   const breadcrumbItems = [
-    { title: "Change Password", link: "/dashboard/change-password " },
+    { title: "تغییر رمز", link: "/dashboard/change-password " },
   ];
 
   return (

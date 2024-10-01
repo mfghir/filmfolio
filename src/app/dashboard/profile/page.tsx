@@ -19,7 +19,7 @@ const Page = async () => {
 
 
   const breadcrumbItems = [
-    { title: "Profile", link: "/dashboard/profile" },
+    { title: "پروفایل", link: "/dashboard/profile" },
   ]
 
   return (
