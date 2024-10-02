@@ -9,9 +9,9 @@ import TitleSec from '@/utilities/title-sec'
 import CustomShape from '@/utilities/CustomShape'
 import HexagonGradientIcon from '@/utilities/HexagonGradientIcon'
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion'
 import { Textarea } from '../ui/textarea'
 import { Button } from '../ui/button'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion'
 
 import { aboutUsSec, blogPosts, faqList, featuresSec, miniAdsSec, moviesSec, theBestSec } from '@/utilities/types-data'
 

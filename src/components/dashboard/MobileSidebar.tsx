@@ -20,9 +20,9 @@ const MobileSidebar = ({ userInfo }: { userInfo: UserInfo }) => {
 
       <SheetContent side="left" className="!px-0">
         <div className="space-y-4 px-3 py-6 ">
-          <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
+          {/* <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
             Overview
-          </h2>
+          </h2> */}
 
           <div className="space-y-2 min-h-[550px]">
             {/* @ts-ignore */}

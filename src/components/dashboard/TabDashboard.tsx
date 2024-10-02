@@ -1,19 +1,20 @@
 "use client";
 
-import { Calendar, Clock, Popcorn, Slice, Smile, Sparkles } from "lucide-react"
-import { useKdramasData } from "@/lib/queries";
-// import DashboardChart from "@/templates/dashboard-chart";
-import DashboardChart from "@/templates/dashboard/dashboard-chart";
+import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import { Clock, Popcorn, Slice, Smile, Sparkles, Calendar } from "lucide-react"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 
+import { useKdramasData } from "@/lib/queries";
 import { UserInfo, userNotifs } from "@/lib/data";
 import { User } from "@/utilities/users-table/columns";
-import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
 
+import DashboardChart from "@/templates/dashboard/dashboard-chart";
+import { useGoogleTranslate } from "@/utilities/google-translate";
+import { CalendarButton } from "@/utilities/CalendarButton";
 
 
 const TabDashboard = ({ role, usersList }: {
@@ -22,6 +23,23 @@ const TabDashboard = ({ role, usersList }: {
 }) => {
   const { data: serverData } = useKdramasData()
   const { status } = useSession();
+  const { language } = useGoogleTranslate();
+
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  // Update the time every minute
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 60000); // 60000 milliseconds = 1 minute
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
+  const formattedTime = language === 'fa'
+    ? currentTime.toLocaleTimeString('fa-IR', { hour12: false, hour: 'numeric', minute: 'numeric' })
+    : currentTime.toLocaleTimeString('en-US', { hour12: false, hour: 'numeric', minute: 'numeric' });
 
 
   if (role === "admin" || status === "authenticated") {
@@ -29,18 +47,26 @@ const TabDashboard = ({ role, usersList }: {
       <>
         <section className="w-full flex items-center justify-between space-y-2">
           <h2 className="text-3xl font-bold tracking-tight">
-            Hi, Welcome back 👋
+            سلام، خوش اومدی 👋
           </h2>
 
           <div className="hidden md:flex items-center gap-x-4">
+            {/* <CalendarButton /> */}
+
             <Button className="flex justify-between items-center gap-x-2" variant="secondary">
               <Calendar size={18} />
-              {new Date().toLocaleString("en-US", { year: "numeric", month: "long", day: '2-digit' })}
+              {
+                language === "fa" ?
+                  new Date().toLocaleString("fa-IR", { year: "numeric", month: "long", day: '2-digit' })
+                  :
+                  new Date().toLocaleString("en-US", { year: "numeric", month: "long", day: '2-digit' })
+              }
             </Button>
-            <Button className="flex justify-between items-center gap-x-2" variant="ghost">
+
+            <span className="flex justify-between items-center gap-x-2" >
               <Clock size={18} />
-              {new Date().toLocaleTimeString('en-US', { hour12: false, hour: "numeric", minute: "numeric" })}
-            </Button>
+              {formattedTime}
+            </span>
           </div>
         </section>
 
@@ -100,7 +126,7 @@ const SecTwo = ({ serverData }: { serverData: ServerDataItem[] }) => {
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-sm font-medium">
-            Total Dramas
+            مجموع دیده شده ها
           </CardTitle>
           <Popcorn />
         </CardHeader>
@@ -116,7 +142,7 @@ const SecTwo = ({ serverData }: { serverData: ServerDataItem[] }) => {
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-sm font-medium">
-            Fantasy KDramas
+            فانتزی
           </CardTitle>
           <Sparkles />
         </CardHeader>
@@ -132,7 +158,7 @@ const SecTwo = ({ serverData }: { serverData: ServerDataItem[] }) => {
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-sm font-medium">
-            Comedy KDramas
+            کمدی
           </CardTitle>
           <Smile />
         </CardHeader>
@@ -148,7 +174,7 @@ const SecTwo = ({ serverData }: { serverData: ServerDataItem[] }) => {
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-sm font-medium">
-            Criminal KDramas
+            جنایی
           </CardTitle>
           <Slice />
         </CardHeader>
@@ -177,7 +203,7 @@ const SecThree = ({ usersList }: {
       {/* <section className=" overflow-y-scroll grid grid-cols-1 gap-y-4  lg:gap-4 md:grid-cols-2 lg:grid-cols-7"> */}
       <Card className="col-span-4 h-[430px]">
         <CardHeader>
-          <CardTitle>Overview</CardTitle>
+          <CardTitle>نمای کلی</CardTitle>
         </CardHeader>
         <CardContent className="pl-2">
           <DashboardChart />
@@ -187,9 +213,9 @@ const SecThree = ({ usersList }: {
 
       <Card className="col-span-4 md:col-span-3 h-[430px] overflow-y-scroll">
         <CardHeader>
-          <CardTitle>Users list</CardTitle>
+          <CardTitle>لیست کاربران</CardTitle>
           <CardDescription>
-            Total Users ({filteredUsers?.length})
+            مجموع کاربران ({filteredUsers?.length})
           </CardDescription>
         </CardHeader>
 

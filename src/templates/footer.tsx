@@ -15,10 +15,9 @@ import Link from 'next/link';
 const Footer = () => {
 
   return (
-    <footer className="w-full  mx-auto text-gray-900 dark:text-white   mt-12 px-6 md:px-8 lg:px-20">
+    <footer className="w-full mx-auto text-gray-900 dark:text-white px-6 md:px-8 lg:px-20">
       <section className="container bg-gray-100 dark:bg-gray-800 w-full rounded-xl
-              flex justify-between items-center flex-wrap md:flex-nowrap gap-y-12 py-10"
-      >
+              flex justify-between items-center flex-wrap md:flex-nowrap gap-y-12 py-10">
 
         {/* logo */}
         <div className="flex flex-col gap-y-2">
