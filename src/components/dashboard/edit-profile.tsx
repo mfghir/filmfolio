@@ -102,7 +102,7 @@ const EditProfile = ({ userInfo }: { userInfo: UserInfo }) => {
   return (
     <>
       <div className="flex items-center justify-between mr-3">
-        <Heading title="Edit Profile" description="Edit your Profile" />
+        <Heading title="ویرایش پروفایل" description="" />
       </div>
 
       <Form {...form}>

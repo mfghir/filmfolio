@@ -84,7 +84,7 @@ export default function FileUpload({
 
   return (
     <>
-      <div className="w-[calc(100%-40px)] md:w-1/2 md:h-full flex items-center justify-center content-center flex-wrap md:flex-nowrap md:gap-x-4">
+      <div className="w-[calc(100%-40px)] md:w-1/2 md:h-full lg:w-full flex items-center justify-center content-center flex-wrap md:flex-nowrap md:gap-x-4">
         <>
           {imgUrl ?
             <div className="w-48 md:w-64 h-48 relative">
@@ -109,7 +109,7 @@ export default function FileUpload({
           }
         </>
 
-        <div className="w-full">
+        <div className="w-full min-w-max">
           {/* @ts-ignore  */}
           <UploadDropzone<OurFileRouter>
             className="dark:bg-zinc-800 py-2 ut-label:text-sm ut-allowed-content:ut-uploading:text-red-300"
@@ -133,15 +133,15 @@ export default function FileUpload({
               if (data) onUpdateFile(data);
               toast({
                 variant: "success",
-                title: "Success!",
-                description: "your picture has been upload successfully!",
+                title: "موفقیت آمیز",
+                description: "عکس شما با موفقیت ذخیره شد",
               });
             }}
             onUploadError={(error: Error) => {
               console.log("error upload ===>", error.message);
               toast({
                 variant: "destructive",
-                title: "Error",
+                title: "خطا",
                 description: error.message,
               });
             }}

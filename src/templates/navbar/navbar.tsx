@@ -16,12 +16,16 @@ import SearchBar from "../search-bar";
 
 import { UserInfo } from "@/utilities/types-data";
 import { LanguageToggle } from "@/utilities/language-toggle";
+import { useGoogleTranslate } from "@/utilities/google-translate";
 
 
 // const Navbar = () => {
-  const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
+const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
   const { data: session, status } = useSession();
   const path = usePathname();
+
+  const { language } = useGoogleTranslate();
+
 
   // console.log("session ---->",session)
   // console.log("status ---->",status)
@@ -53,10 +57,12 @@ import { LanguageToggle } from "@/utilities/language-toggle";
 
   return (
     <div className="fixed inset-0 top-0 left-0 z-20 h-fit">
-      <div className="px-6 py-3 lg:px-20 flex justify-between items-center bg-gray-300/50 dark:bg-gray-800/60 backdrop-blur">
+      <div className={`px-6 py-3 lg:px-20 flex justify-between items-center bg-gray-300/50 dark:bg-gray-800/60 backdrop-blur
+      `}>
+
         <section className=" flex justify-start items-center gap-y-2 gap-x-4 ">
-          <Link href="/"
-            className="pic-anim galaxy-gradient-bg">
+
+          <Link href="/" className="pic-anim galaxy-gradient-bg">
             <Image
               className="w-16 h-16 rounded-full object-fill "
               width={70}
@@ -79,12 +85,8 @@ import { LanguageToggle } from "@/utilities/language-toggle";
           {/* <div className="hidden lg:flex justify-between items-center gap-x-4">
           </div> */}
 
-          <div className="lg:hidden">
-            {/* PhoneNav */}
-            <PhoneNav userInfo={userInfo} />
-          </div>
 
-          
+
           {session?.user ?
             <UserNav userInfo={userInfo} />
             :
@@ -97,6 +99,12 @@ import { LanguageToggle } from "@/utilities/language-toggle";
               </Button>
             </>
           }
+
+
+          <div className="lg:hidden">
+            {/* PhoneNav */}
+            <PhoneNav userInfo={userInfo} />
+          </div>
         </section>
       </div>
     </div>

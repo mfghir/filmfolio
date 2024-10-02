@@ -21,15 +21,15 @@ const PhoneNav = ({ userInfo }: { userInfo: UserInfo }) => {
 
       <SheetContent side="left" className="!px-0">
         <div className="flex flex-col space-y-4 px-3 py-6 ">
-          {/* <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
+          <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
             Overview
-          </h2> */}
+          </h2>
 
           <MenuNav />
 
-          <div className="space-y-2 min-h-[550px]">
+          {/* <div className="space-y-2 min-h-[550px] mt-28 bg-red-300">
             <DashboardNav userInfo={userInfo} setOpen={setOpen} />
-          </div>
+          </div> */}
 
 
           {/* <ModeToggle /> */}

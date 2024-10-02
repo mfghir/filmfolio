@@ -16,7 +16,7 @@ const Page = async () => {
 
   const breadcrumbItems = [
     { title: "پروفایل", link: "/dashboard/profile" },
-    { title: "حذف پروفایل", link: "/dashboard/profile/edit-profile" },
+    { title: "ویرایش پروفایل", link: "/dashboard/profile/edit-profile" },
   ]
 
   return (
