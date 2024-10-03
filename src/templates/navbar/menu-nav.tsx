@@ -1,11 +1,11 @@
 // "use client"
 
-// import { usePathname } from 'next/navigation';
-// import Link from 'next/link';
+// import { usePathname } from "next/navigation";
+// import Link from "next/link";
 
 
-// import { cn } from '@/lib/utils';
-// import { navItemsMenu } from '@/utilities/types';
+// import { cn } from "@/lib/utils";
+// import { navItemsMenu } from "@/utilities/types";
 
 
 // import { Button } from "@/components/ui/button"
@@ -18,8 +18,8 @@
 //   DropdownMenuSeparator,
 //   DropdownMenuTrigger,
 // } from "@/components/ui/dropdown-menu"
-// import { useState } from 'react';
-// import { IconChevronDown } from '@tabler/icons-react';
+// import { useState } from "react";
+// import { IconChevronDown } from "@tabler/icons-react";
 
 
 
@@ -158,12 +158,13 @@
 
 "use client";
 
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import { useState } from 'react';
-import { IconChevronDown } from '@tabler/icons-react';
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { navItemsMenu } from '@/utilities/types-data';
+import { useGoogleTranslate } from "@/utilities/google-translate";
+import { IconChevronDown } from "@tabler/icons-react";
+import { navItemsMenu } from "@/utilities/types-data";
 
 import {
   Menubar,
@@ -172,22 +173,20 @@ import {
   MenubarMenu,
   MenubarRadioGroup,
   MenubarRadioItem,
-  MenubarSeparator,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
 const MenuNav = () => {
   const [position, setPosition] = useState("bottom");
   const path = usePathname();
+  const { language } = useGoogleTranslate();
+
 
   if (!navItemsMenu?.length) return null;
 
   return (
     <nav className="">
-      <Menubar className='border-none bg-transparent flex flex-col items-start gap-y-4 lg:flex-row'>
+      <Menubar className="border-none bg-transparent flex flex-col items-start gap-y-4 lg:flex-row">
         {navItemsMenu.slice(0, 2).map((item, index) => (
           <MenubarMenu key={index}>
             <MenubarTrigger>
@@ -204,57 +203,53 @@ const MenuNav = () => {
 
         <MenubarMenu>
           <MenubarTrigger>
-            <span className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300
-            flex items-center ${path === "/movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}>
-              <IconChevronDown className="ml-1" size="18" stroke="1.5" />
-              <span>فیلم ها</span>
+            <span dir={language === "fa" ? "rtl" : "ltr"}
+              className={`group flex items-center gap-x-2
+              ${path === "/movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}
+            `}>
+              <span className="hover:galaxy-gradient-text duration-300">فیلم ها</span>
+              <IconChevronDown size="18" stroke="1.5" />
             </span>
-
-            {/* <Link
-              href="/movies"
-              className={`hover:galaxy-gradient-text dura 
-              flex items-center ${path === "/movies" ? "galaxy-gradient-text" : "text-zinc-900"}`}
-            >
-              Movies
-              <IconChevronDown className="ml-1" size="18" stroke="1.5" />
-            </Link> */}
           </MenubarTrigger>
 
           <MenubarContent>
             <MenubarRadioGroup value={position} onValueChange={setPosition}>
-              <MenubarRadioItem value="special-ads">
+              <MenubarRadioItem value="special-ads" dir={language === "fa" ? "rtl" : "ltr"}>
                 <Link
                   href="/movies/special-ads"
-                  className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300
-                  ${path === "/movies/special-ads" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
-                >
+                  className={`hover:galaxy-gradient-text duration-300
+                  ${path === "/movies/special-ads" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}
+                  `}>
                   اعلان های ویژه
                 </Link>
               </MenubarRadioItem>
-              <MenubarRadioItem value="popular-movies">
+
+              <MenubarRadioItem value="popular-movies" dir={language === "fa" ? "rtl" : "ltr"}>
                 <Link
                   href="/movies/popular-movies"
-                  className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300
-                  ${path === "/movies/popular-movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
-                >
+                  className={`hover:galaxy-gradient-text duration-300
+                  ${path === "/movies/popular-movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}
+                  `}>
                   فیلم های محبوب
                 </Link>
               </MenubarRadioItem>
-              <MenubarRadioItem value="new-movies">
+
+              <MenubarRadioItem value="new-movies" dir={language === "fa" ? "rtl" : "ltr"}>
                 <Link
                   href="/movies/new-movies"
-                  className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-200 
-                  ${path === "/movies/new-movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
-                >
+                  className={`hover:galaxy-gradient-text duration-200 
+                  ${path === "/movies/new-movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}
+                  `}>
                   فیلم های جدید
                 </Link>
               </MenubarRadioItem>
-              <MenubarRadioItem value="sort-movies">
+
+              <MenubarRadioItem value="sort-movies" dir={language === "fa" ? "rtl" : "ltr"}>
                 <Link
                   href="/movies/sort-movies"
-                  className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300 
-                  ${path === "/movies/sort-movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
-                >
+                  className={`hover:galaxy-gradient-text duration-300 
+                  ${path === "/movies/sort-movies" ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}
+                  `}>
                   دسته بندی فیلم ها
                 </Link>
               </MenubarRadioItem>
@@ -267,7 +262,7 @@ const MenuNav = () => {
             <MenubarTrigger>
               <Link
                 href={item.href!}
-                className={`hover:galaxy-gradient-text dark:hover:galaxy-gradient-text duration-300 
+                className={`hover:galaxy-gradient-text duration-300 
                 ${path === item.href ? "galaxy-gradient-text" : "text-zinc-900 dark:text-white"}`}
               >
                 {item.title}

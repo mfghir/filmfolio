@@ -29,20 +29,20 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
+
 import SubmitButton from "@/utilities/SubmitButton";
-import Dots from "@/utilities/dots";
 import Loading from "@/utilities/loading";
 
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "نام کاربری باید حداقل ۲ کاراکتر داشته باشد.", }),
   email: z.string()
-    .email("This is not a valid email.")
-    .min(5, { message: "این فیلد باید پر شود." }),
+    .min(5, { message: "این بخش حتما باید پر بشه" })
+    .email("ایمیل معتبر نیس"),
   password: z.string()
-    .min(8, { message: 'You must be at least 8 character' })
+    .min(8, { message: "باید حداقل ۸ کاراکتر باشد" })
     .refine((value) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$/.test(value),
-      { message: "رمز باید حداقل یک حرف، یک عدد و یک کاراکتر ویژه داشته باشد" }
+      { message: "رمز باید شامل حداقل یک حرف، یک عدد و یک کاراکتر ویژه باشه" }
     ),
 })
 
@@ -280,133 +280,133 @@ export default function RegisterForm() {
               </div>
             </div> */}
       </>
-    <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
+      <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
 
-      <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit place-content-center">
-        <Image
-          className="hidden lg:block lg:w-[550px] m-auto rounded-3xl"
-          width={1080}
-          height={1080}
-          src="https://i.postimg.cc/3Nh8K4x5/signup.png"
-          alt="Sign up illustration" />
+        <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit place-content-center">
+          <Image
+            className="hidden lg:block lg:w-[550px] m-auto rounded-3xl"
+            width={1080}
+            height={1080}
+            src="https://i.postimg.cc/3Nh8K4x5/signup.png"
+            alt="Sign up illustration" />
 
-        <div className="w-full md:w-[350px] mx-auto lg:w-[450px] flex flex-col items-start justify-start my-6">
-          <h1 className="text-2xl font-bold inline-block w-fit border-b-2 border-gray-500 galaxy-gradient-text my-4">ثبتنام</h1>
+          <div className="w-full md:w-[350px] mx-auto lg:w-[450px] flex flex-col items-start justify-start my-6">
+            <h1 className="text-2xl font-bold inline-block w-fit border-b-2 border-gray-500 galaxy-gradient-text my-4">ثبتنام</h1>
 
-          <Form {...form}  >
-            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>نام کامل</FormLabel>
-                    <FormControl>
-                      <Input placeholder="نام کامل تون رو وارد کنید" {...field} className="py-4" />
-                    </FormControl>
+            <Form {...form}  >
+              <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>نام کامل</FormLabel>
+                      <FormControl>
+                        <Input placeholder="نام کامل تون رو وارد کنید" {...field} className="py-4" />
+                      </FormControl>
 
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>ایمیل</FormLabel>
-                    <FormControl>
-                      <Input placeholder="ایمیل تون رو وارد کنید" {...field} className="py-4" />
-                    </FormControl>
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>ایمیل</FormLabel>
+                      <FormControl>
+                        <Input placeholder="ایمیل تون رو وارد کنید" {...field} className="py-4" />
+                      </FormControl>
 
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>رمز</FormLabel>
-                    <FormControl>
-                      <Input placeholder="رمز عبورتون رو وارد کنید" {...field} className="py-4" />
-                    </FormControl>
-
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
 
-              <div className="flex flex-row justify-between items-center" >
-                {/* <span className="flex justify-start items-start gap-x-2 text-zinc-500">
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>رمز</FormLabel>
+                      <FormControl>
+                        <Input placeholder="رمز عبورتون رو وارد کنید" {...field} className="py-4" />
+                      </FormControl>
+
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+
+                <div className="flex flex-row justify-between items-center" >
+                  {/* <span className="flex justify-start items-start gap-x-2 text-zinc-500">
                   <KeyRound />
                   {passwordGeneFunc ? passwordGeneFunc  : "Password Generator"}
                 </span> */}
 
-                <span className="flex justify-start items-start gap-x-2 text-zinc-500">
-                  <KeyRound />
-                  {showLoader ? (
-                    <>
-                      {
-                        isLoading &&
-                        <>
-                          {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
-                          <svg className="text-gray-300 animate-spin mr-1" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16">
-                            <path
-                              d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z"
-                              stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762"
-                              stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" className="text-gray-900">
-                            </path>
-                          </svg>
-                          کمی صبر کنید ...
-                        </>
-                      }
-                    </>
+                  <span className="flex justify-start items-start gap-x-2 text-zinc-500">
+                    <KeyRound />
+                    {showLoader ? (
+                      <>
+                        {
+                          isLoading &&
+                          <>
+                            {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+                            <svg className="text-gray-300 animate-spin mr-1" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                              width="16" height="16">
+                              <path
+                                d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z"
+                                stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762"
+                                stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" className="text-gray-900">
+                              </path>
+                            </svg>
+                            کمی صبر کنید ...
+                          </>
+                        }
+                      </>
 
-                  ) : (
-                    passwordGeneFunc || "پسورد رندوم"
-                  )}
-                </span>
+                    ) : (
+                      passwordGeneFunc || "پسورد رندوم"
+                    )}
+                  </span>
 
-                <span className="flex justify-start items-start gap-x-2" >
-                  <Copy
-                    className="text-zinc-500 hover:text-blue-500 cursor-pointer transition-all"
-                    onClick={() => copyHandler(passwordGeneFunc)} />
-                  <Dices
-                    className="text-zinc-500 hover:text-blue-500 cursor-pointer transition-all"
-                    onClick={() => refetch()} />
-                </span>
-              </div>
+                  <span className="flex justify-start items-start gap-x-2" >
+                    <Copy
+                      className="text-zinc-500 hover:text-blue-500 cursor-pointer transition-all"
+                      onClick={() => copyHandler(passwordGeneFunc)} />
+                    <Dices
+                      className="text-zinc-500 hover:text-blue-500 cursor-pointer transition-all"
+                      onClick={() => refetch()} />
+                  </span>
+                </div>
 
-              <SubmitButton loading={loading} />
-            </form>
-          </Form>
+                <SubmitButton loading={loading} />
+              </form>
+            </Form>
 
-          <div className="flex justify-between items-center gap-x-2 my-6 w-full text-zinc-600">
-            <span className="w-full h-[1px] bg-zinc-600" />
-            <span>یا</span>
-            <span className="w-full h-[1px] bg-zinc-600" />
+            <div className="flex justify-between items-center gap-x-2 my-6 w-full text-zinc-600">
+              <span className="w-full h-[1px] bg-zinc-600" />
+              <span>یا</span>
+              <span className="w-full h-[1px] bg-zinc-600" />
+            </div>
+
+            <GoogleButton text="ثبتنام" />
+
+            <p className="text-sm mt-4 flex gap-x-2">
+              حساب دارید؟
+              <Link className="galaxy-gradient-text" href="/login" >
+                ورود
+              </Link>
+            </p>
           </div>
-
-          <GoogleButton text="ثبتنام" />
-
-          <p className="text-sm mt-4 flex gap-x-2">
-            حساب دارید؟
-            <Link className="galaxy-gradient-text" href="/login" >
-              ورود
-            </Link>
-          </p>
-        </div>
+        </section>
       </section>
-</section>
     </>
   );
 }

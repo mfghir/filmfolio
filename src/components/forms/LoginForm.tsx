@@ -1,5 +1,18 @@
 "use client"
 
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+
+import { useState } from "react";
+import { signIn, useSession } from "next-auth/react";
+import * as z from "zod"
+
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+
+import { Input } from "@/components/ui/input"
+import { useToast } from "../ui/use-toast";
 import {
   Form,
   FormControl,
@@ -9,30 +22,15 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 
-import { Input } from "@/components/ui/input"
-import { useToast } from "../ui/use-toast";
 import GoogleButton from "../../utilities/GoogleButton";
-
-import * as z from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-
-import { signIn, useSession } from "next-auth/react";
-import { useState } from "react";
-
-import axios from "axios";
 import SubmitButton from "@/utilities/SubmitButton";
 import Loading from "@/utilities/loading";
 
 
 const formSchema = z.object({
   email: z.string()
-    .email("این یک ایمیل معتبر نیست.")
-    .min(5, { message: "این فیلد باید پر شود." }),
+    .min(5, { message: "این بخش حتما باید پر بشه" })
+    .email("ایمیل معتبر نیس"),
   password: z.string()
     .min(8, { message: "باید حداقل ۸ کاراکتر باشد" })
     .refine((value) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$/.test(value),
@@ -62,7 +60,6 @@ export default function LoginForm() {
   const onSubmit = async (values: z.infer<typeof formSchema>): Promise<void> => {
     setLoading(true);
     try {
-      // const res = 
       await signIn("credentials", {
         email: values.email,
         password: values.password,
@@ -70,7 +67,7 @@ export default function LoginForm() {
       });
       // console.log("res login", res);
 
-      console.log("values", values)
+      // console.log("values", values)
 
       // await axios.post("/api/login", { email: values.email });
       router.push("/dashboard");

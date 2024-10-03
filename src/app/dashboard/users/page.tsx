@@ -24,7 +24,7 @@ const DashboardUsers = async () => {
   //   },
   // ]);
 
-  const breadcrumbItems = [{ title: "Users", link: "/dashboard/users" }];
+  const breadcrumbItems = [{ title: "کاربران", link: "/dashboard/users" }];
 
   return (
     <>

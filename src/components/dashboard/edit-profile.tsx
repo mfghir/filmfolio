@@ -31,12 +31,12 @@ import FileUpload from "@/utilities/pic-uploader/file-upload";
 
 const formSchema = z.object({
   name: z.string()
-    .min(3, { message: "اسم حداقل دو حرف باید باشه" }),
+    .min(2, { message: "اسم حداقل دو حرف باید باشه" }),
   imgUrl: z.string()
     .refine((files) => { return files?.[0] }),
   email: z.string()
-    .min(5, { message: "اینفیلد حتما باید پر بشه" })
-    .email("این ایمیل معتبر نیس"),
+    .min(5, { message: "این بخش حتما باید پر بشه" })
+    .email("ایمیل معتبر نیس"),
   role: z.string().default("user")
 });
 

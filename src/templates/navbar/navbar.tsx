@@ -71,10 +71,13 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
               alt="logo"
             />
           </Link>
-
+          <div className="hidden lg:block">
           <ModeToggle />
+          </div>
 
+          <div className="hidden lg:block">
           <LanguageToggle />
+          </div>
         </section>
 
         <div className="hidden lg:block">

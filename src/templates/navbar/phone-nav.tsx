@@ -2,16 +2,20 @@
 
 import { useState } from "react";
 import { MenuIcon } from "lucide-react";
+import { useGoogleTranslate } from "@/utilities/google-translate";
+
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-
+import { LanguageToggle } from "@/utilities/language-toggle";
 import { UserInfo } from "@/utilities/types-data";
-import DashboardNav from "./dashboard-nav";
-import MenuNav from "./menu-nav";
 
+import ModeToggle from "@/utilities/mode-toggle";
+import MenuNav from "./menu-nav";
 
 
 const PhoneNav = ({ userInfo }: { userInfo: UserInfo }) => {
   const [open, setOpen] = useState(false);
+  const { language } = useGoogleTranslate();
+
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -19,20 +23,14 @@ const PhoneNav = ({ userInfo }: { userInfo: UserInfo }) => {
         <MenuIcon />
       </SheetTrigger>
 
-      <SheetContent side="left" className="!px-0">
+      <SheetContent side={language === "fa" ? "right" : "left"} className="!px-0 border-none bg-white dark:bg-background">
         <div className="flex flex-col space-y-4 px-3 py-6 ">
-          <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-            Overview
-          </h2>
+          <div className="flex justify-between items-center my-4">
+            <ModeToggle />
+            <LanguageToggle />
+          </div>
 
           <MenuNav />
-
-          {/* <div className="space-y-2 min-h-[550px] mt-28 bg-red-300">
-            <DashboardNav userInfo={userInfo} setOpen={setOpen} />
-          </div> */}
-
-
-          {/* <ModeToggle /> */}
         </div>
       </SheetContent>
     </Sheet>

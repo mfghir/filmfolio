@@ -4,8 +4,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import * as z from "zod";
 
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import {
   Form,
   FormControl,
@@ -19,22 +21,18 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "../ui/use-toast";
 
-// import { Heading } from '@/templates/heading'
-// import FileUpload from "@/utilities/file-upload";
-import axios from "axios";
 import { Heading } from "@/templates/dashboard/heading";
 import FileUpload from "@/utilities/pic-uploader/file-upload";
 
 
 
 const formSchema = z.object({
-  name: z.string().min(3, { message: "Product Name must be at least 3 characters" }),
+  name: z.string().min(2, { message: "اسم حداقل دو حرف باید باشه" }),
   imgUrl: z.string().refine((files) => { return files?.[0] }),
   email: z.string()
-    .min(5, { message: "This field has to be filled." })
-    .email("This is not a valid email."),
-  password: z.string()
-    .min(8, { message: "pass must be at least 8 length." }),
+    .min(5, { message: "این بخش حتما باید پر بشه" })
+    .email("ایمیل معتبر نیس"),
+  password: z.string().min(8, { message: "باید حداقل ۸ کاراکتر باشد" }),
   role: z.string().default("user")
 });
 
@@ -78,11 +76,17 @@ const TabUserAdd = () => {
 
       toast({
         variant: "success",
-        title: "Success!",
-        description: "User was successfully added.",
+        title: "موفقیت آمیز",
+        description: "کاربر با موفقیت افزوده شد",
       });
     } catch (error: any) {
       console.log("error-->", error);
+
+      toast({
+        variant: "destructive",
+        title: "خطا!",
+        description: "متاسفانه مشکلی پیش  اومد",
+      });
     } finally {
       setLoading(false);
     }
@@ -92,7 +96,9 @@ const TabUserAdd = () => {
   return (
     <>
       <div className="flex items-center justify-between ">
-        <Heading title="Create user" description="Add a new user" />
+        <Heading title="افزودن کاربر"
+        // description="تو این قسمت میتونید کاربر جدید اضافه کنید" 
+        />
       </div>
 
       <Form {...form}>
@@ -102,7 +108,7 @@ const TabUserAdd = () => {
             name="imgUrl"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Images</FormLabel>
+                {/* <FormLabel>Images</FormLabel> */}
                 <FormControl>
                   {/* @ts-ignore */}
                   <FileUpload onChange={field.onChange} value={field.value} onRemove={field.onChange} />
@@ -119,9 +125,9 @@ const TabUserAdd = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>اسم</FormLabel>
                   <FormControl>
-                    <Input placeholder="name" disabled={loading} {...field} />
+                    <Input placeholder="اسم" disabled={loading} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -133,9 +139,9 @@ const TabUserAdd = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>ایمیل</FormLabel>
                   <FormControl>
-                    <Input placeholder="email" disabled={loading} {...field} />
+                    <Input placeholder="ایمیل" disabled={loading} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -147,9 +153,9 @@ const TabUserAdd = () => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>رمز</FormLabel>
                   <FormControl>
-                    <Input placeholder="password" disabled={loading} {...field} />
+                    <Input placeholder="رمز" disabled={loading} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -161,9 +167,9 @@ const TabUserAdd = () => {
               name="role"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Role</FormLabel>
+                  <FormLabel>نقش</FormLabel>
                   <FormControl>
-                    <Input placeholder="role" disabled={loading} {...field} />
+                    <Input placeholder="نقش" disabled={loading} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -172,7 +178,7 @@ const TabUserAdd = () => {
           </div>
 
           <Button disabled={loading} className="ml-auto" type="submit" >
-            {loading ? "Creating..." : "Create"}
+            {loading ? "در حال افزودن ..." : "افزودن"}
           </Button>
         </form>
       </Form>

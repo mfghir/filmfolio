@@ -17,8 +17,8 @@ export default async function Page({ params: { userId } }: PageProps) {
   const user = await User.findById(userId)
 
   const breadcrumbItems = [
-    { title: "Users", link: "/dashboard/users" },
-    { title: "Edit", link: "/dashboard/users/edit" },
+    { title: "کاربران", link: "/dashboard/users" },
+    { title: "ویرایش", link: "/dashboard/users/edit" },
   ];
 
 

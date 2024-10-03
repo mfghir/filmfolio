@@ -3,8 +3,8 @@ import BreadcrumbComp from '@/utilities/Breadcrumb';
 
 const page = () => {
   const breadcrumbItems = [
-    { title: "Users", link: "/dashboard/users" },
-    { title: "Create", link: "/dashboard/users/create" },
+    { title: "کاربران", link: "/dashboard/users" },
+    { title: "افزودن کاربر", link: "/dashboard/users/create" },
   ];
 
   return (

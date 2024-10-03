@@ -42,8 +42,7 @@ const formSchema = z.object({
     .refine((value) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$/.test(value),
       { message: 'Password must contain at least one letter, one number, and one special character' }
     ),
-  confirmPassword: z.string()
-    .min(8, { message: 'Password must be at least 6 characters' })
+  confirmPassword: z.string().min(8, { message: 'Password must be at least 6 characters' })
 })
   .refine((data) => data.newPassword === data.confirmPassword, {
     path: ['confirmPassword'],

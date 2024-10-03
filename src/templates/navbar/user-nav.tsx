@@ -1,10 +1,23 @@
 "use client"
 
+import Link from "next/link";
+import { signOut, useSession } from 'next-auth/react';
+import { useGoogleTranslate } from "@/utilities/google-translate"
+
+import { Button } from "@/components/ui/button"
+import { UserInfo } from "@/utilities/types-data"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
+  Gauge,
+  KeyRound,
+  ListFilter,
+  LogOutIcon,
+  MessageSquare,
+  SquareUserRound,
+  UsersRound
+} from "lucide-react"
+
 
 import {
   DropdownMenu,
@@ -16,16 +29,6 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
-import { Gauge, KeyRound, ListFilter, LogOutIcon, MessageSquare, SquareUserRound, UsersRound } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link";
-import { UserInfo } from "@/utilities/types-data"
-
-
-import { signOut, useSession } from 'next-auth/react';
-import { useGoogleTranslate } from "@/utilities/google-translate"
-
 
 
 
@@ -47,6 +50,7 @@ const UserNav = ({ userInfo }: { userInfo: UserInfo }) => {
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
+
       {/* <DialogHeader className={`w-full ${language === "fa" ? "flex flex-col items-start flex-reverse mt-10" : ""}`} > */}
 
       <DropdownMenuContent className="w-56" align="start" forceMount>
@@ -61,63 +65,89 @@ const UserNav = ({ userInfo }: { userInfo: UserInfo }) => {
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuGroup className={`${language === "fa" ? "w-full flex  justify-between flex-wrap flex-col" : ""}`}>
-          <Link href="/dashboard" className={`${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`} >
+        <DropdownMenuGroup className={`${language === "fa" ? "w-full flex justify-between flex-wrap flex-col" : ""}`}>
+          <Link href="/dashboard"
+            className={`whitespace-nowrap ${language === "fa" ? "w-full flex flex-row-reverse justify-between " : ""}`}
+          >
             <DropdownMenuItem className={`${language === "fa" ? "w-full flex-row-reverse justify-between" : ""}`}>
               داشبورد
-              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} ><Gauge /></DropdownMenuShortcut>
+              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} >
+                <Gauge />
+              </DropdownMenuShortcut>
             </DropdownMenuItem>
           </Link>
 
-          <Link href="/dashboard/profile" className={`${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`} >
+
+          <Link href="/dashboard/profile"
+            className={`whitespace-nowrap lg:hidden ${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`}
+          >
             <DropdownMenuItem className={`${language === "fa" ? "w-full flex-row-reverse justify-between" : ""}`}>
               پروفایل
-              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} ><SquareUserRound /></DropdownMenuShortcut>
+              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} >
+                <SquareUserRound />
+              </DropdownMenuShortcut>
             </DropdownMenuItem>
           </Link>
 
 
-          <Link href="/dashboard/users" className={`${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`} >
+          <Link href="/dashboard/users"
+            className={`whitespace-nowrap lg:hidden ${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`}
+          >
             <DropdownMenuItem className={`${language === "fa" ? "w-full flex-row-reverse justify-between" : ""}`}>
               کاربران
-              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} ><UsersRound /></DropdownMenuShortcut>
+              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} >
+                <UsersRound />
+              </DropdownMenuShortcut>
             </DropdownMenuItem>
           </Link>
 
 
-
-          <Link href="/dashboard/messages" className={`whitespace-nowrap ${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`} >
+          <Link href="/dashboard/messages"
+            className={`whitespace-nowrap lg:hidden ${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`}
+          >
             <DropdownMenuItem className={`${language === "fa" ? "w-full flex-row-reverse justify-between" : ""}`}>
               پیام ها
-              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} ><MessageSquare  /></DropdownMenuShortcut>
+              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} >
+                <MessageSquare />
+              </DropdownMenuShortcut>
             </DropdownMenuItem>
           </Link>
 
 
-          <Link href="/dashboard/kdrama-list" className={`whitespace-nowrap ${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`} >
+          <Link href="/dashboard/kdrama-list"
+            className={`whitespace-nowrap lg:hidden ${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`}
+          >
             <DropdownMenuItem className={`${language === "fa" ? "w-full flex-row-reverse justify-between" : ""}`}>
               لیست فیلم ها
-              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} ><ListFilter /></DropdownMenuShortcut>
+              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} >
+                <ListFilter />
+              </DropdownMenuShortcut>
             </DropdownMenuItem>
           </Link>
 
 
-          <Link href="/dashboard/change-password" className={`whitespace-nowrap ${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`} >
+          <Link href="/dashboard/change-password"
+            className={`whitespace-nowrap lg:hidden ${language === "fa" ? "w-full flex flex-row-reverse  justify-between " : ""}`}
+          >
             <DropdownMenuItem className={`${language === "fa" ? "w-full flex-row-reverse justify-between" : ""}`}>
               تغییر رمز عبور
-              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} ><KeyRound /></DropdownMenuShortcut>
+              <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} >
+                <KeyRound />
+              </DropdownMenuShortcut>
             </DropdownMenuItem>
           </Link>
         </DropdownMenuGroup>
 
         <DropdownMenuSeparator />
 
-
-
-        <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/" })}
-          className={`${language === "fa" ? "w-full flex-row-reverse justify-between" : ""}`}>
+        <DropdownMenuItem
+          onClick={() => signOut({ callbackUrl: "/" })}
+          className={`${language === "fa" ? "w-full flex-row-reverse justify-between" : ""}`}
+        >
           خروج
-          <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} ><LogOutIcon /></DropdownMenuShortcut>
+          <DropdownMenuShortcut className={language === "fa" ? "w-full" : "w-fit"} >
+            <LogOutIcon />
+          </DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu >
