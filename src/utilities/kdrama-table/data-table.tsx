@@ -78,8 +78,8 @@ export function DataTable<TValue>({ kdramaList }: any) {
     <>
       <div className="my-3">
         <Heading
-          title={`Kdramas (${data.length})`}
-          description="list of kdramas in database"
+          title={`مجموع دیده شده ها  (${data.length})`}
+          // description="list of kdramas in database"
         />
       </div>
 

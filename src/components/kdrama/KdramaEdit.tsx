@@ -24,12 +24,11 @@ import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-import { labels, genres, statuses } from "@/lib/data";
-// import { useEditDrama } from "@/lib/mutations";
 import { useState } from "react";
-
 import { usePathname } from "next/navigation";
 import { useEditDrama } from "@/lib/mutations";
+
+import { labels, genres, statuses } from "@/lib/data";
 
 
 type SelectOptions = {
@@ -65,7 +64,7 @@ export default function KdramaEdit({ row }: { row: any }): JSX.Element {
     };
 
     mutate({ id: row.original.id, ...updatedData });
-    toast({ variant: "success", title: "Successfully edited ! ✔" })
+    toast({ variant: "success", title: "با موفقیت ویرایش شد ! ✔" })
   }
 
 
@@ -75,13 +74,13 @@ export default function KdramaEdit({ row }: { row: any }): JSX.Element {
       <DialogTrigger asChild>
         {
           pathname === "/dashboard/kdrama-list" &&
-          <Button variant="default" size="sm">Edit</Button>
+          <Button variant="default" size="sm">ویرایش</Button>
         }
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Edit Kdrama</DialogTitle>
+          <DialogTitle>ویرایش</DialogTitle>
           {/* <DialogDescription>
             What do you want to get done today?
           </DialogDescription> */}
@@ -96,7 +95,7 @@ export default function KdramaEdit({ row }: { row: any }): JSX.Element {
             <Input
               id="title"
               name="title"
-              placeholder="Title..."
+              placeholder="عنوان ..."
               className="col-span-4"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
@@ -112,12 +111,12 @@ export default function KdramaEdit({ row }: { row: any }): JSX.Element {
               }
             >
               <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select a status" />
+                <SelectValue placeholder="یک وضعیت انتخاب کنید" />
               </SelectTrigger>
 
               <SelectContent>
                 <SelectGroup>
-                  <SelectLabel>Select a status</SelectLabel>
+                  <SelectLabel>انتخاب وضعیت</SelectLabel>
                   {statuses.map((item) =>
                     <SelectItem key={item.label} value={item.value}>
                       {item.label}

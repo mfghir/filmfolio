@@ -28,12 +28,12 @@ export function DataTableViewOptions<TData>({ table }: DataTableViewOptionsProps
           className="ml-auto h-8"
         >
           <MixerHorizontalIcon className="mr-2 h-4 w-4" />
-          View
+          مشاهده
         </Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="w-[150px]">
-        <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
+        <DropdownMenuLabel>انتخاب ستون ها</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {table
           .getAllColumns()

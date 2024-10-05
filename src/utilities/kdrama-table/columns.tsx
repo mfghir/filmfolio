@@ -57,7 +57,7 @@ export const columns: ColumnDef<MovieList>[] = [
   {
     accessorKey: "title",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Title" />
+      <DataTableColumnHeader column={column} title="عنوان" />
     ),
     cell: ({ row }) => {
       const label = labels.find((label) => label.value === row.original.label)
@@ -75,7 +75,7 @@ export const columns: ColumnDef<MovieList>[] = [
   {
     accessorKey: "status",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Status" />
+      <DataTableColumnHeader column={column} title="وضعیت" />
     ),
     cell: ({ row }) => {
       const status = statuses.find((status) => status.value === row.getValue("status"))
@@ -97,7 +97,7 @@ export const columns: ColumnDef<MovieList>[] = [
   {
     accessorKey: "genre",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Genre" />
+      <DataTableColumnHeader column={column} title="ژانر" />
     ),
     cell: ({ row }) => {
       const genre = genres.find((genre) => genre.value === row.getValue("genre"))

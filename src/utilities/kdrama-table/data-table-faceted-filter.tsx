@@ -85,7 +85,7 @@ export function DataTableFacetedFilter<TData, TValue>({
         <Command>
           <CommandInput placeholder={title} />
           <CommandList>
-            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandEmpty>نتیجه ای پیدا نشد</CommandEmpty>
 
             <CommandGroup>
               {options.map((option) => {
@@ -139,7 +139,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                     onSelect={() => column?.setFilterValue(undefined)}
                     className="justify-center text-center"
                   >
-                    Clear filters
+                    پاک کردن فیلتر ها
                   </CommandItem>
                 </CommandGroup>
               </>

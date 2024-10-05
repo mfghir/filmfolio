@@ -1,5 +1,3 @@
-// import { Button } from './ui/button'
-// import { useToast } from './ui/use-toast'
 
 import { Button } from "../ui/button"
 import { useToast } from "../ui/use-toast"
@@ -11,8 +9,8 @@ const KdramaCopy = ({ row }: { row: any }): JSX.Element => {
   const copyHandler = (text: string) => {
     navigator.clipboard.writeText(text)
     toast({
-      title: "Copy to clipboard! ✔",
-      description: `Drama Name: ${text}`,
+      title: "به کلیپ‌برد کپی شد! ✔",
+      description: `اسم فیلم/سریال: ${text}`,
     })
   }
 
@@ -22,7 +20,7 @@ const KdramaCopy = ({ row }: { row: any }): JSX.Element => {
       size="sm"
       onClick={() => copyHandler(row.original.title)}
     >
-      Copy
+      کپی
     </Button>
   )
 }

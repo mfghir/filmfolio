@@ -88,7 +88,7 @@ export function DataTableRowActions<TData>({
               <DropdownMenuItem
                 onSelect={(e) => e.preventDefault()}
               >
-                Edit
+                ویرایش
                 {/* @ts-ignore  */}
                 <KdramaEdit table={table} row={row} column={column} getValue={getValue} />
               </DropdownMenuItem>

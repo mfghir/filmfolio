@@ -34,7 +34,7 @@ export function DataTableToolbar<TData>({
       <div className="w-fit flex items-center space-x-2 mr-6 md:mr-auto">
         <Input
           className="h-8 w-[150px] lg:w-[250px]"
-          placeholder="Filter title..."
+          placeholder="نام فیلم، ژانز ..."
           value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("title")?.setFilterValue(event.target.value)
@@ -44,7 +44,7 @@ export function DataTableToolbar<TData>({
         {table.getColumn("status") && (
           <DataTableFacetedFilter
             column={table.getColumn("status")}
-            title="Status"
+            title="وضعیت"
             options={statuses}
           />
         )}
@@ -52,7 +52,7 @@ export function DataTableToolbar<TData>({
         {table.getColumn("genre") && (
           <DataTableFacetedFilter
             column={table.getColumn("genre")}
-            title="genre"
+            title="ژانر"
             options={genres}
           />
         )}
@@ -63,7 +63,7 @@ export function DataTableToolbar<TData>({
             onClick={() => table.resetColumnFilters()}
             className="h-8 px-2 lg:px-3"
           >
-            Reset
+            راه اندازی مجدد
             <Cross2Icon className="ml-2 h-4 w-4" />
           </Button>
         )}

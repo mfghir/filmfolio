@@ -3,7 +3,7 @@ import BreadcrumbComp from '@/utilities/Breadcrumb';
 
 const Page = () => {
   const breadcrumbItems = [
-    { title: "KDrama List", link: "/dashboard/kdrama-list" },
+    { title: "لیست دیده شده ها", link: "/dashboard/kdrama-list" },
   ];
 
   return (

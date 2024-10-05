@@ -20,15 +20,13 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-// import { useAddDrama } from "@/lib/mutations";
-
-// import { useToast } from "./ui/use-toast";
 import { labels, genres, statuses } from "@/lib/data";
-import { useState } from "react";
 
-import axios from "axios";
+import { useState } from "react";
 import { useAddDrama } from "@/lib/mutations";
 import { useToast } from "../ui/use-toast";
+import { useGoogleTranslate } from "@/utilities/google-translate";
+
 
 type SelectOptions = {
   statuses: string;
@@ -38,6 +36,9 @@ type SelectOptions = {
 
 
 const KdramaAdd = () => {
+  const { language } = useGoogleTranslate();
+
+
   const { mutate } = useAddDrama()
   const { toast } = useToast()
   const [value, setValue] = useState<SelectOptions>({
@@ -59,11 +60,14 @@ const KdramaAdd = () => {
       // await axios.post(`/api/kdrama`, data);
       mutate(data);
 
-      toast({ variant: "success", title: "Successfully Added ✔" });
+      toast({ variant: "success", title: "با موفقیت اضافه شد ✔" });
 
     } catch (error) {
       console.error("Error adding data:", error);
-      toast({ title: "Error Adding Data", description: "An error occurred while adding data" });
+      toast({
+        title: "خطا در اضافه کردن داده",
+        description: "هنگام اضافه کردن داده یک خطا رخ داد"
+      });
     }
 
 
@@ -115,38 +119,40 @@ const KdramaAdd = () => {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="secondary" size="sm" className="ml-4 md:ml-0" >
-          ＋ Add New Title
+          ＋ افزودن
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Add New Kdrama</DialogTitle>
+      <DialogContent className={`sm:max-w-[425px] ${language === "fa" ? "text-right float-right rtl " : "text-left"} `} >
+        <DialogHeader  >
+          <DialogTitle className={`bg-red-200 ${language === "fa" ? "text-right" : "text-left"} `}>اضافه کردن عنوان جدید</DialogTitle>
           <DialogDescription>
-            What do you want to add? 😃
+            چه چیزی می‌خوای اضافه کنی؟ 😃
           </DialogDescription>
         </DialogHeader>
+
         <form
           id="drama-form"
-          className="grid gap-4 py-4"
+          className={`grid gap-4 py-4 ${language === "fa" ? "rtl" : "ltr"} `}
           onSubmit={handleSubmit}
         >
           <div className="grid grid-cols-4 items-center gap-4">
             <Input
               id="title"
               name="title"
-              placeholder="Title..."
+              placeholder="عنوان ..."
               className="col-span-4"
             />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
+
+          <div className={`grid grid-cols-4 items-center gap-4 ${language === "fa" ? "rtl" : "ltr"} `}>
             <Select
               name="status"
               value={value.statuses}
               onValueChange={(val) => setValue({ ...value, statuses: val })}
             >
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select a status" />
+              <SelectTrigger className={`w-[180px] ${language === "fa" ? "rtl" : "ltr"} `}>
+                <SelectValue placeholder="انخاب وضعیت" />
               </SelectTrigger>
               <SelectContent
               >
@@ -167,7 +173,7 @@ const KdramaAdd = () => {
               }
             >
               <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select a label" />
+                <SelectValue placeholder="انتخاب برچسب" />
               </SelectTrigger>
               <SelectContent>
                 {labels.map((item) =>
@@ -178,6 +184,7 @@ const KdramaAdd = () => {
               </SelectContent>
             </Select>
           </div>
+
           <div className="grid grid-cols-4 items-center gap-4">
             <Select
               name="genre"
@@ -187,7 +194,7 @@ const KdramaAdd = () => {
               }
             >
               <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select a genre" />
+                <SelectValue placeholder="انتخاب ژانر" />
               </SelectTrigger>
               <SelectContent>
                 {genres.map((item) =>
@@ -203,7 +210,7 @@ const KdramaAdd = () => {
         <DialogFooter>
           <DialogTrigger asChild>
             <Button type="submit" size="sm" form="drama-form">
-              Add Drama
+              ذخیره
             </Button>
           </DialogTrigger>
         </DialogFooter>
