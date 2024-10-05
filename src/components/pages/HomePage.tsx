@@ -26,10 +26,10 @@ const HomePage = () => {
         />
 
         <div className="absolute bottom-12 flex justify-center items-center flex-col gap-y-6 bg-black/60 p-8 rounded-3xl">
-          <p className="text-5xl lg:text-7xl font-bold  galaxy-gradient-text">
+          <h2 className="text-5xl lg:text-7xl font-bold galaxy-gradient-text">
             فیلم فولیو
-          </p>
-          <p className="text-lg lg:text-2xl text-center">پورتفولیوی فیلم های شما</p>
+          </h2>
+          <p className="text-lg lg:text-2xl text-center text-gray-400">پورتفولیوی فیلم های شما</p>
           <Button
             variant="default"
             className="galaxy-gradient-bg text-base font-bold text-white px-10"

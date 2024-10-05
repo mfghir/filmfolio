@@ -8,7 +8,6 @@ import UserNav from "./user-nav";
 import { usePathname } from "next/navigation";
 import ModeToggle from "@/utilities/mode-toggle";
 
-import { Button } from "@/components/ui/button";
 
 import PhoneNav from "./phone-nav";
 import MenuNav from "./menu-nav";
@@ -18,6 +17,7 @@ import { UserInfo } from "@/utilities/types-data";
 import { LanguageToggle } from "@/utilities/language-toggle";
 import { useGoogleTranslate } from "@/utilities/google-translate";
 
+import { Button } from "@/components/ui/button";
 
 // const Navbar = () => {
 const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
@@ -57,11 +57,9 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
 
   return (
     <div className="fixed inset-0 top-0 left-0 z-20 h-fit">
-      <div className={`px-6 py-3 lg:px-20 flex justify-between items-center bg-gray-300/50 dark:bg-gray-800/60 backdrop-blur
-      `}>
+      <div className="px-6 py-3 lg:px-20 flex justify-between items-center bg-gray-300/50 dark:bg-gray-800/60 backdrop-blur">
 
         <section className=" flex justify-start items-center gap-y-2 gap-x-4 ">
-
           <Link href="/" className="pic-anim galaxy-gradient-bg">
             <Image
               className="w-16 h-16 rounded-full object-fill "
@@ -71,12 +69,13 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
               alt="logo"
             />
           </Link>
+
           <div className="hidden lg:block">
-          <ModeToggle />
+            <ModeToggle />
           </div>
 
           <div className="hidden lg:block">
-          <LanguageToggle />
+            <LanguageToggle />
           </div>
         </section>
 
@@ -85,11 +84,6 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
         </div>
 
         <section className="flex justify-end items-center gap-y-2 gap-x-4">
-          {/* <div className="hidden lg:flex justify-between items-center gap-x-4">
-          </div> */}
-
-
-
           {session?.user ?
             <UserNav userInfo={userInfo} />
             :
@@ -105,7 +99,6 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
 
 
           <div className="lg:hidden">
-            {/* PhoneNav */}
             <PhoneNav userInfo={userInfo} />
           </div>
         </section>

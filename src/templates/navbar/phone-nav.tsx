@@ -34,7 +34,6 @@ const PhoneNav = ({ userInfo }: { userInfo: UserInfo }) => {
         </div>
       </SheetContent>
     </Sheet>
-
   )
 }
 

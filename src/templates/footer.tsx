@@ -35,7 +35,7 @@ const Footer = () => {
 
 
         {/* menu */}
-        <ul className="list-none w-ful md:w-fit grid grid-cols-2 md:grid-cols-3 md:gap-y-4 lg:flex md:gap-x-6">
+        <ul className="list-none w-ful md:w-fit grid grid-cols-2 gap-x-16 gap-y-2 md:grid-cols-3 md:gap-y-4 lg:flex md:gap-x-6">
           <li>
             <Link href="/"
               className="hover:galaxy-gradient-text duration-300">
@@ -81,7 +81,7 @@ const Footer = () => {
 
 
         {/* socials */}
-        <ul className="flex justify-start items-center gap-x-3">
+        <ul className="flex justify-center items-center gap-x-3 mx-auto">
           <li className="hover:text-fuchsia-500 duration-300">
             <a
               href="https://t.me/fatemeweb"

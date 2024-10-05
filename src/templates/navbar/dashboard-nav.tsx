@@ -19,7 +19,10 @@ const DashboardNav = ({ setOpen, userInfo }: {
   if (!navItemsDashboard?.length) return null;
 
   return (
-    <nav className="grid items-start gap-2">
+    <nav className={`relative hidden h-auto pt-32 px-4 lg:block w-72 dark:border-gray-700 
+          ${language === "fa" ? "border-l" : "border-r"}
+     `}>
+
       {navItemsDashboard.map((item, index) => {
         if (item.role.includes(userInfo?.role)) {
           return (
@@ -33,7 +36,7 @@ const DashboardNav = ({ setOpen, userInfo }: {
               >
                 <span
                   className={cn(
-                    "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
+                    "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground my-2",
                     path === item.href ? "bg-accent" : "transparent",
                     item.disabled && "cursor-not-allowed opacity-80",
                   )}
