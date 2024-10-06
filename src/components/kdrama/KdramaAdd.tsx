@@ -38,12 +38,16 @@ type SelectOptions = {
 
 const KdramaAdd = () => {
   const { language } = useGoogleTranslate();
-  // const [valueNationality, setValueNationality] = useState({ nationality: "" });
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTermNationality, setSearchTermNationality] = useState("");
+  const [searchTermGenre, setSearchTermGenre] = useState("");
 
-  // Filter nationalities based on search input
+  // Filter nationalities and genres based on search input
   const filteredNationalities = nationalities.filter((item) =>
-    item.label.toLowerCase().includes(searchTerm.toLowerCase())
+    item.label.toLowerCase().includes(searchTermNationality.toLowerCase())
+  );
+
+  const filteredGenres = genres.filter((item) =>
+    item.label.toLowerCase().includes(searchTermGenre.toLowerCase())
   );
 
   const { mutate } = useAddDrama()
@@ -209,11 +213,21 @@ const KdramaAdd = () => {
               </SelectTrigger>
 
               <SelectContent className={` ${language === "fa" ? "rtl" : "ltr"} `} >
-                {genres.map((item) =>
-                  <SelectItem key={item.label} value={item.value}>
+                {/* Search Bar for Genre */}
+                <div className="p-2">
+                  <Input
+                    placeholder="جستجو ژانر"
+                    value={searchTermGenre}
+                    onChange={(e) => setSearchTermGenre(e.target.value)}
+                    className={`w-full ${language === "fa" ? "rtl" : "ltr"}`}
+                  />
+                </div>
+                {/* Display Filtered Genres */}
+                {filteredGenres.map((item) => (
+                  <SelectItem key={item.value} value={item.value}>
                     {item.label}
                   </SelectItem>
-                )}
+                ))}
               </SelectContent>
             </Select>
           </div>
@@ -230,16 +244,15 @@ const KdramaAdd = () => {
               </SelectTrigger>
 
               <SelectContent className={` ${language === "fa" ? "rtl" : "ltr"}`}>
-                {/* Search Bar */}
+                {/* Search Bar for Nationality */}
                 <div className="p-2">
                   <Input
-                    placeholder="جستجو"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    placeholder="جستجو ملیت"
+                    value={searchTermNationality}
+                    onChange={(e) => setSearchTermNationality(e.target.value)}
                     className={`w-full ${language === "fa" ? "rtl" : "ltr"}`}
                   />
                 </div>
-
                 {/* Display Filtered Nationalities */}
                 {filteredNationalities.map((item) => (
                   <SelectItem key={item.value} value={item.value}>
