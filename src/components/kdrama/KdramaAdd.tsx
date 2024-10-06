@@ -20,7 +20,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { labels, genres, statuses } from "@/lib/data";
+import { labels, genres, statuses, nationalities } from "@/lib/data";
 
 import { useState } from "react";
 import { useAddDrama } from "@/lib/mutations";
@@ -32,19 +32,27 @@ type SelectOptions = {
   statuses: string;
   labels: string;
   genres: string;
+  nationality: string
 };
 
 
 const KdramaAdd = () => {
   const { language } = useGoogleTranslate();
+  // const [valueNationality, setValueNationality] = useState({ nationality: "" });
+  const [searchTerm, setSearchTerm] = useState("");
 
+  // Filter nationalities based on search input
+  const filteredNationalities = nationalities.filter((item) =>
+    item.label.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const { mutate } = useAddDrama()
   const { toast } = useToast()
   const [value, setValue] = useState<SelectOptions>({
     statuses: "",
     labels: "",
-    genres: ""
+    genres: "",
+    nationality: ""
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -123,10 +131,12 @@ const KdramaAdd = () => {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className={`sm:max-w-[425px] ${language === "fa" ? "text-right float-right rtl " : "text-left"} `} >
-        <DialogHeader  >
-          <DialogTitle className={`bg-red-200 ${language === "fa" ? "text-right" : "text-left"} `}>اضافه کردن عنوان جدید</DialogTitle>
-          <DialogDescription>
+      <DialogContent className="max-w-[280px] md:max-w-[430px]">
+        <DialogHeader>
+          <DialogTitle className={`mt-4 ${language === "fa" ? "text-right" : "text-left"} `}>
+            اضافه کردن عنوان جدید
+          </DialogTitle>
+          <DialogDescription className={` ${language === "fa" ? "text-right float-right content-start" : "text-left"} `}>
             چه چیزی می‌خوای اضافه کنی؟ 😃
           </DialogDescription>
         </DialogHeader>
@@ -140,7 +150,7 @@ const KdramaAdd = () => {
             <Input
               id="title"
               name="title"
-              placeholder="عنوان ..."
+              placeholder="عنوان فیلم ..."
               className="col-span-4"
             />
           </div>
@@ -164,6 +174,7 @@ const KdramaAdd = () => {
               </SelectContent>
             </Select>
           </div>
+
           <div className="grid grid-cols-4 items-center gap-4">
             <Select
               name="label"
@@ -172,7 +183,7 @@ const KdramaAdd = () => {
                 (val) => setValue({ ...value, labels: val })
               }
             >
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className={`w-[180px] ${language === "fa" ? "rtl" : "ltr"} `}>
                 <SelectValue placeholder="انتخاب برچسب" />
               </SelectTrigger>
               <SelectContent>
@@ -193,15 +204,48 @@ const KdramaAdd = () => {
                 (val) => setValue({ ...value, genres: val })
               }
             >
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className={`w-[180px] ${language === "fa" ? "rtl" : "ltr"} `}>
                 <SelectValue placeholder="انتخاب ژانر" />
               </SelectTrigger>
-              <SelectContent>
+
+              <SelectContent className={` ${language === "fa" ? "rtl" : "ltr"} `} >
                 {genres.map((item) =>
                   <SelectItem key={item.label} value={item.value}>
                     {item.label}
                   </SelectItem>
                 )}
+              </SelectContent>
+            </Select>
+          </div>
+
+
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Select
+              name="nationality"
+              value={value.nationality}
+              onValueChange={(val) => setValue({ ...value, nationality: val })}
+            >
+              <SelectTrigger className={`w-[180px] ${language === "fa" ? "rtl" : "ltr"}`}>
+                <SelectValue placeholder="ملیت" />
+              </SelectTrigger>
+
+              <SelectContent className={` ${language === "fa" ? "rtl" : "ltr"}`}>
+                {/* Search Bar */}
+                <div className="p-2">
+                  <Input
+                    placeholder="جستجو"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className={`w-full ${language === "fa" ? "rtl" : "ltr"}`}
+                  />
+                </div>
+
+                {/* Display Filtered Nationalities */}
+                {filteredNationalities.map((item) => (
+                  <SelectItem key={item.value} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
