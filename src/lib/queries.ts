@@ -10,7 +10,7 @@ const useKdramasData = () => {
     // const data = await res.json();
     // console.log(data);
 
-    const res = await axios.get("/api/kdrama");
+    const res = await axios.get("/api/drama");
     // console.log(res);
     return res.data.data;
   }

@@ -15,123 +15,56 @@ import {
   KeyRound,
 } from "lucide-react";
 
-// export interface NavItem {
-//   title: string;
-//   href?: string;
-//   disabled?: boolean;
-//   external?: boolean;
-//   icon?: unknown;
-//   label?: string;
-//   role: string[];
-// }
-
-// export const navItems: NavItem[] = [
-//   {
-//     title: "Dashboard",
-//     href: "/dashboard",
-//     icon: Gauge,
-//     label: "Dashboard",
-//     role: ["user", "admin"],
-//   },
-//   {
-//     title: "Profile",
-//     href: "/dashboard/profile",
-//     icon: SquareUserRound,
-//     label: "Profile",
-//     role: ["user", "admin"],
-//   },
-//   {
-//     title: "Users",
-//     href: "/dashboard/users",
-//     icon: UsersRound,
-//     label: "Users",
-//     role: ["admin"],
-//   },
-//   {
-//     title: "Messages",
-//     href: "/dashboard/messages",
-//     icon: MessageSquare,
-//     label: "Messages",
-//     role: ["user"],
-//   },
-//   {
-//     title: "KDrama List",
-//     href: "/dashboard/kdrama-list",
-//     icon: ListFilter,
-//     label: "KDrama List",
-//     role: ["user", "admin"],
-//   },
-//   {
-//     title: "Change Password",
-//     href: "/dashboard/change-password",
-//     icon: KeyRound,
-//     label: "Change Password",
-//     role: ["user", "admin"],
-//   },
-// ];
+export const sorts = [
+  { value: "anime", label: "انیمه" },
+  { value: "animation", label: "انیمیشن" },
+  { value: "cinema", label: "سینمایی" },
+  { value: "documentary", label: "مستند" },
+  { value: "kdrama", label: "کیدراما" },
+  { value: "mini-series", label: "مینی‌ سریال" },
+  { value: "reality-show", label: "ریلیتی شو" },
+  { value: "serial", label: "سریال" },
+  { value: "short-film", label: "فیلم کوتاه" },
+  { value: "tv-show", label: "برنامه تلویزیونی" },
+  { value: "web-drama", label: "وب‌ دراما" },
+];
 
 export const labels = [
-  {
-    value: "mini",
-    label: "Mini",
-  },
-  {
-    value: "usual",
-    label: "Usual",
-  },
-  {
-    value: "long",
-    label: "Long",
-  },
+  { value: "mini", label: "مینی" },
+  { value: "usual", label: "معمولی" },
+  { value: "long", label: "طولانی" },
 ];
 
 export const statuses = [
-  {
-    value: "fav",
-    label: "Fav",
-    icon: Heart,
-  },
-  {
-    value: "1time",
-    label: "1 Time",
-    icon: Star,
-  },
-  {
-    value: "normal",
-    label: "Normal",
-    icon: ThumbsUp,
-  },
-  {
-    value: "dis",
-    label: "Dis",
-    icon: ThumbsDown,
-  },
-  {
-    value: "awful",
-    label: "Awful",
-    icon: HeartOff,
-  },
+  { value: "fav", label: "خیلی دوسش داشتم" }, // Loved it
+  { value: "good", label: "خوب بود" }, // Good
+  { value: "1time", label: "ارزش یک بار دیدن رو داره" }, // Worth watching once
+  { value: "normal", label: "معمولی بود" }, // Average
+  { value: "meh", label: "نه خوب نه بد" }, // Didn't impress
+  { value: "dis", label: "خوشم نیومد" }, // Disliked it
+  { value: "awful", label: "واقعا بد بود" }, // Awful
 ];
-
 
 export const genres = [
-  { label: "فانتزی", value: "fantasy" },
-  { label: "کمدی", value: "comedy" },
-  { label: "درام", value: "drama" },
   { label: "اکشن", value: "action" },
-  { label: "ماجراجویی", value: "adventure" },
-  { label: "هیجانی", value: "thriller" },
+  { label: "انیمیشن", value: "animation" },
+  { label: "تاریخی", value: "historical" },
   { label: "ترسناک", value: "horror" },
+  { label: "جنایی", value: "crime" },
+  { label: "درام", value: "drama" },
+  { label: "ماجراجویی", value: "adventure" },
+  { label: "مدرسه‌ای", value: "schoolish" },
+  { label: "معمایی", value: "mystery" },
+  { label: "مستند", value: "documentary" },
+  { label: "موزیکال", value: "musical" },
   { label: "عاشقانه", value: "romance" },
   { label: "علمی-تخیلی", value: "sci-fi" },
-  { label: "تاریخی", value: "historical" },
-  { label: "معمایی", value: "mystery" },
-  { label: "موزیکال", value: "musical" },
-  { label: "جنایی", value: "crime" },
-  { label: "انیمیشن", value: "animation" },
-  { label: "مستند", value: "documentary" },
+  { label: "فانتزی", value: "fantasy" },
+  { label: "کاراگاهی", value: "detective" },
+  { label: "کمدی", value: "comedy" },
+  { label: "مدرسه ای", value: "schoolish" },
+  { label: "هیجانی", value: "thriller" },
 ];
-
 
 export const nationalities = [
   { label: "آمریکایی", value: "american" },

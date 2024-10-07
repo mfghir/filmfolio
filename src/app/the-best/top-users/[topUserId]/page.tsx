@@ -28,6 +28,7 @@ export default function Page({ params: { topUserId } }: PageProps) {
     <>
       {/* @ts-ignore */}
       <BreadcrumbComp items={breadcrumbItems} />
+      kllk
       <TopDetailUserPage />
     </>
   )

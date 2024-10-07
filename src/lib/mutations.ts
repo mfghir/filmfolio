@@ -61,8 +61,7 @@ const useAddDrama = () => {
   const queryClient = useQueryClient();
 
   const addDrama = async (data: unknown) => {
-    // await axios.post(`${process.env.NEXT_PUBLIC_API_KEY}/kdrama`, data);
-    await axios.post("/api/kdrama", data);
+    await axios.post("/api/drama", data);
 
     console.log("data - useAddDrama ---->", data);
   };
@@ -84,7 +83,7 @@ const useEditDrama = () => {
   const editDrama = async (item: any) => {
     await axios.put(
       // `${process.env.NEXT_PUBLIC_API_KEY}/kdrama/`,
-      `/api/kdrama/${item.id}`,
+      `/api/drama/${item.id}`,
       item
     );
   };
@@ -101,7 +100,7 @@ const useDeleteDrama = () => {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const deleteDrama = async (item: any) => {
     // await axios.delete(`${process.env.NEXT_PUBLIC_API_KEY}/kdrama/${item.id}`);
-    await axios.delete(`/api/kdrama/${item.id}`);
+    await axios.delete(`/api/drama/${item.id}`);
     return item.id;
   };
 

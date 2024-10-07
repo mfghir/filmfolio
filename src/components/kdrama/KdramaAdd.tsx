@@ -20,19 +20,22 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { labels, genres, statuses, nationalities } from "@/lib/data";
+import { Textarea } from "../ui/textarea";
 
 import { useState } from "react";
 import { useAddDrama } from "@/lib/mutations";
-import { useToast } from "../ui/use-toast";
+import { labels, genres, statuses, nationalities, sorts } from "@/lib/data";
+
 import { useGoogleTranslate } from "@/utilities/google-translate";
+import { useToast } from "../ui/use-toast";
 
 
 type SelectOptions = {
   statuses: string;
   labels: string;
   genres: string;
-  nationality: string
+  nationality: string,
+  sorts: string
 };
 
 
@@ -50,17 +53,37 @@ const KdramaAdd = () => {
     item.label.toLowerCase().includes(searchTermGenre.toLowerCase())
   );
 
+
+
+
+
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [containsSpoilers, setContainsSpoilers] = useState(false); // State for spoilers
+  const [showFullComment, setShowFullComment] = useState(false); // State for showing full comment
+
+
+
+
+  
+
   const { mutate } = useAddDrama()
   const { toast } = useToast()
   const [value, setValue] = useState<SelectOptions>({
     statuses: "",
     labels: "",
     genres: "",
-    nationality: ""
+    nationality: "",
+    sorts: ""
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    setErrors({}); // Reset errors
+
+    // const { title, opinion } = e.currentTarget;
+
+    
 
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -138,7 +161,7 @@ const KdramaAdd = () => {
       <DialogContent className="max-w-[280px] md:max-w-[430px]">
         <DialogHeader>
           <DialogTitle className={`mt-4 ${language === "fa" ? "text-right" : "text-left"} `}>
-            اضافه کردن عنوان جدید
+            اضافه کردن مورد جدید
           </DialogTitle>
           <DialogDescription className={` ${language === "fa" ? "text-right float-right content-start" : "text-left"} `}>
             چه چیزی می‌خوای اضافه کنی؟ 😃
@@ -150,47 +173,19 @@ const KdramaAdd = () => {
           className={`grid gap-4 py-4 ${language === "fa" ? "rtl" : "ltr"} `}
           onSubmit={handleSubmit}
         >
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Input
-              id="title"
-              name="title"
-              placeholder="عنوان فیلم ..."
-              className="col-span-4"
-            />
-          </div>
 
-          <div className={`grid grid-cols-4 items-center gap-4 ${language === "fa" ? "rtl" : "ltr"} `}>
-            <Select
-              name="status"
-              value={value.statuses}
-              onValueChange={(val) => setValue({ ...value, statuses: val })}
-            >
-              <SelectTrigger className={`w-[180px] ${language === "fa" ? "rtl" : "ltr"} `}>
-                <SelectValue placeholder="انخاب وضعیت" />
-              </SelectTrigger>
-              <SelectContent
-              >
-                {statuses.map((item) =>
-                  <SelectItem key={item.label} value={item.value}>
-                    {item.label}
-                  </SelectItem>
-                )}
-              </SelectContent>
-            </Select>
-          </div>
 
-          <div className="grid grid-cols-4 items-center gap-4">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-4">
             <Select
               name="label"
               value={value.labels}
-              onValueChange={
-                (val) => setValue({ ...value, labels: val })
-              }
+              onValueChange={(val) => setValue({ ...value, labels: val })}
             >
-              <SelectTrigger className={`w-[180px] ${language === "fa" ? "rtl" : "ltr"} `}>
+              <SelectTrigger className={` ${language === "fa" ? "rtl" : "ltr"} `}>
                 <SelectValue placeholder="انتخاب برچسب" />
               </SelectTrigger>
-              <SelectContent>
+
+              <SelectContent className={` ${language === "fa" ? "rtl" : "ltr"} `} >
                 {labels.map((item) =>
                   <SelectItem key={item.label} value={item.value}>
                     {item.label}
@@ -198,9 +193,45 @@ const KdramaAdd = () => {
                 )}
               </SelectContent>
             </Select>
-          </div>
 
-          <div className="grid grid-cols-4 items-center gap-4">
+            <Select
+              name="sort"
+              value={value.sorts}
+              onValueChange={
+                (val) => setValue({ ...value, sorts: val })
+              }
+            >
+              <SelectTrigger className={` ${language === "fa" ? "rtl" : "ltr"} `}>
+                <SelectValue placeholder="انتخاب نوع" />
+              </SelectTrigger>
+
+              <SelectContent className={` ${language === "fa" ? "rtl" : "ltr"} `} >
+                {sorts.map((item) =>
+                  <SelectItem key={item.label} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                )}
+              </SelectContent>
+            </Select>
+
+            <Select
+              name="status"
+              value={value.statuses}
+              onValueChange={(val) => setValue({ ...value, statuses: val })}
+            >
+              <SelectTrigger className={` ${language === "fa" ? "rtl" : "ltr"} `}>
+                <SelectValue placeholder="انخاب وضعیت" />
+              </SelectTrigger>
+
+              <SelectContent className={` ${language === "fa" ? "rtl" : "ltr"} `} >
+                {statuses.map((item) =>
+                  <SelectItem key={item.label} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                )}
+              </SelectContent>
+            </Select>
+
             <Select
               name="genre"
               value={value.genres}
@@ -208,7 +239,7 @@ const KdramaAdd = () => {
                 (val) => setValue({ ...value, genres: val })
               }
             >
-              <SelectTrigger className={`w-[180px] ${language === "fa" ? "rtl" : "ltr"} `}>
+              <SelectTrigger className={` ${language === "fa" ? "rtl" : "ltr"} `}>
                 <SelectValue placeholder="انتخاب ژانر" />
               </SelectTrigger>
 
@@ -230,16 +261,13 @@ const KdramaAdd = () => {
                 ))}
               </SelectContent>
             </Select>
-          </div>
 
-
-          <div className="grid grid-cols-4 items-center gap-4">
             <Select
               name="nationality"
               value={value.nationality}
               onValueChange={(val) => setValue({ ...value, nationality: val })}
             >
-              <SelectTrigger className={`w-[180px] ${language === "fa" ? "rtl" : "ltr"}`}>
+              <SelectTrigger className={` ${language === "fa" ? "rtl" : "ltr"}`}>
                 <SelectValue placeholder="ملیت" />
               </SelectTrigger>
 
@@ -262,11 +290,31 @@ const KdramaAdd = () => {
               </SelectContent>
             </Select>
           </div>
+
+
+          <div className="w-full grid grid-cols-1 items-center gap-4">
+            <Input
+              id="title"
+              name="title"
+              placeholder="عنوان فیلم ..."
+              // className="col-span-4"
+            />
+
+            <Textarea
+              id="opinion"
+              name="opinion"
+              placeholder="نظرت رو بنویس"
+              // className="col-span-4"
+            />
+          </div>
         </form>
 
         <DialogFooter>
-          <DialogTrigger asChild>
-            <Button type="submit" size="sm" form="drama-form">
+          <DialogTrigger asChild >
+            <Button type="submit" size="sm"
+              form="drama-form"
+              className="w-full"
+            >
               ذخیره
             </Button>
           </DialogTrigger>
