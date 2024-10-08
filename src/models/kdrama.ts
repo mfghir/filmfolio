@@ -10,6 +10,10 @@ const KDramaSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    label: {
+      type: String,
+      required: true,
+    },
     sort: {
       type: String,
       required: true,

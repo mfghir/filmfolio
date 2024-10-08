@@ -1,19 +1,3 @@
-import {
-  ThumbsUp,
-  ThumbsDown,
-  Star,
-  Heart,
-  HeartOff,
-  ArrowDown,
-  ArrowRight,
-  ArrowUp,
-  Gauge,
-  ListFilter,
-  SquareUserRound,
-  UsersRound,
-  MessageSquare,
-  KeyRound,
-} from "lucide-react";
 
 export const sorts = [
   { value: "anime", label: "انیمه" },
@@ -62,7 +46,6 @@ export const genres = [
   { label: "فانتزی", value: "fantasy" },
   { label: "کاراگاهی", value: "detective" },
   { label: "کمدی", value: "comedy" },
-  { label: "مدرسه ای", value: "schoolish" },
   { label: "هیجانی", value: "thriller" },
 ];
 

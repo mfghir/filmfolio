@@ -39,7 +39,8 @@ export async function POST(req: any) {
   try {
     await connectDB();
     const body = await req.json();
-    const { title, status, label, genre }: any = body;
+    const { title, status, label, genre, sort, nationality, opinion }: any =
+      body;
 
     const session = await getServerSession(authOptions);
     // console.log("POST KDrama session******", session);
@@ -74,6 +75,9 @@ export async function POST(req: any) {
       status,
       label,
       genre,
+      opinion,
+      sort,
+      nationality,
       userId: new Types.ObjectId(user._id),
     });
     // console.log("POST newKDrama ******", newKDrama);

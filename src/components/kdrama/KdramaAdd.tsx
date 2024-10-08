@@ -78,6 +78,7 @@ const KdramaAdd = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
 
     setErrors({}); // Reset errors
 
@@ -94,7 +95,6 @@ const KdramaAdd = () => {
     try {
       // await axios.post(`/api/kdrama`, data);
       mutate(data);
-
       toast({ variant: "success", title: "با موفقیت اضافه شد ✔" });
 
     } catch (error) {
