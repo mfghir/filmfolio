@@ -87,18 +87,18 @@ export const columns: ColumnDef<MovieList>[] = [
     cell: ({ row }) => {
         // const label = labels.find((label) => label.value === row.original.label)
 
-        const label = labels.find((label) => label.value === row.getValue("label"))
-        console.log( "row  +++++++++++++++----> ", label)
-        if (!label) return null
+        // const label = labels.find((label) => label.value === row.getValue("label"))
+        // console.log( "row  +++++++++++++++----> ", label)
+        // // if (!label) return null
 
-        console.log( "row ----> ",row.original.label)
-        console.log( "row  22----> ",row.getValue("label"))
+        // console.log( "row ----> ",row.original.label)
+        // console.log( "row  22----> ",row.getValue("label"))
 
       return (
         <div className="flex space-x-2">
-          <span className="max-w-[500px] truncate font-medium">
-            {row.getValue("label")} ********
-            {label.label}
+          <span className="bg-red-600">
+            {/* {row.getValue("label")} ******** */}
+            {/* {label?.label} */}
           </span>
              {row.original.label && <Badge variant="outline">{row.original.label}</Badge>}
         </div>

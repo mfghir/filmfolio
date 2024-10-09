@@ -1,4 +1,10 @@
 
+export const labels = [
+  { value: "mini", label: "مینی" },
+  { value: "usual", label: "معمولی" },
+  { value: "long", label: "طولانی" },
+];
+
 export const sorts = [
   { value: "anime", label: "انیمه" },
   { value: "animation", label: "انیمیشن" },
@@ -11,12 +17,6 @@ export const sorts = [
   { value: "short-film", label: "فیلم کوتاه" },
   { value: "tv-show", label: "برنامه تلویزیونی" },
   { value: "web-drama", label: "وب‌ دراما" },
-];
-
-export const labels = [
-  { value: "mini", label: "مینی" },
-  { value: "usual", label: "معمولی" },
-  { value: "long", label: "طولانی" },
 ];
 
 export const statuses = [

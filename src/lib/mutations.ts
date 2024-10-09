@@ -97,9 +97,9 @@ const useEditDrama = () => {
 
 const useDeleteDrama = () => {
   const queryClient = useQueryClient();
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  
   const deleteDrama = async (item: any) => {
-    // await axios.delete(`${process.env.NEXT_PUBLIC_API_KEY}/kdrama/${item.id}`);
+    console.log( "item delete",item)
     await axios.delete(`/api/drama/${item.id}`);
     return item.id;
   };

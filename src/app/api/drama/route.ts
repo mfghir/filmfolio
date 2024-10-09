@@ -35,6 +35,10 @@ export async function GET() {
   }
 }
 
+
+
+
+
 export async function POST(req: any) {
   try {
     await connectDB();
@@ -62,9 +66,17 @@ export async function POST(req: any) {
       );
     }
 
-    if (!title || !status || !label || !genre) {
+    if (
+      !title ||
+      !status ||
+      !label ||
+      !genre ||
+      !sort ||
+      !nationality ||
+      !opinion
+    ) {
       return NextResponse.json(
-        { error: "please fill all the fields" },
+        { error: "sth went wrong" },
         { status: 400 }
       );
     }
