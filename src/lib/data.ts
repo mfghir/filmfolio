@@ -72,6 +72,16 @@ export const nationalities = [
   { label: "روسی", value: "russian" },
 ];
 
+
+
+
+
+
+
+
+
+
+
 export const chartData = [
   {
     name: "Jan",
@@ -132,7 +142,8 @@ export type Notification = {
 };
 
 export type MovieList = {
-  id: object;
+  _id(arg0: string, _id: any): unknown;
+  id: string | object;
   title: string;
   status: string;
   label: string;

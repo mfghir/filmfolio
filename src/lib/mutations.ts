@@ -95,18 +95,31 @@ const useEditDrama = () => {
   });
 };
 
+
+
+
+
+type DramaItem = {
+  id: string;
+  // add other relevant fields if necessary
+};
+
 const useDeleteDrama = () => {
   const queryClient = useQueryClient();
-  
-  const deleteDrama = async (item: any) => {
-    console.log( "item delete",item)
+
+  const deleteDrama = async (item: DramaItem) => {
+    console.log("item delete", item);
+    
+    // Making a DELETE request, passing ID in the URL
     await axios.delete(`/api/drama/${item.id}`);
+
     return item.id;
   };
 
   return useMutation(deleteDrama, {
     onSuccess: (deletedItemId) => {
-      queryClient.setQueryData<MovieList[] | undefined>(
+      // Update the query cache
+      queryClient.setQueryData<DramaItem[] | undefined>(
         ["kdrama"],
         (oldItems) => {
           if (oldItems) {
@@ -115,7 +128,12 @@ const useDeleteDrama = () => {
           return [];
         }
       );
+      // Invalidate the query to refetch data
       queryClient.invalidateQueries(["kdrama"]);
+    },
+    onError: (error) => {
+      console.error("Error deleting drama:", error);
+      // Handle the error (e.g., show toast notifications)
     },
   });
 };
