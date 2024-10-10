@@ -108,7 +108,7 @@ export function DataTable<TValue>({ kdramaList }: any) {
             ))}
           </TableHeader>
 
-          <TableBody>
+          <TableBody className="w-full">
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
