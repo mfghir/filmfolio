@@ -5,15 +5,13 @@ import { Cross2Icon } from "@radix-ui/react-icons"
 import { Input } from "@/components/ui/input"
 
 import { Button } from "@/components/ui/button"
-import { genres, statuses } from "@/lib/data"
+import { genres, nationalities, sorts, statuses } from "@/lib/data"
 import { DataTableFacetedFilter } from "./data-table-faceted-filter"
 
 import { DataTableViewOptions } from "./data-table-view-options"
-// import KdramaAdd from "@/components/KdramaAdd"
-// import { useSession } from "next-auth/react"
-
 import { usePathname } from "next/navigation"
 import KdramaAdd from "@/components/kdrama/KdramaAdd"
+import { DataTableRowActions } from "./DataTableRowActions"
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>
@@ -30,51 +28,67 @@ export function DataTableToolbar<TData>({
 
   return (
     <>
-      {/* <section className="w-auto flex items-center justify-between overflow-x-scroll bg-blue-200"> */}
-      <div className="w-fit flex items-center space-x-2 mr-6 md:mr-auto">
-        <Input
-          className="h-8 w-[150px] lg:w-[250px]"
-          placeholder="نام فیلم، ژانز ..."
-          value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("title")?.setFilterValue(event.target.value)
-          }
-        />
-
-        {table.getColumn("status") && (
-          <DataTableFacetedFilter
-            column={table.getColumn("status")}
-            title="وضعیت"
-            options={statuses}
+      <section className="w-full flex items-center justify-between gap-x-12 overflow-x-scroll lg:overflow-x-hidden">
+        <div className=" flex items-center gap-x-2">
+          <Input
+            className="h-10 w-[180px] lg:w-[250px]"
+            placeholder="نام فیلم، ژانر ..."
+            value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
+            onChange={(event) =>
+              table.getColumn("title")?.setFilterValue(event.target.value)
+            }
           />
-        )}
 
-        {table.getColumn("genre") && (
-          <DataTableFacetedFilter
-            column={table.getColumn("genre")}
-            title="ژانر"
-            options={genres}
-          />
-        )}
+          {table.getColumn("status") && (
+            <DataTableFacetedFilter
+              column={table.getColumn("status")}
+              title="وضعیت"
+              options={statuses}
+            />
+          )}
 
-        {isFiltered && (
-          <Button
-            variant="ghost"
-            onClick={() => table.resetColumnFilters()}
-            className="h-8 px-2 lg:px-3"
-          >
-            راه اندازی مجدد
-            <Cross2Icon className="ml-2 h-4 w-4" />
-          </Button>
-        )}
-      </div>
+          {table.getColumn("genre") && (
+            <DataTableFacetedFilter
+              column={table.getColumn("genre")}
+              title="ژانر"
+              options={genres}
+            />
+          )}
 
-      <div className="w-fit flex justify-end items-center gap-x-2">
-        {pathname === "/dashboard/kdrama-list" && <KdramaAdd />}
-        <DataTableViewOptions table={table} />
-        {/* <span className="opacity-0 md:hidden">tetssss</span> */}
-      </div>
-      {/* </section> */}
+          {table.getColumn("sort") && (
+            <DataTableFacetedFilter
+              column={table.getColumn("sort")}
+              title="نوع"
+              options={sorts}
+            />
+          )}
+
+
+          {table.getColumn("nationality") && (
+            <DataTableFacetedFilter
+              column={table.getColumn("nationality")}
+              title="ملیت"
+              options={nationalities}
+            />
+          )}
+          {isFiltered && (
+            <Button
+              variant="ghost"
+              onClick={() => table.resetColumnFilters()}
+              className="h-8 px-2 lg:px-3"
+            >
+              راه اندازی مجدد
+              <Cross2Icon className="ml-2 h-4 w-4" />
+            </Button>
+          )}
+        </div>
+
+        <div className=" flex justify-end items-center gap-x-2 ">
+          {pathname === "/dashboard/kdrama-list" && <KdramaAdd />}
+          <DataTableViewOptions table={table} />
+          {/* <DataTableRowActions table={table} column={undefined} row={undefined} getValue={undefined} /> */}
+        </div>
+      </section>
     </>
 
   )

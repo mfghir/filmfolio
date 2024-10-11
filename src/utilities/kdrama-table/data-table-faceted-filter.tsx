@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Separator } from "@/components/ui/separator"
+import { useGoogleTranslate } from "../google-translate"
 
 import {
   Command,
@@ -37,12 +38,14 @@ export function DataTableFacetedFilter<TData, TValue>({
 }: DataTableFacetedFilterProps<TData, TValue>) {
   const facets = column?.getFacetedUniqueValues()
   const selectedValues = new Set(column?.getFilterValue() as string[])
+  const { language } = useGoogleTranslate();
+
 
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" size="sm" className="h-8 border-dashed">
-          <PlusCircledIcon className="mr-2 h-4 w-4" />
+        <Button variant="secondary" size="sm" className="h-10 ">
+          <PlusCircledIcon className={` h-4 w-4 ${language === "fa" ? "ml-2" : "mr-2"}`} />
           {title}
           {selectedValues?.size > 0 && (
             <>
@@ -107,7 +110,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                   >
                     <div
                       className={cn(
-                        "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
+                        `${language === "fa" ? "ml-2" : "mr-2"} flex h-4 w-4 items-center justify-center rounded-sm border border-primary`,
                         isSelected
                           ? "bg-primary text-primary-foreground"
                           : "opacity-50 [&_svg]:invisible"

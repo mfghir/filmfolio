@@ -13,7 +13,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 // import KdramaDelete from "@/components/KdramaDelete"
 // import KdramaCopy from "@/components/KdramaCopy"
-// import { DataTableRowActions } from "./DataTableRowActions"
+import { DataTableRowActions } from "./DataTableRowActions"
 
 
 
@@ -85,14 +85,14 @@ export const columns: ColumnDef<MovieList>[] = [
       <DataTableColumnHeader column={column} title="برچسب" />
     ),
     cell: ({ row }) => {
-        // const label = labels.find((label) => label.value === row.original.label)
+      // const label = labels.find((label) => label.value === row.original.label)
 
-        // const label = labels.find((label) => label.value === row.getValue("label"))
-        // console.log( "row  +++++++++++++++----> ", label)
-        // // if (!label) return null
+      // const label = labels.find((label) => label.value === row.getValue("label"))
+      // console.log( "row  +++++++++++++++----> ", label)
+      // // if (!label) return null
 
-        // console.log( "row ----> ",row.original.label)
-        // console.log( "row  22----> ",row.getValue("label"))
+      // console.log( "row ----> ",row.original.label)
+      // console.log( "row  22----> ",row.getValue("label"))
 
       return (
         <div className="flex space-x-2">
@@ -100,7 +100,7 @@ export const columns: ColumnDef<MovieList>[] = [
             {/* {row.getValue("label")} ******** */}
             {/* {label?.label} */}
           </span>
-             {row.original.label && <Badge variant="outline">{row.original.label}</Badge>}
+          {row.original.label && <Badge variant="outline">{row.original.label}</Badge>}
         </div>
       )
     },
@@ -227,19 +227,20 @@ export const columns: ColumnDef<MovieList>[] = [
       return value.includes(row.getValue(id))
     },
   },
-  // {
-  //   id: "actions",
-  //   cell: ({ row ,column,table, getValue}) => {
+  {
+    id: "actions",
+    cell: ({ row ,column,table, getValue}) => {
 
-  //     // const movies = row.original
-  //     // console.log("movies",movies);
+      const movies = row.original
+      console.log("movies",movies);
 
-  //     // console.log("row",row);
-  //     // console.log("column",column);
-  //     // console.log("table",table);
-  //     return <DataTableRowActions row={row} column={column} table={table} getValue={getValue} />
-  //   }
-  // },
+      console.log("row",row);
+      console.log("column",column);
+      console.log("table",table);
+      return <DataTableRowActions row={row} column={column} table={table} getValue={getValue} />
+      // return <DataTableRowActions row={row} column={column} table={table} getValue={getValue} />
+    }
+  },
 
   {
     id: "edit",
@@ -250,10 +251,6 @@ export const columns: ColumnDef<MovieList>[] = [
   {
     id: "delete",
     cell: ({ row }) => {
-      console.log("row col--------------->" ,row.original._id)
-      // const status = statuses.find((status) => status.value === row.getValue("status"))
-      // if (!status) return null
-
       return <KdramaDelete row={row} />
     }
   },
@@ -262,11 +259,5 @@ export const columns: ColumnDef<MovieList>[] = [
     cell: ({ row }) => {
       return <KdramaCopy row={row} />
     }
-  },
-  // {
-  //   id: "test",
-  //   cell: ({ row }) => {
-  //     return <span className="opacity-0 md:hidden">tets</span>
-  //   }
-  // },
+  }
 ]

@@ -35,9 +35,12 @@ import KdramaEdit from "@/components/kdrama/KdramaEdit"
  const movieSchema = z.object({
   id: z.string(),
   title: z.string(),
+  opinion:z.string(),
   status: z.string(),
   label: z.string(),
   genre: z.string(),
+  nationality: z.string()
+  
 })
 
 
@@ -55,7 +58,7 @@ export function DataTableRowActions<TData>({
   row,
   getValue
 }: DataTableRowActionsProps<TData>) {
-  const drama = movieSchema.parse(row.original)
+  // const drama = movieSchema.parse(row.original)
   const { toast } = useToast()
 
   const copyHandler = (text: string) => {
@@ -97,7 +100,7 @@ export function DataTableRowActions<TData>({
 
 
 
-          <DropdownMenuItem onClick={() => copyHandler(drama.title)} >Make a copy</DropdownMenuItem>
+          {/* <DropdownMenuItem onClick={() => copyHandler(drama.title)} >کپی</DropdownMenuItem> */}
           {/* <DropdownMenuItem>Favorite</DropdownMenuItem> */}
 
           <DropdownMenuSeparator />

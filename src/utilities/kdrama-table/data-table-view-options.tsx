@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
+import { useGoogleTranslate } from "../google-translate"
 
 
 interface DataTableViewOptionsProps<TData> {
@@ -19,21 +20,25 @@ interface DataTableViewOptionsProps<TData> {
 }
 
 export function DataTableViewOptions<TData>({ table }: DataTableViewOptionsProps<TData>) {
+  console.log("table", table .getAllColumns() )
+
+  const { language } = useGoogleTranslate();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
           size="sm"
-          className="ml-auto h-8"
+          className="h-10"
         >
-          <MixerHorizontalIcon className="mr-2 h-4 w-4" />
+          <MixerHorizontalIcon className={`h-4 w-4 ${language === "fa" ? "ml-2" : "mr-2"}`} />
           مشاهده
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align="end" className="w-[150px]">
-        <DropdownMenuLabel>انتخاب ستون ها</DropdownMenuLabel>
+      <DropdownMenuContent align="start" className={`w-[150px] ${language === "fa" ? "rtl":"ltr" }`} >
+        <DropdownMenuLabel >انتخاب ستون ها</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {table
           .getAllColumns()
