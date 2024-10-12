@@ -35,7 +35,8 @@ const KdramaDelete = ({ row }: { row: any }): JSX.Element => {
       <DialogTrigger asChild>
         {
           pathname === "/dashboard/kdrama-list" &&
-          <Button variant="destructive" size="sm">حذف</Button>
+          // <Button variant="destructive" size="sm">حذف</Button>
+          <span>حذف</span>
         }
       </DialogTrigger>
 

@@ -87,7 +87,9 @@ export function DataTable<TValue>({ kdramaList }: any) {
         <DataTableToolbar table={table} />
       </div>
 
-      <div className="rounded-md border h-[calc(82vh-220px)] overflow-scroll p-4 relative">
+
+      <div className="rounded-md border h-[calc(82vh-220px)] overflow-scroll md:overflow-x-hidden p-4">
+      {/* <div className="rounded-md border h-[calc(82vh-220px)] overflow-scroll p-4 relative"> */}
         <Table className="relative ">
           <TableHeader className="">
             {table.getHeaderGroups().map((headerGroup) => (

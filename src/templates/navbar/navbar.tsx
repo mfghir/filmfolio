@@ -56,7 +56,7 @@ const Navbar = ({ userInfo }: { userInfo: UserInfo }) => {
 
 
   return (
-    <div className="fixed inset-0 top-0 left-0 z-20 h-fit">
+    <div className="max-w-[1440px] mx-auto fixed inset-0 top-0 left-0 z-20 h-fit">
       <div className="px-6 py-3 lg:px-20 flex justify-between items-center bg-gray-300/50 dark:bg-gray-800/60 backdrop-blur">
 
         <section className=" flex justify-start items-center gap-y-2 gap-x-4 ">

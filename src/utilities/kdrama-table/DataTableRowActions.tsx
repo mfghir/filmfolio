@@ -32,15 +32,15 @@ import KdramaEdit from "@/components/kdrama/KdramaEdit"
 
 
 
- const movieSchema = z.object({
+const movieSchema = z.object({
   id: z.string(),
   title: z.string(),
-  opinion:z.string(),
+  opinion: z.string(),
   status: z.string(),
   label: z.string(),
   genre: z.string(),
   nationality: z.string()
-  
+
 })
 
 
@@ -86,19 +86,24 @@ export function DataTableRowActions<TData>({
         </DropdownMenuTrigger>
 
         <DropdownMenuContent align="end" className="w-[160px]">
-          <Dialog>
+           <Dialog>
             <DialogTrigger asChild>
-              <DropdownMenuItem
-                onSelect={(e) => e.preventDefault()}
-              >
-                ویرایش
-                {/* @ts-ignore  */}
-                <KdramaEdit table={table} row={row} column={column} getValue={getValue} />
+              <DropdownMenuItem>
+                <KdramaEdit
+                // @ts-ignore
+                  table={table}
+                  row={row}
+                  column={column}
+                  getValue={getValue}
+                />
               </DropdownMenuItem>
             </DialogTrigger>
           </Dialog>
 
-
+          {/* <DropdownMenuItem>
+           {/* @ts-ignore  */}
+             {/* <KdramaEdit table={table} row={row} column={column} getValue={getValue} />
+           </DropdownMenuItem> */} 
 
           {/* <DropdownMenuItem onClick={() => copyHandler(drama.title)} >کپی</DropdownMenuItem> */}
           {/* <DropdownMenuItem>Favorite</DropdownMenuItem> */}

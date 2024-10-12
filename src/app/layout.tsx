@@ -38,7 +38,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   return (
     <html lang="fa" >
-      <body className={vazir.className}>
+      <body className={`max-w-[1440px] mx-auto ${vazir.className}`}>
         <GoogleTranslateProvider>
 
           <TanstackProvider>
@@ -54,7 +54,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                   userInfo={user}
                 // userInfo={JSON.parse(JSON.stringify(user))}
                 />
-                <main className="dark:bg-gradient-to-bl dark:from-indigo-950/50 dark:via-indigo-950/25 dark:to-indigo-950/10">
+                <main className=" dark:bg-gradient-to-bl dark:from-indigo-950/50 dark:via-indigo-950/25 dark:to-indigo-950/10">
                   {children}
                 </main>
                 <Toaster />
