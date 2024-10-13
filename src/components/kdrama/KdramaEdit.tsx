@@ -42,7 +42,7 @@ type SelectOptions = {
 };
 
 
-export default function KdramaEdit({ row }: { row: any }): JSX.Element {
+export default function KdramaEdit({ row, isOpen, onClose }: { row: any, isOpen: boolean, onClose: () => void }): JSX.Element {
   const { mutate } = useEditDrama()
   const { toast } = useToast()
   const pathname = usePathname()
@@ -71,8 +71,15 @@ export default function KdramaEdit({ row }: { row: any }): JSX.Element {
       input: inputValue, // Use the preserved input value
     };
 
-    mutate({ id: row.original.id, ...updatedData });
-    toast({ variant: "success", title: "با موفقیت ویرایش شد ! ✔" })
+    // mutate({ id: row.original.id, ...updatedData });
+    // toast({ variant: "success", title: "با موفقیت ویرایش شد ! ✔" })
+
+    mutate({ id: row.original.id, ...updatedData }, {
+      onSuccess: () => {
+        toast({ variant: "success", title: "با موفقیت ویرایش شد ! ✔" });
+        onClose(); // Close the dialog after successful edit
+      },
+    });
   }
 
   const { language } = useGoogleTranslate();
@@ -92,14 +99,20 @@ export default function KdramaEdit({ row }: { row: any }): JSX.Element {
 
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      {/* <DialogTrigger asChild>
         {
           pathname === "/dashboard/kdrama-list" &&
-          <Button variant="default" size="sm">ویرایش</Button>
-          // <span>ویرایش</span>
+          // <Button variant="default" size="sm">ویرایش</Button>
+          <span>ویرایش</span>
         }
-      </DialogTrigger>
+      </DialogTrigger> */}
+
+      {/* <DialogHeader>
+        <DialogTitle>ویرایش</DialogTitle>
+      </DialogHeader> */}
+
+
 
       <DialogContent className="max-w-[280px] md:max-w-[430px]">
         <DialogHeader>

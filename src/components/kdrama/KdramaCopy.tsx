@@ -1,8 +1,10 @@
 
+import { Copy } from "lucide-react"
 import { Button } from "../ui/button"
 import { useToast } from "../ui/use-toast"
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+
+
 const KdramaCopy = ({ row }: { row: any }): JSX.Element => {
   const { toast } = useToast()
 
@@ -20,7 +22,7 @@ const KdramaCopy = ({ row }: { row: any }): JSX.Element => {
       size="sm"
       onClick={() => copyHandler(row.original.title)}
     >
-      کپی
+      <Copy />
     </Button>
   )
 }

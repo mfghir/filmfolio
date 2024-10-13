@@ -242,18 +242,18 @@ export const columns: ColumnDef<MovieList>[] = [
     }
   },
 
-  {
-    id: "edit",
-    cell: ({ row }) => {
-      return <KdramaEdit row={row} />
-    }
-  },
-  {
-    id: "delete",
-    cell: ({ row }) => {
-      return <KdramaDelete row={row} />
-    }
-  },
+  // {
+  //   id: "edit",
+  //   cell: ({ row }) => {
+  //     return <KdramaEdit row={row} />
+  //   }
+  // },
+  // {
+  //   id: "delete",
+  //   cell: ({ row }) => {
+  //     return <KdramaDelete row={row} />
+  //   }
+  // },
   {
     id: "copy",
     cell: ({ row }) => {

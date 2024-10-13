@@ -1,13 +1,17 @@
 "use client"
+
+
 import { Button } from "@/components/ui/button"
 import { Table } from "@tanstack/react-table"
-import { AwardIcon, ChevronLeftIcon,
-    ChevronRightIcon,
+import { useGoogleTranslate } from "../google-translate"
+
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
   ChevronsLeft,
   ChevronsRight,
-  // DoubleArrowLeftIcon,
-  // DoubleArrowRightIcon
-  Trash } from "lucide-react"
+  Trash
+} from "lucide-react"
 
 import {
   Select,
@@ -17,16 +21,6 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-// import {
-//   ChevronLeftIcon,
-//   ChevronRightIcon,
-//   DoubleArrowLeftIcon,
-//   DoubleArrowRightIcon,
-// } from "@radix-ui/react-icons"
-// import { AlertModal } from "../../templates/alert-modal"
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import axios from "axios"
 
 
 
@@ -36,10 +30,8 @@ interface DataTablePaginationProps<TData> {
   setOpen: boolean
 }
 
-export function DataTablePagination<TData>({
-  table,
-  setOpen
-}: DataTablePaginationProps<TData>) {
+export function DataTablePagination<TData>({ table, setOpen }: DataTablePaginationProps<TData>) {
+  const { language } = useGoogleTranslate();
 
   // const [loading, setLoading] = useState(false);
   // const [open, setOpen] = useState(false);
@@ -71,8 +63,10 @@ export function DataTablePagination<TData>({
 
   return (
     <>
-      <div className="w-full flex items-center justify-between px-2 overflow-x-scroll md:overflow-x-hidden">
-        <div className="flex justify-between items-center gap-x-4 mr-4">
+      <div className={` w-full flex items-center justify-between px-2 overflow-x-scroll md:overflow-x-hidden 
+           ${language === "fa" ? "flex-row-reverse" : ""}
+      `}>
+        <div className={`flex justify-between items-center gap-x-4 ${language === "fa" ? "ml-4" : "mr-4"} `}>
           <div className="flex-1 text-sm text-muted-foreground whitespace-nowrap">
             {table.getFilteredSelectedRowModel().rows.length} از {" "}
             {table.getFilteredRowModel().rows.length} ردیف(ها) انتخاب شده.
@@ -86,7 +80,8 @@ export function DataTablePagination<TData>({
         </div>
 
         <div className="flex items-center space-x-6 lg:space-x-8">
-          <div className="flex items-center space-x-2">
+          <div className={`flex items-center space-x-2 ${language === "fa" ? "gap-x-4" : ""} 
+          `}>
             <p className="text-sm font-medium whitespace-nowrap">ردیف به ازای هر صفحه</p>
             <Select
               value={`${table.getState().pagination.pageSize}`}
@@ -105,21 +100,21 @@ export function DataTablePagination<TData>({
                 ))}
               </SelectContent>
             </Select>
-          </div>
+          </div >
 
-          <div className="flex w-[100px] items-center justify-center text-sm font-medium">
+          <div className="flex w-[100px] items-center justify-center text-sm font-medium gap-x-1">
             صفحه {table.getState().pagination.pageIndex + 1} از {" "}
             {table.getPageCount()}
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className={`flex items-center space-x-2  ${language === "fa" ? "flex-row-reverse" : ""} `}>
             <Button
               variant="outline"
               className="hidden h-8 w-8 p-0 lg:flex"
               onClick={() => table.setPageIndex(0)}
               disabled={!table.getCanPreviousPage()}
             >
-              <span className="sr-only">برو به صفحه اول</span>
+              {/* <span className="sr-only">برو به صفحه اول</span> */}
               <ChevronsLeft className="h-4 w-4" />
             </Button>
             <Button
@@ -128,16 +123,17 @@ export function DataTablePagination<TData>({
               onClick={() => table.previousPage()}
               disabled={!table.getCanPreviousPage()}
             >
-              <span className="sr-only">برو به صفحه قبلی</span>
+              {/* <span className="sr-only">برو به صفحه قبلی</span> */}
               <ChevronLeftIcon className="h-4 w-4" />
             </Button>
+
             <Button
               variant="outline"
               className="h-8 w-8 p-0"
               onClick={() => table.nextPage()}
               disabled={!table.getCanNextPage()}
             >
-              <span className="sr-only">برو به صفحه بعدی</span>
+              {/* <span className="sr-only">برو به صفحه بعدی</span> */}
               <ChevronRightIcon className="h-4 w-4" />
             </Button>
 
@@ -147,12 +143,12 @@ export function DataTablePagination<TData>({
               onClick={() => table.setPageIndex(table.getPageCount() - 1)}
               disabled={!table.getCanNextPage()}
             >
-              <span className="sr-only">برو به آخرین صفحه</span>
+              {/* <span className="sr-only">برو به آخرین صفحه</span> */}
               <ChevronsRight className="h-4 w-4" />
             </Button>
           </div>
-        </div>
-      </div>
+        </div >
+      </div >
       {/* <span className="opacity-0 md:hidden">tetssss</span> */}
     </>
 

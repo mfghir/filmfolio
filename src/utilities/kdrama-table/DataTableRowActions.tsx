@@ -1,47 +1,24 @@
 "use client"
 
-import { DotsHorizontalIcon } from "@radix-ui/react-icons"
+import { useState } from "react"
 import { Column, Row, Table } from "@tanstack/react-table"
+import { useGoogleTranslate } from "../google-translate"
+
+
+import KdramaDelete from "@/components/kdrama/KdramaDelete"
+import KdramaEdit from "@/components/kdrama/KdramaEdit"
+import { useToast } from "@/components/ui/use-toast"
 
 import { Button } from "@/components/ui/button"
+import { Ellipsis } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-import { useToast } from "@/components/ui/use-toast"
-import { Dialog, DialogTrigger } from "@/components/ui/dialog"
-import { useState } from "react"
-
-// import KdramaEdit from "@/components/KdramaEdit"
-import { z } from "zod"
-import KdramaEdit from "@/components/kdrama/KdramaEdit"
-
-
-
-
-
-
-
-const movieSchema = z.object({
-  id: z.string(),
-  title: z.string(),
-  opinion: z.string(),
-  status: z.string(),
-  label: z.string(),
-  genre: z.string(),
-  nationality: z.string()
-
-})
 
 
 
@@ -52,22 +29,21 @@ interface DataTableRowActionsProps<TData> {
   getValue: any
 }
 
-export function DataTableRowActions<TData>({
-  table,
-  column,
-  row,
-  getValue
-}: DataTableRowActionsProps<TData>) {
+export function DataTableRowActions<TData>({ row }: DataTableRowActionsProps<TData>) {
   // const drama = movieSchema.parse(row.original)
-  const { toast } = useToast()
+  const { language } = useGoogleTranslate();
 
-  const copyHandler = (text: string) => {
-    navigator.clipboard.writeText(text)
-    toast({
-      title: "Copy to clipboard! ✔",
-      description: `Drama Name: ${text}`,
-    })
-  }
+  const { toast } = useToast()
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+
+  // const copyHandler = (text: string) => {
+  //   navigator.clipboard.writeText(text)
+  //   toast({
+  //     title: "Copy to clipboard! ✔",
+  //     description: `Drama Name: ${text}`,
+  //   })
+  // }
 
 
 
@@ -80,60 +56,44 @@ export function DataTableRowActions<TData>({
             variant="ghost"
             className="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
           >
-            <DotsHorizontalIcon className="h-4 w-4" />
-            <span className="sr-only">Open menu</span>
+            <Ellipsis className="h-4 w-4" />
+            {/* <span className="sr-only">Open menu</span> */}
           </Button>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent align="end" className="w-[160px]">
-           <Dialog>
-            <DialogTrigger asChild>
-              <DropdownMenuItem>
-                <KdramaEdit
-                // @ts-ignore
-                  table={table}
-                  row={row}
-                  column={column}
-                  getValue={getValue}
-                />
-              </DropdownMenuItem>
-            </DialogTrigger>
-          </Dialog>
+        <DropdownMenuContent align="end" className={`w-[160px] ${language === "fa" ? "rtl" : "ltr"}`}>
+          <DropdownMenuItem>جزئیات</DropdownMenuItem>
 
-          {/* <DropdownMenuItem>
-           {/* @ts-ignore  */}
-             {/* <KdramaEdit table={table} row={row} column={column} getValue={getValue} />
-           </DropdownMenuItem> */} 
+          {/* Edit Option */}
+          <DropdownMenuItem onClick={() => setIsEditOpen(true)}>
+            ویرایش
+          </DropdownMenuItem>
 
-          {/* <DropdownMenuItem onClick={() => copyHandler(drama.title)} >کپی</DropdownMenuItem> */}
-          {/* <DropdownMenuItem>Favorite</DropdownMenuItem> */}
+          {/* Copy Option */}
+          {/* <DropdownMenuItem onClick={() => copyHandler(row.original.----)}>
+            کپی
+          </DropdownMenuItem> */}
 
           <DropdownMenuSeparator />
 
-          {/* <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
-          <DropdownMenuSubContent>
-            <DropdownMenuRadioGroup value={drama.label}>
-              {labels.map((label) => (
-                <DropdownMenuRadioItem key={label.value} value={label.value}>
-                  {label.label}
-                </DropdownMenuRadioItem>
-              ))}
-            </DropdownMenuRadioGroup>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
-
-        <DropdownMenuSeparator /> */}
-
-          <DropdownMenuItem
-          // onClick={() => deleteUser(drama.id)}
-          >
-            Delete
-            <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
+          {/* Delete Option */}
+          <DropdownMenuItem onClick={() => setIsDeleteOpen(true)}>
+            حذف
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
       {/* </Dialog> */}
+
+
+
+
+
+
+      {/* Edit Dialog */}
+      <KdramaEdit row={row} isOpen={isEditOpen} onClose={() => setIsEditOpen(false)} />
+
+      {/* Delete Dialog */}
+      <KdramaDelete row={row} isOpen={isDeleteOpen} onClose={() => setIsDeleteOpen(false)} />
     </>
   )
 }
