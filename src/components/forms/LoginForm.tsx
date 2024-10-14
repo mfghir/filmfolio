@@ -129,7 +129,7 @@ export default function LoginForm() {
   }
 
   return (
-    <section className="p-5 -pt-0 h-full min-h-screen md:px-8 lg:px-20">
+    <section className="p-5 h-full min-h-screen md:px-8 lg:px-20">
 
       <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit place-content-center">
         <Image

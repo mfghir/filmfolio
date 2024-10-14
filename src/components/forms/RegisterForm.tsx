@@ -84,7 +84,7 @@ export default function RegisterForm() {
         description: "ثبت نام با موفقیت انجام شد!"
       });
 
-      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+
     } catch (error: any) {
       console.log("error catch - RegisterForm ---->", error)
 
@@ -280,7 +280,7 @@ export default function RegisterForm() {
               </div>
             </div> */}
       </>
-      <section className="p-5 pt-32 h-full min-h-screen md:px-8 lg:px-20">
+      <section className="p-5 h-full min-h-screen md:px-8 lg:px-20">
 
         <section className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 min-h-screen h-fit place-content-center">
           <Image
