@@ -104,3 +104,74 @@ export async function POST(req: any) {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export async function DELETE(request: any) {
+//   try {
+//     await connectDB();
+//     const ids = request.nextUrl.searchParams.getAll("ids[]");
+//     await DramaModel.deleteMany({ _id: { $in: ids } });
+
+//     return NextResponse.json(
+//       { message: "No KDrama IDs provided." },
+//       { status: 201 }
+//     );
+//   } catch (error) {
+//     console.error("Error deleting users:", error);
+//     return NextResponse.json(
+//       { message: "Failed to delete users", error },
+//       { status: 500 }
+//     );
+//   }
+// }
+
+
+
+
+
+export async function DELETE(request: any) {
+  try {
+    await connectDB();
+
+    // Retrieve the array of KDrama IDs from the request query parameters
+    const ids = request.nextUrl.searchParams.getAll("ids[]");
+    if (!ids || ids.length === 0) {
+      return NextResponse.json(
+        { message: "No KDrama IDs provided." },
+        { status: 400 }
+      );
+    }
+
+    // Delete all KDramas with the given IDs
+    const result = await DramaModel.deleteMany({ _id: { $in: ids } });
+
+    if (result.deletedCount === 0) {
+      return NextResponse.json(
+        { message: "No KDramas found to delete." },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json(
+      { message: "KDramas deleted successfully." },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Error deleting KDramas:", error);
+    return NextResponse.json(
+      { message: "Failed to delete KDramas", error },
+      { status: 500 }
+    );
+  }
+}

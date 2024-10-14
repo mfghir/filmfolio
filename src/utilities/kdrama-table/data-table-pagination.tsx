@@ -20,6 +20,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useState } from "react"
+import KdramaDelete from "@/components/kdrama/KdramaDelete"
 
 
 
@@ -27,11 +29,15 @@ import {
 
 interface DataTablePaginationProps<TData> {
   table: Table<TData>,
-  setOpen: boolean
+  row:any
+  // setOpen: boolean
 }
 
-export function DataTablePagination<TData>({ table, setOpen }: DataTablePaginationProps<TData>) {
+export function DataTablePagination<TData>({row, table }: DataTablePaginationProps<TData>) {
   const { language } = useGoogleTranslate();
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+
+  console.log("row=====" ,row)
 
   // const [loading, setLoading] = useState(false);
   // const [open, setOpen] = useState(false);
@@ -74,14 +80,14 @@ export function DataTablePagination<TData>({ table, setOpen }: DataTablePaginati
 
           {table.getFilteredSelectedRowModel().rows.length ?
             //  @ts-ignore 
-            <Button variant="destructive" onClick={() => setOpen(true)}>
+            <Button variant="destructive" onClick={() => setIsDeleteOpen(true)}>
               <Trash className="mr-2 h-4 w-4" /> حذف
             </Button> : ""}
         </div>
 
         <div className="flex items-center space-x-6 lg:space-x-8">
-          <div className={`flex items-center space-x-2 ${language === "fa" ? "gap-x-4" : ""} 
-          `}>
+          <div className={`flex items-center space-x-2 ${language === "fa" ? "gap-x-4" : ""} `}>
+
             <p className="text-sm font-medium whitespace-nowrap">ردیف به ازای هر صفحه</p>
             <Select
               value={`${table.getState().pagination.pageSize}`}
@@ -92,6 +98,7 @@ export function DataTablePagination<TData>({ table, setOpen }: DataTablePaginati
               <SelectTrigger className="h-8 w-[70px]">
                 <SelectValue placeholder={table.getState().pagination.pageSize} />
               </SelectTrigger>
+
               <SelectContent side="top">
                 {[10, 20, 30, 40, 50].map((pageSize) => (
                   <SelectItem key={pageSize} value={`${pageSize}`}>
@@ -147,10 +154,13 @@ export function DataTablePagination<TData>({ table, setOpen }: DataTablePaginati
               <ChevronsRight className="h-4 w-4" />
             </Button>
           </div>
-        </div >
-      </div >
-      {/* <span className="opacity-0 md:hidden">tetssss</span> */}
-    </>
+        </div>
+      </div>
 
+
+
+      {/* Delete Dialog */}
+      <KdramaDelete row={row} isOpen={isDeleteOpen} onClose={() => setIsDeleteOpen(false)} />
+    </>
   )
 }

@@ -31,11 +31,9 @@ import { columns } from '@/utilities/kdrama-table/columns'
 
 import { useToast } from "@/components/ui/use-toast"
 import { Heading } from "@/templates/dashboard/heading"
-// import { Heading } from "../../templates/heading"
 
 
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export function DataTable<TValue>({ kdramaList }: any) {
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
@@ -137,7 +135,7 @@ export function DataTable<TValue>({ kdramaList }: any) {
       </div>
 
       <div className="w-auto flex items-center justify-end space-x-2 py-4">
-        <DataTablePagination table={table} setOpen={false} />
+        <DataTablePagination row={table.getRowModel().rows} table={table}  />
       </div>
     </>
   )

@@ -36,7 +36,7 @@ const KdramaDelete = ({ row, isOpen, onClose }: { row: any, isOpen: boolean, onC
     // mutate({ id: row.original._id })
     // toast({ variant: "success", title: "✔ با موفقیت حذف شد" });
 
-    mutate({ id: row.original._id }, {
+    mutate({ id: row.original?._id }, {
       onSuccess: () => {
         toast({ variant: "success", title: "✔ با موفقیت حذف شد" });
         onClose(); // Close the dialog after successful deletion

@@ -1,16 +1,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { useEffect, useRef } from "react";
-
 import animationData from "../../public/lottie/404.json";
 import Lottie from "lottie-react";
 
+import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   const router = useRouter();
-
 
   return (
     <div className="px-5 md:px-8 lg:px-80 w-full min-h-svh mb-16 flex flex-col items-center justify-center text-center">
