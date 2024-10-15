@@ -146,6 +146,7 @@ export async function DELETE(request: any) {
 
     // Retrieve the array of KDrama IDs from the request query parameters
     const ids = request.nextUrl.searchParams.getAll("ids[]");
+    console.log("ids kd---->", ids)
     if (!ids || ids.length === 0) {
       return NextResponse.json(
         { message: "No KDrama IDs provided." },

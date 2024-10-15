@@ -31,6 +31,9 @@ import { columns } from '@/utilities/kdrama-table/columns'
 
 import { useToast } from "@/components/ui/use-toast"
 import { Heading } from "@/templates/dashboard/heading"
+import { AlertModal } from "@/templates/alert-modal"
+import axios from "axios"
+import { useRouter } from "next/navigation"
 
 
 
@@ -38,16 +41,10 @@ export function DataTable<TValue>({ kdramaList }: any) {
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const { toast } = useToast()
-
-  // const copyHandler = (text: string) => {
-  //   navigator.clipboard.writeText(text)
-  //   toast({
-  //     title: "Copy to clipboard! ✔",
-  //     description: `Drama Name: ${text}`,
-  //   })
-  // }
+  
 
 
+  
 
   const { data: serverData } = useKdramasData()
   // const data = useMemo(() => serverData ?? [], [serverData]);
@@ -70,6 +67,52 @@ export function DataTable<TValue>({ kdramaList }: any) {
       columnFilters,
     },
   })
+
+  
+
+
+  
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const rowsList = table.getFilteredSelectedRowModel().rows
+  const ids = rowsList.map((item) => item.original._id)
+
+
+  const onConfirm = async () => {
+    try {
+      setLoading(true);
+
+      const requestBody = { ids: ids };
+      await axios.delete('/api/drama', { params: requestBody })
+
+      // table.setRowSelection([]);  // v.1 - this unselected the rows
+      table.resetRowSelection(true) // v.2 - this unselected the rows
+
+      router.refresh();
+      setOpen(false)
+
+    } catch (error) {
+      console.error("delete error------>", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+
+
+
+  // const copyHandler = (text: string) => {
+  //   navigator.clipboard.writeText(text)
+  //   toast({
+  //     title: "Copy to clipboard! ✔",
+  //     description: `Drama Name: ${text}`,
+  //   })
+  // }
+
+
 
 
   return (
@@ -133,10 +176,16 @@ export function DataTable<TValue>({ kdramaList }: any) {
           </TableBody>
         </Table>
       </div>
-
       <div className="w-auto flex items-center justify-end space-x-2 py-4">
-        <DataTablePagination row={table.getRowModel().rows} table={table}  />
+        <DataTablePagination row={table.getRowModel().rows} table={table} />
       </div>
+
+      <AlertModal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        onConfirm={onConfirm}
+        loading={loading}
+      />
     </>
   )
 }

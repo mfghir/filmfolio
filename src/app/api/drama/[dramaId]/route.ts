@@ -29,10 +29,15 @@ export async function DELETE(req: any,context: any) {
       );
     }
 
+
+
+    
+
     // Extract KDrama ID from request
     const id = context.params.dramaId;
     // const { id } = await req.json();
     console.log("id drama-------->", id)
+
     if (!id) {
       return NextResponse.json(
         { error: "KDrama ID is required." },
@@ -45,6 +50,12 @@ export async function DELETE(req: any,context: any) {
       _id: new Types.ObjectId(id),
       userId: user._id,
     });
+
+
+
+
+
+
 
     if (!drama) {
       return NextResponse.json(

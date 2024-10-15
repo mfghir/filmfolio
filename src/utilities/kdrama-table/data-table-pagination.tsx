@@ -29,11 +29,11 @@ import KdramaDelete from "@/components/kdrama/KdramaDelete"
 
 interface DataTablePaginationProps<TData> {
   table: Table<TData>,
-  row:any
-  // setOpen: boolean
+  row:any ,
+  setOpen: boolean
 }
 
-export function DataTablePagination<TData>({row, table }: DataTablePaginationProps<TData>) {
+export function DataTablePagination<TData>({row, table,setOpen }: DataTablePaginationProps<TData>) {
   const { language } = useGoogleTranslate();
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
@@ -80,7 +80,10 @@ export function DataTablePagination<TData>({row, table }: DataTablePaginationPro
 
           {table.getFilteredSelectedRowModel().rows.length ?
             //  @ts-ignore 
-            <Button variant="destructive" onClick={() => setIsDeleteOpen(true)}>
+            <Button variant="destructive" 
+            // onClick={() => setIsDeleteOpen(true)}
+            onClick={() => setOpen(true)}
+            >
               <Trash className="mr-2 h-4 w-4" /> حذف
             </Button> : ""}
         </div>
@@ -160,7 +163,7 @@ export function DataTablePagination<TData>({row, table }: DataTablePaginationPro
 
 
       {/* Delete Dialog */}
-      <KdramaDelete row={row} isOpen={isDeleteOpen} onClose={() => setIsDeleteOpen(false)} />
+      {/* <KdramaDelete row={row} isOpen={isDeleteOpen} onClose={() => setIsDeleteOpen(false)} /> */}
     </>
   )
 }
