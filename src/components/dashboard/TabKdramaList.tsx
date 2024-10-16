@@ -1,9 +1,9 @@
 import { DataTable } from "@/utilities/kdrama-table/data-table"
 
-const TabKdramaList = () => {
+const TabKdramaList = ({data} :{data:any}) => {
   return (
     <div className="w-full h-full">
-      <DataTable />
+      <DataTable dataTest={data} />
     </div>
   )
 }

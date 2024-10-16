@@ -81,7 +81,6 @@ export function DataTablePagination<TData>({row, table,setOpen }: DataTablePagin
           {table.getFilteredSelectedRowModel().rows.length ?
             //  @ts-ignore 
             <Button variant="destructive" 
-            // onClick={() => setIsDeleteOpen(true)}
             onClick={() => setOpen(true)}
             >
               <Trash className="mr-2 h-4 w-4" /> حذف

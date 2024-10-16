@@ -37,7 +37,14 @@ import { useRouter } from "next/navigation"
 
 
 
-export function DataTable<TValue>({ kdramaList }: any) {
+interface DataTableProps<TData, TValue> {
+  columns: ColumnDef<TData, TValue>[];
+  data: TData[];
+  searchKey: string;
+}
+
+
+export function DataTable<TValue>({ kdramaList , dataTest}: any) {
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const { toast } = useToast()
